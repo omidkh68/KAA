@@ -1,0 +1,71 @@
+.clear {
+  clear: both;
+}
+
+:focus {
+  outline: $none;
+}
+
+a {
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+.block-el {
+  display: $disblock;
+}
+
+.bg-white {
+  background-color: $pure-white-color;
+}
+
+.mt {
+  margin-top: $half-em;
+}
+.mb {
+  margin-bottom: $half-em;
+}
+
+.noPadding {
+  padding: $zero;
+}
+
+%transition-normal {
+  @include transition(all .4s);
+}
+
+.no-padding-side {
+  padding-left: $zero;
+  padding-right: $zero;
+}
+
+.round-corner {
+  @include radius($all: true);
+}
+
+.box-style {
+  @extend .round-corner;
+  @extend .bg-white;
+}
+
+.wrapper {
+  margin: $zero auto;
+  max-width: 1200px;
+}
+
+.tooltip-inner {
+  font-family: $font-stack;
+  min-width: 100px;
+}

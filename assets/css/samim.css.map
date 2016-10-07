@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAOC;EANC,WAAW,EAAE,OAAO;EACpB,GAAG,EAAE,4CAA4C;EACjD,GAAG,EAAE,8MAE0D;EAC/D,WAAW,EAAE,MAAM;AAErB,UAOC;EANC,WAAW,EAAE,OAAO;EACpB,GAAG,EAAE,iDAAiD;EACtD,GAAG,EAAE,6NAE+D;EACpE,WAAW,EAAE,IAAI",
+"sources": ["samim.scss"],
+"names": [],
+"file": "samim.css"
+}

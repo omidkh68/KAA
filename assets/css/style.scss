@@ -1,62 +1,112 @@
 @import 'variables';
+@import 'normalize-scss/sass/normalize';
+@import 'mixins';
+@import 'essential';
+@import 'hamburgers/hamburgers';
+@import 'samim';
+@import 'font-awesome/scss/font-awesome';
 
 body {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background: url('../images/kavoshabzar-background.jpg') no-repeat fixed center center;
   background-size: cover;
-  margin: 0;
-  padding: 0;
+  margin: $zero;
+  padding: $zero;
   font-size: 14px;
+  font-family: Samim, "Helvetica Neue", sans-serif;
+
+  &.fixed {
+    height: $full-size;
+    overflow: hidden;
+    position: $fixed;
+    width: $full-size;
+  }
 }
 
 header {
   background-color: $light-black-color;
-  height: 50px;
-  position: relative;
-  width: 100%;
+  height: $headerheight;
+  position: $relative;
+  width: $full-size;
   z-index: 2;
 
-  a {
-    display: block;
-    margin: 0 auto;
-    height: 100%;
+  > a {
+    display: $disblock;
+    height: $full-size;
     max-width: 150px;
-    width: 100%;
+    padding-right: $half-em;
+    width: $full-size;
 
     img {
       margin-top: .7em;
-      width: 100%;
+      width: $full-size;
     }
   }
 }
 
-.overlay {
-  background-color: $dark-gray-color;
-  height: 100%;
-  left: 0;
-  padding-top: 10em;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
+nav {
+  @extend %transition-normal;
 
-  p {
-    color: $pure-white-color;
-    display: block;
-    font-family: Helvetica Neue, Tahoma, sans-serif;
-    font-size: 3rem;
-    font-weight: 100;
-    text-align: center;
-    width: 100%;
+  height: $headerheight;
+  max-width: 600px;
+  padding-left: $full-em * 2;
+  width: $full-size;
+
+  ul {
+    list-style: $none;
+    margin: $zero;
+    padding: $zero;
   }
 
-  img {
-    display: block;
-    margin: 0 auto;
-    max-width: 200px;
-    width: 100%;
+  li {
+    height: $headerheight;
+    width: auto;
+
+    a {
+      @extend %transition-normal;
+
+      color: $light-white-color;
+      display: $disblock;
+      font-size: $full-em;
+      font-weight: 200;
+      height: $full-size;
+      line-height: $headerheight;
+      padding: $zero $full-em;
+      width: $full-size;
+
+      &:hover {
+        color: $cyan-color;
+      }
+    }
+
+    a.active {
+      color: $cyan-color;
+      font-style: italic;
+      position: $relative;
+
+      &::before {
+        background-color: $cyan-color;
+        bottom: $zero;
+        content: '';
+        height: 2px;
+        left: $zero;
+        position: $absolute;
+        width: $full-size;
+        z-index: 2;
+      }
+    }
   }
 }
 
 @import 'responsive';
+
+
+
+
+
+
+
+
+
+

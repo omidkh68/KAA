@@ -1,0 +1,105 @@
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin box-shadow($left, $top, $blur, $color, $inset:'') {
+  -moz-box-shadow: $left $top $blur $color #{$inset};
+  -webkit-box-shadow: $left $top $blur $color #{$inset};
+  box-shadow: $left $top $blur $color #{$inset};
+}
+
+@mixin rounded($radius: .5em) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin gradient($from, $to) {
+  background: #ff882c; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ff882c 0%, #fe5454 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ff882c 0%,#fe5454 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ff882c 0%,#fe5454 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff882c', endColorstr='#fe5454',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin radius($topleft: 3px, $topright: 3px, $bottomright: 3px, $bottomleft: 3px, $all: false) {
+  @if $all == false {
+    -moz-border-radius: $topleft $topright $bottomright $bottomleft;
+    -webkit-border-radius: $topleft $topright $bottomright $bottomleft;
+    border-radius: $topleft $topright $bottomright $bottomleft;
+  } @else {
+    -moz-border-radius: $topleft;
+    -webkit-border-radius: $topleft;
+    border-radius: $topleft;
+  }
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie); //IE8
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+// mixin for multiline
+@mixin multilineellipsis($lineheight: 1.2em, $linecount: 1, $bgcolor: white){
+  direction: rtl;
+  overflow: hidden;
+  position: $relative;
+  line-height: $lineheight;
+  max-height: $lineheight * $linecount;
+  text-align: $justify;
+  padding-left: $fullem;
+
+  &::before {
+    bottom: $zero;
+    content: '...';
+    position: $absolute;
+    left: $zero;
+  }
+
+  &::after {
+    background: $bgcolor;
+    content: '';
+    height: $fullem;
+    margin-top: .2em;
+    position: $absolute;
+    left: $zero;
+    width: $fullem;
+  }
+}
+
+// mixin for rotation
+@mixin transform-rotate($deg: 0) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate($deg+deg);
+  -ms-transform: rotate($deg+deg);
+  transform: rotate($deg+deg);
+}

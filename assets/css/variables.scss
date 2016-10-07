@@ -13,36 +13,11 @@ $none: none;
 
 // color variables
 $pure-white-color: #fff;
-$white-color: #fafafa;
-$medium-white-color: #ededed;
-$ultralight-gray-color: #e1e1e1;
-$gray-color: #ccc;
-$light-gray-color: #8e8e8e;
+$light-white-color: #ddd;
 $light-normal-gray-color: rgba(54, 54, 54, .6);
-$medium-gray-color: #555;
-$dark-gray-color: rgba(83, 83, 83, .6);
-$ultradark-gray-color: #363636;
-$light-black-color: rgba(37, 37, 37, .8);
-$orange-color: #f1af10;
-$light-orange-color: #ccaca2;
-$ultralight-orange-color: #ffdca8;
-$ultralight-orange-border-color: #efbf78;
-$ultra-orange-border-color: #fbd59d;
-$dark-orange-color: #b37028;
-$ultra-dark-orange-color: #ff5a00;
-$medium-orange-color: #e08422;
-$medium-brown-color: #bd611d;
-$red-color: #e54140;
-$dark-blue-color: #34495e;
-$subject-title-color: #077d84;
-$medium-blue-color: #5c95b1;
-$header-border-blue-color: #1cc3b0;
-$dark-black-color: #252525;
-$pure-black-color: #000;
-$cyan-color: #18deb6;
-$from-gredient1: #ff882c;
-$to-gredient1: #fe5454;
-$light-cyan-color: #16ebc0;
+$dark-gray-color: rgba(83, 83, 83, .9);
+$light-black-color: rgba(37, 37, 37, .7);
+$cyan-color: #2de1fc;
 
 // positions & displays
 $fixed: fixed;
@@ -52,19 +27,18 @@ $disblock: block;
 $distable: table;
 
 // size variables
-$ziro: 0;
+$zero: 0;
 $full-size: 100%;
 $half-size: 50%;
 $logowidth: 40px;
 $headerwidth: 60px;
 $headerwidthactivated: 270px;
-$headerheight: 40px;
+$headerheight: 50px;
 $footerheight: 30px;
 $half-em: .5em;
 $half-rem: .5rem;
 $full-em: 1em;
 $full-rem: 1rem;
-$nav-height: 50px;
 
 // formcontainer variables
 $formcontainerwidth: 1000px;
