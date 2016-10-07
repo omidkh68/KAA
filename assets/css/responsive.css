@@ -1,0 +1,7 @@
+@media screen and (max-width: 768px) {
+  .overlay {
+    padding-top: 2em; }
+    .overlay p {
+      font-weight: 200; } }
+
+/*# sourceMappingURL=responsive.css.map */

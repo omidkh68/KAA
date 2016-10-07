@@ -1,0 +1,62 @@
+@import 'variables';
+
+body {
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background: url('../images/kavoshabzar-background.jpg') no-repeat fixed center center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+header {
+  background-color: $light-black-color;
+  height: 50px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  a {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 150px;
+    width: 100%;
+
+    img {
+      margin-top: .7em;
+      width: 100%;
+    }
+  }
+}
+
+.overlay {
+  background-color: $dark-gray-color;
+  height: 100%;
+  left: 0;
+  padding-top: 10em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  p {
+    color: $pure-white-color;
+    display: block;
+    font-family: Helvetica Neue, Tahoma, sans-serif;
+    font-size: 3rem;
+    font-weight: 100;
+    text-align: center;
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    width: 100%;
+  }
+}
+
+@import 'responsive';

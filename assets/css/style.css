@@ -1,0 +1,55 @@
+body {
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background: url("../images/kavoshabzar-background.jpg") no-repeat fixed center center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-size: 14px; }
+
+header {
+  background-color: rgba(37, 37, 37, 0.8);
+  height: 50px;
+  position: relative;
+  width: 100%;
+  z-index: 2; }
+  header a {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 150px;
+    width: 100%; }
+    header a img {
+      margin-top: .7em;
+      width: 100%; }
+
+.overlay {
+  background-color: rgba(83, 83, 83, 0.6);
+  height: 100%;
+  left: 0;
+  padding-top: 10em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+  .overlay p {
+    color: #fff;
+    display: block;
+    font-family: Helvetica Neue, Tahoma, sans-serif;
+    font-size: 3rem;
+    font-weight: 100;
+    text-align: center;
+    width: 100%; }
+  .overlay img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    width: 100%; }
+
+@media screen and (max-width: 768px) {
+  .overlay {
+    padding-top: 2em; }
+    .overlay p {
+      font-weight: 200; } }
+
+/*# sourceMappingURL=style.css.map */
