@@ -4,28 +4,33 @@
 @import 'essential';
 @import 'hamburgers/hamburgers';
 @import 'samim';
+@import 'supersized';
 @import 'font-awesome/scss/font-awesome';
+@import 'flaticon';
 
+// body style configuration
 body {
   -moz-background-size: cover;
   -webkit-background-size: cover;
-  background: url('../images/kavoshabzar-background.jpg') no-repeat fixed center center;
+  background: url('../images/kavoshabzar-background-5.jpg') no-repeat fixed center center;
   background-size: cover;
   margin: $zero;
   padding: $zero;
   font-size: 14px;
-  font-family: Samim, "Helvetica Neue", sans-serif;
+  font-family: $font-stack;
 
   &.fixed {
     height: $full-size;
-    overflow: hidden;
+    overflow: $hidden;
     position: $fixed;
     width: $full-size;
   }
 }
+// end of body style configuration
 
+// top header
 header {
-  background-color: $light-black-color;
+  background-color: $dark-black-color;
   height: $headerheight;
   position: $relative;
   width: $full-size;
@@ -44,24 +49,34 @@ header {
     }
   }
 }
+// end f top header
 
+// website navigation
 nav {
   @extend %transition-normal;
 
   height: $headerheight;
-  max-width: 600px;
+  //max-width: 600px;
   padding-left: $full-em * 2;
-  width: $full-size;
+  //width: $full-size;
 
   ul {
-    list-style: $none;
-    margin: $zero;
-    padding: $zero;
+    &.rtl {
+      a {
+        font-family: $font-stack;
+      }
+    }
+
+    &.ltr {
+      a {
+        font-family: $font-stack-en;
+      }
+    }
   }
 
   li {
     height: $headerheight;
-    width: auto;
+    width: $auto;
 
     a {
       @extend %transition-normal;
@@ -98,15 +113,233 @@ nav {
     }
   }
 }
+// end of navigation website
+
+// footer of website
+footer {
+  background-color: $light-black-color;
+  bottom: $zero;
+  height: $footerheight;
+  left: $zero;
+  position: $fixed;
+  width: $full-size;
+
+  .lang-selector {
+    height: $footerheight;
+    margin-left: $full-em;
+    max-width: 200px;
+    width: $full-size;
+
+    li {
+      height: $footerheight;
+      margin-right: $half-em;
+      width: 30px;
+    }
+
+    a {
+      display: $disblock;
+      height: $full-size;
+      position: $relative;
+
+      &.active {
+        &::before {
+          background-color: $cyan-color;
+          bottom: $zero;
+          content: '';
+          height: 2px;
+          left: $zero;
+          position: $absolute;
+          width: $full-size;
+        }
+      }
+
+      img {
+        display: $disblock;
+        max-width: 25px;
+        position: $relative;
+        top: $half-em;
+      }
+    }
+  }
+
+  p {
+    color: $medium-white-color;
+    display: $disblock;
+    height: $footerheight;
+    line-height: $footerheight;
+    padding-right: $half-em;
+
+    .current-year {
+      &.rtl {
+        font-family: $font-stack;
+      }
+
+      &.ltr {
+        font-family: $font-stack-en;
+      }
+    }
+  }
+}
+// end of footer
+
+// fullscreen slider style
+  // -- Controls Bar
+#controls-wrapper {
+  bottom: $footerheight + 10px;
+  height: 40px;
+  left: $zero;
+  position: $fixed;
+  width: $full-size;
+  z-index: 4;
+}
+
+#controls {
+  height: $full-size;
+  overflow: $hidden;
+  position: $relative;
+  text-align: $left;
+  width: $full-size;
+  z-index: 5;
+
+}
+
+#slidecounter {
+  bottom: $zero;
+  color: $light-gray-color;
+  font-size: .8em;
+  font-weight: 200;
+  left: 110px;
+  line-height: 20px;
+  position: $absolute;
+
+  .slidenumber,
+  .totalslides {
+    &.rtl {
+      font-family: $font-stack;
+    }
+
+    &.ltr {
+      font-family: $font-stack-en;
+    }
+  }
+}
+
+#slidecaption {
+  color: $pure-white-color;
+  font-weight: 200;
+  left: 110px;
+  line-height: 20px;
+  overflow: $hidden;
+  padding-left: 1.5em;
+  position: $absolute;
+  top: $zero;
+
+  &::before {
+    @extend %round-corner-full;
+    border: solid 2px $pure-white-color;
+    content: '';
+    height: 13px;
+    left: $zero;
+    position: $absolute;
+    top: 4px;
+    width: 13px;
+  }
+
+  &.rtl {
+    font-family: $font-stack;
+  }
+
+  &.ltr {
+    font-family: $font-stack-en;
+  }
+}
+
+#prevslide, #nextslide {
+  @extend %transition-normal;
+
+  background-color: $light-black-color;
+  color: $pure-white-color;
+  font-size: .8em;
+  height: 40px;
+  line-height: 42px;
+  position: $absolute;
+  text-align: $center;
+  top: $zero;
+  width: 40px;
+  z-index: 6;
+}
+
+#prevslide {
+  left: 10px;
+}
+
+#nextslide {
+  left: 60px;
+}
+
+#prevslide:active,
+#nextslide:active,
+#nextslide:hover,
+#nextslide:hover {
+  background-color: $dark-black-color;
+}
+
+#slide-list {
+  bottom: $zero;
+  left: 110px;
+  margin: 0 !important;
+  position: absolute;
+
+  li {
+    float: $left;
+    height: 2px;
+    margin: $zero 5px $zero $zero;
+    width: 40px;
+
+    a {
+      @extend %transition-normal;
+
+      background-color: $light-black-color;
+      display: $disblock;
+      height: $full-size;
+      position: $relative;
+      width: $full-size;
+
+      &:hover {
+        background-color: $light-white-color;
+      }
+    }
+
+    &.current-slide {
+      a {
+        background-color: $light-white-color;
+      }
+    }
+  }
+}
+
+#slide-list li a:hover {
+  background-position: $zero -12px;
+  cursor: $pointer;
+}
+
+  // -- Progressive bar
+#progress-back {
+  background-color: $light-normal-gray-color;
+  bottom: 35px;
+  height: 2px;
+  left: $zero;
+  position: $fixed;
+  width: $full-size;
+  z-index: 5;
+
+  #progress-bar {
+    background-color: $light-gray-color;
+    height: 2px;
+    position: $relative;
+    width: $full-size;
+  }
+}
+// end of fullscreen slider style
 
 @import 'responsive';
-
-
-
-
-
-
-
-
-
-

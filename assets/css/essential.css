@@ -2,7 +2,7 @@
 Error: Undefined variable: "$none".
         on line 6 of css/essential.scss
 
-1: .clear {
+1: %clear {
 2:   clear: both;
 3: }
 4: 
@@ -11,8 +11,8 @@ Error: Undefined variable: "$none".
 7: }
 8: 
 9: a {
-10:   &:hover,
-11:   &:focus,
+10:   cursor: pointer;
+11: 
 
 Backtrace:
 css/essential.scss:6
@@ -67,4 +67,4 @@ css/essential.scss:6
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$none\".\A         on line 6 of css/essential.scss\A \A 1: .clear {\A 2:   clear: both;\A 3: }\A 4: \A 5: :focus {\A 6:   outline: $none;\A 7: }\A 8: \A 9: a {\A 10:   &:hover,\A 11:   &:focus,"; }
+  content: "Error: Undefined variable: \"$none\".\A         on line 6 of css/essential.scss\A \A 1: %clear {\A 2:   clear: both;\A 3: }\A 4: \A 5: :focus {\A 6:   outline: $none;\A 7: }\A 8: \A 9: a {\A 10:   cursor: pointer;\A 11: "; }

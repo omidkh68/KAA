@@ -1,57 +1,29 @@
 @charset "UTF-8";
-.clear {
-  clear: both; }
-
 :focus {
   outline: none; }
 
-a:hover, a:focus, a:active, a:visited {
-  text-decoration: none; }
+a {
+  cursor: pointer; }
+  a:hover, a:focus, a:active, a:visited {
+    text-decoration: none; }
 
-.rtl {
-  direction: rtl; }
-
-.ltr {
-  direction: ltr; }
-
-.block-el {
-  display: block; }
-
-.bg-white, .box-style {
-  background-color: #fff; }
-
-.mt {
-  margin-top: 0.5em; }
-
-.mb {
-  margin-bottom: 0.5em; }
-
-.noPadding {
+ul,
+li {
+  list-style: none;
+  margin: 0;
   padding: 0; }
 
-nav, nav li a {
+nav, nav li a, #prevslide, #nextslide, #slide-list li a {
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   -ms-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s; }
 
-.no-padding-side {
-  padding-left: 0;
-  padding-right: 0; }
-
-.round-corner, .box-style {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px; }
-
-.wrapper {
-  margin: 0 auto;
-  max-width: 1200px; }
-
-.tooltip-inner {
-  font-family: Samim, tahoma, serif !important;
-  min-width: 100px; }
+#slidecaption::before {
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%; }
 
 /*!
  * Hamburgers
@@ -658,6 +630,63 @@ nav, nav li a {
   src: url("../fonts/samim-font-v0.11.0/Samim-Bold.eot");
   src: url("../fonts/samim-font-v0.11.0/Samim-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/samim-font-v0.11.0/Samim-Bold.woff") format("woff"), url("../fonts/samim-font-v0.11.0/Samim-Bold.ttf") format("truetype");
   font-weight: bold; }
+#supersized-loader {
+  height: 60px;
+  left: 50%;
+  margin: -30px 0 0 -30px;
+  position: absolute;
+  text-indent: -999em;
+  top: 50%;
+  width: 60px;
+  z-index: 0; }
+
+#supersized {
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -999; }
+  #supersized img {
+    border: none;
+    display: none;
+    height: auto;
+    outline: none;
+    position: relative;
+    width: auto; }
+  #supersized li {
+    background: rgba(55, 55, 55, 0.8);
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -30; }
+    #supersized li.prevslide {
+      z-index: -20; }
+      #supersized li.prevslide img {
+        display: inline; }
+    #supersized li.activeslide {
+      z-index: -10; }
+      #supersized li.activeslide img {
+        display: inline; }
+    #supersized li.image-loading {
+      background: rgba(55, 55, 55, 0.8) no-repeat center center;
+      height: 100%;
+      width: 100%; }
+      #supersized li.image-loading img {
+        visibility: hidden; }
+  #supersized a {
+    display: block;
+    height: 100%;
+    width: 100%; }
+  #supersized.quality img {
+    image-rendering: optimizeQuality; }
+
 /*!
  *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2844,15 +2873,57 @@ nav, nav li a {
   overflow: visible;
   clip: auto; }
 
+@font-face {
+  font-family: 'Flaticon';
+  src: url("../fonts/flaticon/Flaticon.eot");
+  src: url("../fonts/flaticon/Flaticon.eot?#iefix") format("embedded-opentype"), url("../fonts/flaticon/Flaticon.woff") format("woff"), url("../fonts/flaticon/Flaticon.ttf") format("truetype"), url("../fonts/flaticon/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: 'Flaticon';
+    src: url("../fonts/flaticon/Flaticon.svg#Flaticon") format("svg"); } }
+.fi::before {
+  display: inline-block;
+  font-family: 'Flaticon';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none; }
+
+.flaticon-angle-bottom::before {
+  content: '\f100'; }
+
+.flaticon-angle-left::before {
+  content: '\f101'; }
+
+.flaticon-angle-right::before {
+  content: '\f102'; }
+
+.flaticon-angle-top::before {
+  content: '\f103'; }
+
+.flaticon-bell::before {
+  content: '\f104'; }
+
+.flaticon-search::before {
+  content: '\f105'; }
+
 body {
   -moz-background-size: cover;
   -webkit-background-size: cover;
-  background: url("../images/kavoshabzar-background.jpg") no-repeat fixed center center;
+  background: url("../images/kavoshabzar-background-5.jpg") no-repeat fixed center center;
   background-size: cover;
   margin: 0;
   padding: 0;
   font-size: 14px;
-  font-family: Samim, "Helvetica Neue", sans-serif; }
+  font-family: Samim, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
   body.fixed {
     height: 100%;
     overflow: hidden;
@@ -2877,13 +2948,11 @@ header {
 
 nav {
   height: 50px;
-  max-width: 600px;
-  padding-left: 2em;
-  width: 100%; }
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
+  padding-left: 2em; }
+  nav ul.rtl a {
+    font-family: Samim, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+  nav ul.ltr a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
   nav li {
     height: 50px;
     width: auto; }
@@ -2912,6 +2981,166 @@ nav {
         width: 100%;
         z-index: 2; }
 
+footer {
+  background-color: rgba(55, 55, 55, 0.8);
+  bottom: 0;
+  height: 35px;
+  left: 0;
+  position: fixed;
+  width: 100%; }
+  footer .lang-selector {
+    height: 35px;
+    margin-left: 1em;
+    max-width: 200px;
+    width: 100%; }
+    footer .lang-selector li {
+      height: 35px;
+      margin-right: 0.5em;
+      width: 30px; }
+    footer .lang-selector a {
+      display: block;
+      height: 100%;
+      position: relative; }
+      footer .lang-selector a.active::before {
+        background-color: #2de1fc;
+        bottom: 0;
+        content: '';
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%; }
+      footer .lang-selector a img {
+        display: block;
+        max-width: 25px;
+        position: relative;
+        top: 0.5em; }
+  footer p {
+    color: #dcdcdc;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    padding-right: 0.5em; }
+    footer p .current-year.rtl {
+      font-family: Samim, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+    footer p .current-year.ltr {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+
+#controls-wrapper {
+  bottom: 45px;
+  height: 40px;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 4; }
+
+#controls {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  z-index: 5; }
+
+#slidecounter {
+  bottom: 0;
+  color: #999;
+  font-size: .8em;
+  font-weight: 200;
+  left: 110px;
+  line-height: 20px;
+  position: absolute; }
+  #slidecounter .slidenumber.rtl,
+  #slidecounter .totalslides.rtl {
+    font-family: Samim, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+  #slidecounter .slidenumber.ltr,
+  #slidecounter .totalslides.ltr {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+
+#slidecaption {
+  color: #fff;
+  font-weight: 200;
+  left: 110px;
+  line-height: 20px;
+  overflow: hidden;
+  padding-left: 1.5em;
+  position: absolute;
+  top: 0; }
+  #slidecaption::before {
+    border: solid 2px #fff;
+    content: '';
+    height: 13px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+    width: 13px; }
+  #slidecaption.rtl {
+    font-family: Samim, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+  #slidecaption.ltr {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+
+#prevslide, #nextslide {
+  background-color: rgba(55, 55, 55, 0.8);
+  color: #fff;
+  font-size: .8em;
+  height: 40px;
+  line-height: 42px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 40px;
+  z-index: 6; }
+
+#prevslide {
+  left: 10px; }
+
+#nextslide {
+  left: 60px; }
+
+#prevslide:active,
+#nextslide:active,
+#nextslide:hover,
+#nextslide:hover {
+  background-color: rgba(37, 37, 37, 0.7); }
+
+#slide-list {
+  bottom: 0;
+  left: 110px;
+  margin: 0 !important;
+  position: absolute; }
+  #slide-list li {
+    float: left;
+    height: 2px;
+    margin: 0 5px 0 0;
+    width: 40px; }
+    #slide-list li a {
+      background-color: rgba(55, 55, 55, 0.8);
+      display: block;
+      height: 100%;
+      position: relative;
+      width: 100%; }
+      #slide-list li a:hover {
+        background-color: #ddd; }
+    #slide-list li.current-slide a {
+      background-color: #ddd; }
+
+#slide-list li a:hover {
+  background-position: 0 -12px;
+  cursor: pointer; }
+
+#progress-back {
+  background-color: rgba(54, 54, 54, 0.6);
+  bottom: 35px;
+  height: 2px;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 5; }
+  #progress-back #progress-bar {
+    background-color: #999;
+    height: 2px;
+    position: relative;
+    width: 100%; }
+
 @media screen and (max-width: 768px) {
   nav {
     background-color: rgba(83, 83, 83, 0.9);
@@ -2935,6 +3164,9 @@ nav {
     nav li {
       width: 100%; }
       nav li a {
-        font-weight: normal; } }
+        font-weight: normal; }
+
+  footer p {
+    font-size: 13px; } }
 
 /*# sourceMappingURL=style.css.map */

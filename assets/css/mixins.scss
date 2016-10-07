@@ -24,11 +24,15 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff882c', endColorstr='#fe5454',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-@mixin radius($topleft: 3px, $topright: 3px, $bottomright: 3px, $bottomleft: 3px, $all: false) {
+@mixin radius($topleft: 3px, $topright: 3px, $bottomright: 3px, $bottomleft: 3px, $all: false, $full: false) {
   @if $all == false {
     -moz-border-radius: $topleft $topright $bottomright $bottomleft;
     -webkit-border-radius: $topleft $topright $bottomright $bottomleft;
     border-radius: $topleft $topright $bottomright $bottomleft;
+  } @else if($all == true, $full == true) {
+    -moz-border-radius: $full-size;
+    -webkit-border-radius: $full-size;
+    border-radius: $full-size;
   } @else {
     -moz-border-radius: $topleft;
     -webkit-border-radius: $topleft;
@@ -45,9 +49,20 @@
 }
 
 @mixin opacity($opacity) {
+  /* IE 8 */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity = $opacity * 100)';
+
+  /* IE 5-7 */
+  filter: alpha(opacity = $opacity * 100);
+
+  /* Netscape */
+  -moz-opacity: $opacity;
+
+  /* Safari 1.x */
+  -khtml-opacity: $opacity;
+
+  /* Good browsers */
   opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity = $opacity-ie); //IE8
 }
 
 @mixin keyframes($animation-name) {

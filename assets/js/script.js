@@ -23,6 +23,10 @@ $(document).ready(function() {
         $nav.toggleClass('active');
     });
 
+    // set current year to footer
+    var date = new Date();
+    $('.current-year').html(date.getFullYear());
+
 });
 $(window).resize(function() {
     var $nav = $('nav'),
@@ -32,6 +36,10 @@ $(window).resize(function() {
     if(width > 768) {
         if($nav.hasClass('active')) {
             $nav.removeClass('active');
+        }
+
+        if($hamburger.hasClass('is-active')) {
+            $hamburger.removeClass('is-active')
         }
 
         $hamburger.addClass('hidden');

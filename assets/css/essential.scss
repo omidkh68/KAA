@@ -1,4 +1,4 @@
-.clear {
+%clear {
   clear: both;
 }
 
@@ -7,6 +7,8 @@
 }
 
 a {
+  cursor: pointer;
+
   &:hover,
   &:focus,
   &:active,
@@ -15,30 +17,37 @@ a {
   }
 }
 
-.rtl {
-  direction: rtl;
+ul,
+li {
+  list-style: $none;
+  margin: $zero;
+  padding: $zero;
 }
 
-.ltr {
-  direction: ltr;
+%rtl {
+  direction: $dirright;
 }
 
-.block-el {
+%ltr {
+  direction: $dirleft;
+}
+
+%block-el {
   display: $disblock;
 }
 
-.bg-white {
+%bg-white {
   background-color: $pure-white-color;
 }
 
-.mt {
+%mt {
   margin-top: $half-em;
 }
-.mb {
+%mb {
   margin-bottom: $half-em;
 }
 
-.noPadding {
+%noPadding {
   padding: $zero;
 }
 
@@ -46,26 +55,30 @@ a {
   @include transition(all .4s);
 }
 
-.no-padding-side {
+%no-padding-side {
   padding-left: $zero;
   padding-right: $zero;
 }
 
-.round-corner {
+%round-corner {
   @include radius($all: true);
 }
 
-.box-style {
-  @extend .round-corner;
-  @extend .bg-white;
+%round-corner-full {
+  @include radius($all: true, $full: true);
 }
 
-.wrapper {
+%box-style {
+  @extend %round-corner;
+  @extend %bg-white;
+}
+
+%wrapper {
   margin: $zero auto;
   max-width: 1200px;
 }
 
-.tooltip-inner {
+%tooltip-inner {
   font-family: $font-stack;
   min-width: 100px;
 }
