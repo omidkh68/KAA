@@ -3,13 +3,13 @@
   nav {
     background-color: $dark-gray-color;
     /* Firefox */
-    height: -moz-calc(100% - 50px);
+    height: -moz-calc(100% - 85px);
     /* WebKit */
-    height: -webkit-calc(100% - 50px);
+    height: -webkit-calc(100% - 85px);
     /* Opera */
-    height: -o-calc(100% - 50px);
+    height: -o-calc(100% - 85px);
     /* Standard */
-    height: calc(100% - 50px);
+    height: calc(100% - 85px);
     left: -$full-size;
     max-width: 300px;
     padding-left: $full-em * 2;

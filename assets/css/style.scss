@@ -62,12 +62,22 @@ nav {
 
   ul {
     &.rtl {
+      li {
+        float: $right;
+      }
+
       a {
         font-family: $font-stack;
+        font-size: .9em;
+        text-align: $right;
       }
     }
 
     &.ltr {
+      li {
+        float: $left;
+      }
+
       a {
         font-family: $font-stack-en;
       }
@@ -169,8 +179,14 @@ footer {
     line-height: $footerheight;
     padding-right: $half-em;
 
+    &.rtl {
+      font-size: .8em;
+      line-height: 33px;
+    }
+
     .current-year {
       &.rtl {
+        display: $none;
         font-family: $font-stack;
       }
 
@@ -182,7 +198,42 @@ footer {
 }
 // end of footer
 
+// overlay for ajax
+.overlay {
+  @include transition(all .2s ease-out);
+
+  background-color: $light-gray-color;
+  /* Firefox */
+  height: -moz-calc(100% - 85px);
+  /* WebKit */
+  height: -webkit-calc(100% - 85px);
+  /* Opera */
+  height: -o-calc(100% - 85px);
+  /* Standard */
+  left: $full-size;
+  position: $fixed;
+  right: -$full-size;
+  height: calc(100% - 85px);
+  top: $headerheight;
+  width: $full-size;
+
+  &.active {
+    left: $zero;
+    right: $full-size;
+  }
+
+  &.deactive {
+    left: -$full-size;
+    right: $zero;
+  }
+}
+
 // fullscreen slider style
+#supersized {
+  a {
+    cursor: default;
+  }
+}
   // -- Controls Bar
 #controls-wrapper {
   bottom: $footerheight + 10px;
@@ -341,5 +392,112 @@ footer {
   }
 }
 // end of fullscreen slider style
+
+// page loading spinner
+.sk-cube-grid {
+  height: 40px;
+  left: $half-size;
+  margin: -20px $zero $zero -20px;
+  position: $absolute;
+  top: $half-size;
+  width: 40px;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: $pure-white-color;
+  float: $left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  -moz-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+@-moz-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -moz-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -moz-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
 
 @import 'responsive';

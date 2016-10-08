@@ -24,7 +24,8 @@ li {
   padding: $zero;
 }
 
-%rtl {
+%rtl,
+.rtl {
   direction: $dirright;
 }
 
@@ -43,6 +44,7 @@ li {
 %mt {
   margin-top: $half-em;
 }
+
 %mb {
   margin-bottom: $half-em;
 }

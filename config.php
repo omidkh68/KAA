@@ -6,7 +6,25 @@
  * Time: 1:42 PM
  */
 
-define("LANG", "en");
+include_once("includes/db/connection.php");
+
+$sql = <<<SQL
+    SELECT *
+    FROM `config`
+SQL;
+
+$lang = "en";
+
+if(!$result = $db->query($sql)){
+    die('There was an error running the query [' . $db->error . ']');
+} else {
+    while($row = $result->fetch_assoc()){
+        $lang = $row['lang'];
+    }
+}
+$db->close();
+
+define("LANG", $lang);
 
 include_once("lang/".LANG.".php");
 
