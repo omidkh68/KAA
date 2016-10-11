@@ -67,3 +67,13 @@
     bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
   }
 }
+
+body.white {
+  .hamburger-inner {
+    &,
+    &::before,
+    &::after {
+      background-color: $medium-black-color !important;
+    }
+  }
+}

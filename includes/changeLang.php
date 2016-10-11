@@ -22,6 +22,7 @@ if (isset($_POST['changeLang'])) {
         "PRESS_RELEASE" => PRESS_RELEASE,
         "CONTACT" => CONTACT,
         "COPY" => COPY,
+        "SEARCH" => SEARCH,
     ];
 
     echo json_encode($arr, JSON_UNESCAPED_UNICODE);

@@ -1,3 +1,19 @@
+@media screen and (max-width: 920px) {
+  header {
+    .logo {
+      h5 {
+        display: $none;
+      }
+    }
+  }
+
+  .search-container {
+    &.pull-left {
+      left: $zero !important;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
 
   nav {
@@ -10,7 +26,6 @@
     height: -o-calc(100% - 85px);
     /* Standard */
     height: calc(100% - 85px);
-    left: -$full-size;
     max-width: 300px;
     padding-left: $full-em * 2;
     position: $fixed;
@@ -18,15 +33,36 @@
     width: $full-size;
     z-index: 2;
 
-    &.active {
+    &.pull-left {
+      left: -$full-size;
+    }
+
+    &.pull-right {
+      right: -$full-size;
+    }
+
+    &.active.pull-left {
       left: $zero;
+    }
+
+    &.active.pull-right {
+      right: $zero;
     }
 
     li {
       width: $full-size;
 
       a {
+        color: $pure-white-color !important;
         font-weight: normal;
+
+        &:visited {
+          color: $cyan-color !important;
+        }
+
+        &::before {
+          background-color: $cyan-color !important;
+        }
       }
     }
   }

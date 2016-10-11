@@ -7,4 +7,4 @@
 node_modules/
 assets/.sass-cache/
 .DS_Store
-includes/db
+includes/db/connection.php

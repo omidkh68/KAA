@@ -26,17 +26,17 @@
 
 @mixin radius($topleft: 3px, $topright: 3px, $bottomright: 3px, $bottomleft: 3px, $all: false, $full: false) {
   @if $all == false {
-    -moz-border-radius: $topleft $topright $bottomright $bottomleft;
-    -webkit-border-radius: $topleft $topright $bottomright $bottomleft;
-    border-radius: $topleft $topright $bottomright $bottomleft;
+    -moz-border-radius: $topleft $topright $bottomright $bottomleft !important;
+    -webkit-border-radius: $topleft $topright $bottomright $bottomleft !important;;
+    border-radius: $topleft $topright $bottomright $bottomleft !important;;
   } @else if($all == true, $full == true) {
-    -moz-border-radius: $full-size;
-    -webkit-border-radius: $full-size;
-    border-radius: $full-size;
+    -moz-border-radius: $full-size !important;;
+    -webkit-border-radius: $full-size !important;;
+    border-radius: $full-size !important;;
   } @else {
-    -moz-border-radius: $topleft;
-    -webkit-border-radius: $topleft;
-    border-radius: $topleft;
+    -moz-border-radius: $topleft !important;;
+    -webkit-border-radius: $topleft !important;;
+    border-radius: $topleft !important;;
   }
 }
 

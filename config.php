@@ -20,11 +20,13 @@ if(!$result = $db->query($sql)){
 } else {
     while($row = $result->fetch_assoc()){
         $lang = $row['lang'];
+        $theme = $row['theme'];
     }
 }
 $db->close();
 
 define("LANG", $lang);
+define("DEFAULT_THEME", $theme);
 
 include_once("lang/".LANG.".php");
 

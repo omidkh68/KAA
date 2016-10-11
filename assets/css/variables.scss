@@ -1,7 +1,7 @@
 // font variables
 $body-default-font-size: 14px;
-$font-stack: Samim, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-$font-stack-en: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+$font-stack: Samim, Arial, sans-serif !important;
+$font-stack-en: 'Titillium Web', "Helvetica Neue", Arial, sans-serif !important;
 
 // default property
 $center: center;
@@ -14,15 +14,18 @@ $none: none;
 
 // color variables
 $pure-white-color: #fff;
+$pure-white-color-width-alpha: rgba(255, 255, 255, .8);
 $medium-white-color: #dcdcdc;
 $light-white-color: #ddd;
 $light-normal-gray-color: rgba(54, 54, 54, .6);
 $light-gray-color: #999;
 $dark-gray-color: rgba(83, 83, 83, .9);
 $medium-black-color: #333;
+$medium-gray-color: #555;
 $dark-black-color: rgba(37, 37, 37, .7);
 $light-black-color: rgba(55, 55, 55, .8);
 $cyan-color: #2de1fc;
+$dark-cyan-color: #0e68b1;
 $pure-black-color: #000;
 
 // positions & displays
@@ -32,6 +35,7 @@ $absolute: absolute;
 $disblock: block;
 $distable: table;
 $hidden: hidden;
+$visibile: visible;
 $auto: auto;
 $pointer: pointer;
 

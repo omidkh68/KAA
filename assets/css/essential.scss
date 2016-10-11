@@ -13,7 +13,8 @@ a {
   &:focus,
   &:active,
   &:visited {
-    text-decoration: none;
+    text-decoration: $none;
+    outline: $none;
   }
 }
 
@@ -22,6 +23,13 @@ li {
   list-style: $none;
   margin: $zero;
   padding: $zero;
+}
+
+%no-select {
+  -webkit-user-select: $none;
+  -moz-user-select: $none;
+  -ms-user-select: $none;
+  user-select: $none;
 }
 
 %rtl,
@@ -76,7 +84,7 @@ li {
 }
 
 %wrapper {
-  margin: $zero auto;
+  margin: $zero $auto;
   max-width: 1200px;
 }
 

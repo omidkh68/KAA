@@ -6,5 +6,5 @@
  * Time: 11:30 PM
  */
 
-sleep(5);
+sleep(3);
 die("salam");
