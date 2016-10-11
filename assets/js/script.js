@@ -167,7 +167,7 @@ $(document).ready(function() {
 
         var $self = $(this);
 
-        $self.find('i').toggleClass('fa-rotate-180');
+        $self.find('i').toggleClass('fi-rotate-180');
     });
 
     // set default logo per Theme
@@ -192,7 +192,7 @@ $(document).ready(function() {
     });
 
     // open search container and focus search field
-    $searchContainer.find('i.fa').bind('click', function (e) {
+    $searchContainer.find('i.fi').bind('click', function (e) {
         e.stopPropagation();
 
         var $self = $(this);
@@ -209,7 +209,7 @@ $(document).ready(function() {
         }
 
         if ($nav.find('.hasMenu').hasClass('open')) {
-            $nav.find('.hasMenu i').removeClass('fa-rotate-180');
+            $nav.find('.hasMenu i').removeClass('fi-rotate-180');
         }
     });
 

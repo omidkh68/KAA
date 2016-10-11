@@ -40,6 +40,13 @@
   }
 }
 
+@mixin fi-icon-rotate($degrees, $rotation) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation})";
+  -webkit-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;

@@ -16,31 +16,53 @@
   }
 }
 
-.fi::before {
+.fi:before {
   display: inline-block;
   font-family: 'Flaticon';
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
   font-style: normal;
+  font-weight: normal;
   font-variant: normal;
-  font-weight: bold;
   line-height: 1;
   text-decoration: inherit;
   text-rendering: optimizeLegibility;
   text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
-.flaticon-angle-bottom::before { content: '\f100'; }
-.flaticon-angle-left::before { content: '\f101'; }
-.flaticon-angle-right::before { content: '\f102'; }
-.flaticon-angle-top::before { content: '\f103'; }
-.flaticon-bell::before { content: '\f104'; }
-.flaticon-search::before { content: '\f105'; }
+.flaticon-angle-bottom:before {
+  content: '\f100';
+}
 
-$font-flaticon-angle-bottom: '\f100';
-$font-flaticon-angle-left: '\f101';
-$font-flaticon-angle-right: '\f102';
-$font-flaticon-angle-top: '\f103';
-$font-flaticon-bell: '\f104';
-$font-flaticon-search: '\f105';
+.flaticon-angle-left:before {
+  content: '\f101';
+}
+
+.flaticon-angle-right:before {
+  content: '\f102';
+}
+
+.flaticon-angle-top:before {
+  content: '\f103';
+}
+
+.flaticon-bell:before {
+  content: '\f104';
+}
+
+.flaticon-circle:before {
+  content: '\f105';
+}
+
+.flaticon-search:before {
+  content: '\f106';
+}
+
+$font-Flaticon-angle-bottom: '\f100';
+$font-Flaticon-angle-left: '\f101';
+$font-Flaticon-angle-right: '\f102';
+$font-Flaticon-angle-top: '\f103';
+$font-Flaticon-bell: '\f104';
+$font-Flaticon-circle: '\f105';
+$font-Flaticon-search: '\f106';

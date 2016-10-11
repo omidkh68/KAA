@@ -11,17 +11,17 @@
 
     <!-- search container -->
     <div class="search-container <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>">
-        <i class="fa fa-search text-center"></i>
-        <i class="fa fa-times text-center"></i>
+        <i class="fi flaticon-search text-center"></i>
+        <i class="fi flaticon-circle text-center"></i>
         <input type="text" name="search" id="search" data-word="search" placeholder="<?php echo SEARCH; ?>">
     </div>
 
     <!-- hamburger menu -->
     <button class="hamburger hamburger--squeeze hidden <?php echo (LANG == "fa") ? "pull-left" : "pull-right" ?>"
             type="button">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
     </button>
 
     <!-- navigation items -->
@@ -44,7 +44,7 @@
                 <a class="dropdown-toggle" data-word="principal_company" id="dropdownMenu1" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="true">
                     <span><?php echo PRINCIPAL_COMPANY; ?></span>
-                    <i class="fa fa-angle-down"></i>
+                    <i class="fi flaticon-angle-bottom"></i>
                 </a>
                 <ul class="dropdown-menu <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>" aria-labelledby="dropdownMenu1">
                     <li><a href="#">OMG</a></li>

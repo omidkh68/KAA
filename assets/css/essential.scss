@@ -92,3 +92,7 @@ li {
   font-family: $font-stack;
   min-width: 100px;
 }
+
+.fi-rotate-180 {
+  @include fi-icon-rotate(180deg, 2);
+}

@@ -1,11 +1,10 @@
 @import 'variables';
-@import 'normalize-scss/sass/normalize';
+//@import 'normalize-scss/sass/normalize';
 @import 'mixins';
 @import 'essential';
 @import 'hamburgers/hamburgers';
 @import 'samim';
 @import 'supersized';
-@import 'font-awesome/scss/font-awesome';
 @import 'flaticon';
 
 // body style configuration
@@ -130,7 +129,7 @@ header {
         padding-right: $half-em;
       }
 
-      .fa-search {
+      .flaticon-search {
         @include opacity(1);
 
         left: initial;
@@ -138,7 +137,7 @@ header {
         visibility: $visibile;
       }
 
-      .fa-times {
+      .flaticon-circle {
         @include opacity($zero);
 
         left: initial;
@@ -155,7 +154,7 @@ header {
         padding-left: $half-em;
       }
 
-      .fa-search {
+      .flaticon-search {
         @include opacity(1);
 
         left: initial;
@@ -163,7 +162,7 @@ header {
         visibility: $visibile;
       }
 
-      .fa-times {
+      .flaticon-circle {
         @include opacity($zero);
 
         left: initial;
@@ -189,7 +188,7 @@ header {
       }
 
       &.pull-right {
-        .fa-search {
+        .flaticon-search {
           @include opacity($zero);
 
           left: $zero;
@@ -197,7 +196,7 @@ header {
           visibility: $hidden;
         }
 
-        .fa-times {
+        .flaticon-circle {
           @include opacity(1);
 
           left: $zero;
@@ -207,7 +206,7 @@ header {
       }
 
       &.pull-left {
-        .fa-search {
+        .flaticon-search {
           @include opacity($zero);
 
           left: $zero;
@@ -215,7 +214,7 @@ header {
           visibility: $hidden;
         }
 
-        .fa-times {
+        .flaticon-circle {
           @include opacity(1);
 
           left: initial;
@@ -289,6 +288,10 @@ nav {
 
       i {
         @extend %transition-normal;
+
+        display: inline-block;
+        margin: $zero $half-em;
+        font-size: $full-rem;
       }
     }
 
