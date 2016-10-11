@@ -1,6 +1,5 @@
 <script src="<?php echo DOMAIN_URL; ?>bower_components/jquery/dist/jquery.min.js"></script>
 <script src="<?php echo DOMAIN_URL; ?>bower_components/bootstrap-3.3.6/js/bootstrap.min.js"></script>
-<script src="<?php echo DOMAIN_URL; ?>assets/js/jquery.easing.min.js"></script>
 <script src="<?php echo DOMAIN_URL; ?>assets/js/supersized.3.2.7.min.js"></script>
 <script src="<?php echo DOMAIN_URL; ?>assets/js/supersized.shutter.min.js"></script>
 <script src="<?php echo DOMAIN_URL; ?>assets/js/script.min.js"></script>
