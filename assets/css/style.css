@@ -997,9 +997,7 @@ nav li ul li:hover a {
     background-color: #e02635;
     content: '';
     height: 10px;
-    left: -23px;
     position: absolute;
-    top: 7px;
     width: 10px;
 }
 
@@ -1037,12 +1035,32 @@ nav li ul li:hover a {
     right: 9px;
 }
 
+.indicator.rtl a span::before {
+    left: initial;
+    right: -23px;
+    top: 6px;
+}
+
+.indicator.rtl a.active {
+    font-weight: bold;
+}
+
 .indicator.ltr a::before {
     left: 0;
 }
 
 .indicator.ltr a::after {
     left: 9px;
+}
+
+.indicator.ltr a span::before {
+    left: -23px;
+    right: initial;
+    top: 7px;
+}
+
+.indicator.ltr a.active {
+    font-weight: bold;
 }
 
 footer {
@@ -1477,7 +1495,6 @@ body.white footer p.rtl {
 
   footer p {
     font-size: 13px; } }
-
 @media screen and (max-width: 700px) {
     .body-content {
         padding: 0.5em;
@@ -1488,7 +1505,6 @@ body.white footer p.rtl {
         height: auto;
         position: inherit;
     }
-
     footer p {
         display: block;
         text-align: center;

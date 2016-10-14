@@ -570,9 +570,7 @@ nav {
           background-color: $light-pink-color;
           content: '';
           height: 10px;
-          left: -23px;
           position: $absolute;
-          top: 7px;
           width: 10px;
         }
       }
@@ -613,6 +611,18 @@ nav {
       &::after {
         right: 9px;
       }
+
+      span {
+        &::before {
+          left: initial;
+          right: -23px;
+          top: 6px;
+        }
+      }
+
+      &.active {
+        font-weight: bold;
+      }
     }
   }
 
@@ -626,6 +636,18 @@ nav {
 
       &::after {
         left: 9px;
+      }
+
+      span {
+        &::before {
+          left: -23px;
+          right: initial;
+          top: 7px;
+        }
+      }
+
+      &.active {
+        font-weight: bold;
       }
     }
   }
