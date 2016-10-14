@@ -4,14 +4,12 @@
     </div>
 
     <!--Control Bar-->
-    <div id="controls-wrapper" class="load-item"><!--Thumbnail Navigation-->
+    <div id="controls-wrapper" class="load-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
         <!--Arrow Navigation-->
         <a id="prevslide" class="load-item"><i class="fi flaticon-angle-left"></i></a>
         <a id="nextslide" class="load-item"><i class="fi flaticon-angle-right"></i></a>
 
         <div id="controls">
-
-            <!--<a id="play-button"><img id="pauseplay" src="img/pause.png"/></a>-->
 
             <!--Slide counter-->
             <div id="slidecounter">
@@ -22,10 +20,9 @@
             <!--Slide captions displayed here-->
             <div id="slidecaption" class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>"></div>
 
-
             <!--Navigation-->
             <ul id="slide-list"></ul>
 
         </div>
     </div>
-</div>
+        </div>

@@ -9,8 +9,8 @@ $(document).ready(function() {
         $nav = $('nav'),
         $logo = $('.logo'),
         $searchContainer = $('.search-container'),
-        $searchTxt = $('#search');
-    width = $(this).width(),
+        $searchTxt = $('#search'),
+        width = $(this).width(),
         $hamburger = $('.hamburger'),
         $footer = $('footer'),
         $changeLang = $('.change_lang'),
@@ -173,19 +173,6 @@ $(document).ready(function() {
     // set default logo per Theme
     changeLogoPerTheme();
 
-    function changeLogoPerTheme() {
-        var langType = $htmlRoot.attr('lang'),
-            logoType = "";
-
-        if ($body.hasClass('white')) {
-            logoType = "-2";
-        } else {
-            logoType = "";
-        }
-
-        $logo.find('img').attr('src', $base_url_img + 'kavoshabzar-logo-' + langType + logoType + '.png');
-    }
-
     // by clicking on body did not close open search container
     $searchContainer.click(function (e) {
         e.stopPropagation();
@@ -217,6 +204,24 @@ $(document).ready(function() {
         $(this).val("");
     });
 
+    // initial animate effect appear
+    new WOW().init();
+
+    // functions
+    function changeLogoPerTheme() {
+        var langType = $htmlRoot.attr('lang'),
+            logoType = "";
+
+        if ($body.hasClass('white')) {
+            logoType = "-2";
+        } else {
+            logoType = "";
+        }
+
+        $logo.find('img').attr('src', $base_url_img + 'kavoshabzar-logo-' + langType + logoType + '.png');
+    }
+
+// end of functions
 });
 $(window).resize(function() {
     var $nav = $('nav'),

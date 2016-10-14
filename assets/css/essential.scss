@@ -41,11 +41,30 @@ li {
   direction: $dirleft;
 }
 
+%en-font,
+.en-font {
+  font-family: $font-stack-en;
+}
+
+.hiding {
+  @include opacity($zero);
+}
+
+.showing {
+  @include opacity(1);
+}
+
+%fa-font,
+.fa-font {
+  font-family: $font-stack;
+}
+
 %block-el {
   display: $disblock;
 }
 
-%bg-white {
+%bg-white,
+.bg-white {
   background-color: $pure-white-color;
 }
 

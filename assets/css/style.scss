@@ -27,11 +27,11 @@ body {
 }
 
 html[lang="fa"] body {
-  font-family: $font-stack;
+  @extend %fa-font;
 }
 
 html[lang="en"] body {
-  font-family: $font-stack-en;
+  @extend %en-font;
 }
 // end of body style configuration
 
@@ -70,10 +70,13 @@ header {
       top: $half-em;
       width: 300px;
 
-      p {
+      b {
         color: $cyan-color;
+        display: $disblock;
         font-size: 1.2em;
-        font-weight: bold;
+        font-weight: 200;
+        line-height: 1.2;
+        width: $full-size;
       }
 
       span {
@@ -140,6 +143,7 @@ header {
       .flaticon-circle {
         @include opacity($zero);
 
+        color: $light-pink-color;
         left: initial;
         right: $zero;
         visibility: $hidden;
@@ -147,7 +151,7 @@ header {
     }
 
     &.pull-left {
-      left: 220px;
+      left: 250px;
 
       input[type="text"] {
         padding-right: 2.5em;
@@ -165,6 +169,7 @@ header {
       .flaticon-circle {
         @include opacity($zero);
 
+        color: $light-pink-color;
         left: initial;
         right: $zero;
         visibility: $hidden;
@@ -173,8 +178,8 @@ header {
 
     &.active {
       @include rounded(3px);
+      @extend %bg-white;
 
-      background-color: $pure-white-color;
       width: 200px;
 
       input[type="text"] {
@@ -315,6 +320,8 @@ nav {
     ul {
       @include radius($zero, $zero, 3px, 3px);
 
+      background-color: $light-pink-color !important;
+
       &.rtl {
         left: initial !important;
         right: $zero;
@@ -331,13 +338,86 @@ nav {
         height: 35px;
 
         a {
+          color: $pure-white-color !important;
           line-height: 33px !important;
+
+          &:hover,
+          &:focus,
+          &:visited,
+          &:active {
+            color: $light-gray-color !important;
+          }
         }
       }
     }
   }
 }
 // end of navigation website
+
+// body content style
+.body-content {
+  height: $auto;
+  min-height: 300px;
+  overflow: $hidden;
+  padding: $full-em * 2;
+  width: $full-size;
+}
+
+.box {
+  @include radius();
+
+  height: 200px;
+  margin-bottom: $full-em;
+  max-width: 450px;
+  position: $relative;
+  width: $full-size;
+
+  .img-container {
+    position: $relative;
+    width: 40%;
+
+    img {
+      left: -$full-em;
+      position: $absolute;
+      top: .7em;
+      width: 100%;
+    }
+  }
+
+  .content {
+    width: 60%;
+
+    h1 {
+      color: $dark-cyan-color;
+      font-size: $full-em * 2;
+      font-weight: 200;
+      height: $headerheight;
+      line-height: $headerheight;
+      margin: $zero;
+      width: $full-size;
+    }
+
+    article {
+      color: $light-normal-gray-color;
+      font-size: $full-em;
+
+      a {
+        @include radius();
+
+        background-color: $light-green-color;
+        bottom: $full-em;
+        height: 30px;
+        line-height: 30px;
+        padding: $zero $half-em;
+        position: $absolute;
+        right: -$full-em;
+        width: 100px;
+      }
+    }
+  }
+}
+
+// end of body content style
 
 // footer of website
 footer {
@@ -347,6 +427,7 @@ footer {
   left: $zero;
   position: $fixed;
   width: $full-size;
+  z-index: 10;
 
   .lang-selector {
     height: $footerheight;
@@ -361,13 +442,13 @@ footer {
 
       &:nth-child(1) {
         .tooltip {
-          font-family: $font-stack-en;
+          @extend %en-font;
         }
       }
 
       &:nth-child(2) {
         .tooltip {
-          font-family: $font-stack;
+          @extend %fa-font;
         }
       }
     }
@@ -487,17 +568,17 @@ footer {
   .slidenumber,
   .totalslides {
     &.rtl {
-      font-family: $font-stack;
+      @extend %fa-font;
     }
 
     &.ltr {
-      font-family: $font-stack-en;
+      @extend %en-font;
     }
   }
 }
 
 #slidecaption {
-  color: $pure-white-color;
+  color: $light-pink-color;
   font-weight: 200;
   left: 110px;
   line-height: 20px;
@@ -518,11 +599,11 @@ footer {
   }
 
   &.rtl {
-    font-family: $font-stack;
+    @extend %fa-font;
   }
 
   &.ltr {
-    font-family: $font-stack-en;
+    @extend %en-font;
   }
 }
 
@@ -621,7 +702,7 @@ body.white {
 
     > a {
       h5 {
-        p {
+        b {
           color: $dark-cyan-color;
         }
 
@@ -694,7 +775,7 @@ body.white {
   }
 
   #progress-back {
-    background-color: $pure-white-color;
+    @extend %bg-white;
   }
 }
 

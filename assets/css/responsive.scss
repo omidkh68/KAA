@@ -1,3 +1,9 @@
+@media screen and (min-width: 1024px) {
+  .box {
+    margin-left: $full-em * 5;
+  }
+}
+
 @media screen and (max-width: 920px) {
   header {
     .logo {
@@ -62,6 +68,14 @@
 
         &::before {
           background-color: $cyan-color !important;
+        }
+      }
+
+      .dropdown-menu {
+        width: $full-size;
+
+        a {
+          color: $dark-black-color !important;
         }
       }
     }

@@ -3,12 +3,14 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/assets/js/script.min.js" />
-        <item url="file://$PROJECT_DIR$/assets/js/script.min.js" />
+        <item url="file://$PROJECT_DIR$/assets/js/jquery.appear.min.min.js" />
+        <item url="file://$PROJECT_DIR$/assets/js/wow.min.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/assets/js/script.min.js" />
-      <root url="file://$PROJECT_DIR$/assets/js/script.min.js" />
+      <root url="file://$PROJECT_DIR$/assets/js/jquery.appear.min.min.js" />
+      <root url="file://$PROJECT_DIR$/assets/js/wow.min.min.js" />
     </CLASSES>
     <SOURCES />
   </library>
