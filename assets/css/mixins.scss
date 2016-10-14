@@ -55,6 +55,14 @@
   transition: $args;
 }
 
+@mixin margin($top: $zero, $right: $zero, $bottom: $zero, $left: $zero) {
+  margin: $top $right $bottom $left;
+}
+
+@mixin padding($top: $zero, $right: $zero, $bottom: $zero, $left: $zero) {
+  padding: $top $right $bottom $left;
+}
+
 @mixin opacity($opacity) {
   /* IE 8 */
   -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity = $opacity * 100)';
@@ -87,34 +95,6 @@
   }
   @keyframes #{$animation-name} {
     @content;
-  }
-}
-
-// mixin for multiline
-@mixin multilineellipsis($lineheight: 1.2em, $linecount: 1, $bgcolor: white){
-  direction: rtl;
-  overflow: hidden;
-  position: $relative;
-  line-height: $lineheight;
-  max-height: $lineheight * $linecount;
-  text-align: $justify;
-  padding-left: $fullem;
-
-  &::before {
-    bottom: $zero;
-    content: '...';
-    position: $absolute;
-    left: $zero;
-  }
-
-  &::after {
-    background: $bgcolor;
-    content: '';
-    height: $fullem;
-    margin-top: .2em;
-    position: $absolute;
-    left: $zero;
-    width: $fullem;
   }
 }
 

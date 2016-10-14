@@ -24,5 +24,5 @@
             <ul id="slide-list"></ul>
 
         </div>
-    </div>
         </div>
+</div><!-- /Fullscreen Slider -->

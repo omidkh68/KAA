@@ -6,6 +6,15 @@
   outline: $none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: $zero;
+}
+
 a {
   cursor: pointer;
 
@@ -13,9 +22,18 @@ a {
   &:focus,
   &:active,
   &:visited {
-    text-decoration: $none;
     outline: $none;
+    text-decoration: $none;
   }
+}
+
+textarea {
+  height: 150px;
+  max-height: 200px;
+  max-width: $full-size;
+  min-height: 100px;
+  min-width: $full-size;
+  width: $full-size;
 }
 
 ul,
@@ -26,9 +44,9 @@ li {
 }
 
 %no-select {
-  -webkit-user-select: $none;
   -moz-user-select: $none;
   -ms-user-select: $none;
+  -webkit-user-select: $none;
   user-select: $none;
 }
 
@@ -114,4 +132,124 @@ li {
 
 .fi-rotate-180 {
   @include fi-icon-rotate(180deg, 2);
+}
+
+.mt-half,
+%mt-half {
+  @include margin($half-em, $zero, $zero, $zero);
+}
+
+.mt,
+%mt {
+  @include margin($full-em, $zero, $zero, $zero);
+}
+
+.mt-double,
+%mt-double {
+  @include margin($full-em * 2, $zero, $zero, $zero);
+}
+
+.mr-half,
+%mr-half {
+  @include margin($zero, $half-em, $zero, $zero);
+}
+
+.mr,
+%mr {
+  @include margin($zero, $full-em, $zero, $zero);
+}
+
+.mr-double,
+%mr-double {
+  @include margin($zero, $full-em * 2, $zero, $zero);
+}
+
+.mb-half,
+%mb-half {
+  @include margin($zero, $zero, $half-em, $zero);
+}
+
+.mb,
+%mb {
+  @include margin($zero, $zero, $full-em, $zero);
+}
+
+.mb-double,
+%mb-double {
+  @include margin($zero, $zero, $zero, $full-em * 2);
+}
+
+.ml-half,
+%ml-half {
+  @include margin($zero, $zero, $zero, $half-em);
+}
+
+.ml,
+%ml {
+  @include margin($zero, $zero, $zero, $full-em);
+}
+
+.ml-double,
+%ml-double {
+  @include margin($zero, $zero, $zero, $full-em * 2);
+}
+
+.pt-half,
+%pt-half {
+  @include padding($half-em, $zero, $zero, $zero);
+}
+
+.pt,
+%pt {
+  @include padding($full-em, $zero, $zero, $zero);
+}
+
+.pt-double,
+%pt-double {
+  @include padding($full-em * 2, $zero, $zero, $zero);
+}
+
+.pr-half,
+%pr-half {
+  @include padding($zero, $half-em, $zero, $zero);
+}
+
+.pr,
+%pr {
+  @include padding($zero, $full-em, $zero, $zero);
+}
+
+.pr-double,
+%pr-double {
+  @include padding($zero, $full-em * 2, $zero, $zero);
+}
+
+.pb-half,
+%pb-half {
+  @include padding($zero, $zero, $half-em, $zero);
+}
+
+.pb,
+%pb {
+  @include padding($zero, $zero, $full-em, $zero);
+}
+
+.pb-double,
+%pb-double {
+  @include padding($zero, $zero, $zero, $full-em * 2);
+}
+
+.pl-half,
+%pl-half {
+  @include padding($zero, $zero, $zero, $half-em);
+}
+
+.pl,
+%pl {
+  @include padding($zero, $zero, $zero, $full-em);
+}
+
+.pl-double,
+%pl-double {
+  @include padding($zero, $zero, $zero, $full-em * 2);
 }

@@ -8,6 +8,9 @@ $(document).ready(function() {
         $body = $('body'),
         $nav = $('nav'),
         $logo = $('.logo'),
+        $box = $body.find('.box'),
+        $box_contact_us = $body.find('.box.contact_us'),
+        $box_products = $body.find('.box.products'),
         $searchContainer = $('.search-container'),
         $searchTxt = $('#search'),
         width = $(this).width(),
@@ -16,6 +19,7 @@ $(document).ready(function() {
         $changeLang = $('.change_lang'),
         $overlay = $('.overlay'),
         $base_url = $('#base_url'),
+        $indicator = $body.find('.indicator'),
         $base_url_img = $('#base_url_img').val(),
         toggleOverlay = true;
 
@@ -100,6 +104,21 @@ $(document).ready(function() {
                 $body.find('[data-word="contact_us"] span').html(words['CONTACT']);
                 $body.find('[data-word="copy"]').html(words['COPY']);
                 $body.find('[data-word="search"]').attr('placeholder', words['SEARCH']);
+                $body.find('[data-word="contact_name"]').attr('placeholder', words['NAME']);
+                $body.find('[data-word="contact_email"]').attr('placeholder', words['EMAIL']);
+                $body.find('[data-word="contact_subject"]').attr('placeholder', words['SUBJECT']);
+                $body.find('[data-word="contact_message"]').attr('placeholder', words['YOUR_MESSAGE']);
+                $body.find('[data-word="contact_code"]').attr('placeholder', words['CAPTCHA_CODE']);
+                $body.find('[data-word="contact_send"]').html(words['SEND']);
+                $body.find('[data-word="phone"] span').html(words['PHONE']);
+                $body.find('[data-word="fax"] span').html(words['FAX']);
+                $body.find('[data-word="contact_email"] span').html(words['EMAIL']);
+                $body.find('[data-word="postal_code"] span').html(words['POSTAL_CODE']);
+                $body.find('[data-word="address"] span').html(words['ADDRESS']);
+                $body.find('[data-word="physical_address"]').html(words['PHYSICAL_ADDRESS']);
+                $body.find('[data-word="products"] span').html(words['PRODUCTS']);
+                $body.find('[data-word="references"] span').html(words['REFERENCES']);
+                $body.find('[data-word="certificate"] span').html(words['CERTIFICATE']);
 
                 if (dataLang == "en") {
                     $body.find('.rtl').each(function () {
@@ -111,6 +130,14 @@ $(document).ready(function() {
                     $logo.find('img').removeClass('pull-right').addClass('pull-left');
                     $hamburger.removeClass('pull-left').addClass('pull-right');
                     $searchContainer.removeClass('pull-right').addClass('pull-left');
+                    $box.removeClass('fadeInRight').addClass('fadeInLeft');
+
+                    if ($box_contact_us.length) {
+                        $box_contact_us.find('.pull-right').removeClass('pull-right').addClass('pull-left');
+                    }
+                    if ($box_products.length) {
+                        $box_products.find('.pull-right').removeClass('pull-right').addClass('pull-left');
+                    }
 
                     $htmlRoot.attr('lang', 'en');
                 } else {
@@ -123,6 +150,14 @@ $(document).ready(function() {
                     $logo.find('img').removeClass('pull-left').addClass('pull-right');
                     $hamburger.removeClass('pull-right').addClass('pull-left');
                     $searchContainer.removeClass('pull-left').addClass('pull-right');
+                    $box.removeClass('fadeInLeft').addClass('fadeInRight');
+
+                    if ($box_contact_us.length) {
+                        $box_contact_us.find('.pull-left').removeClass('pull-left').addClass('pull-right');
+                    }
+                    if ($box_products.length) {
+                        $box_products.find('.pull-left').removeClass('pull-left').addClass('pull-right');
+                    }
 
                     $htmlRoot.attr('lang', 'fa');
                 }
@@ -143,20 +178,50 @@ $(document).ready(function() {
     $nav.find('.menuItem').bind('click', function (e) {
         e.preventDefault();
 
-        var $self = $(this);
+        var $self = $(this),
+            path = $self.attr('href');
+
+        if (path == "#") {
+            return false;
+        }
 
         if ($self.hasClass('active')) {
             return false;
         }
 
+        if ($self.hasClass('subMenuItem') && $self.attr('data-item') == $self.parents('.dropdown-menu').prev().attr('data-item-active')) {
+            return false;
+        }
+
+        if ($self.hasClass('subMenuItem')) {
+            $self.parents('.dropdown-menu').prev().attr('data-item-active', $self.attr('data-item'));
+        } else {
+            $nav.find('.dropdown-menu').prev().attr('data-item-active', "");
+        }
+
         if (toggleOverlay) {
             toggleOverlay = false;
 
-            $.post('/includes/pageLoad.php', function (result) {
-                console.log(result);
+            $('.body-content').load(path + ' .body-content > *', function (result) {
 
-                $nav.find('a').removeClass('active');
-                $self.addClass('active');
+                if ($self.hasClass('subMenuItem')) {
+                    $nav.find('a').removeClass('active');
+                    $self.parents('.dropdown-menu').prev().addClass('active');
+                } else {
+                    $nav.find('a').removeClass('active');
+                    $self.addClass('active');
+                }
+
+                // change url
+                loadDataToTemplate(path);
+
+                if ($nav.hasClass('active')) {
+                    $nav.removeClass('active');
+                }
+
+                if ($hamburger.hasClass('is-active')) {
+                    $hamburger.removeClass('is-active')
+                }
             });
         }
     });
@@ -204,6 +269,15 @@ $(document).ready(function() {
         $(this).val("");
     });
 
+    $body.on('click', '.indicator a', function (e) {
+        e.preventDefault();
+
+        var $self = $(this);
+
+        $self.parents('.indicator').find('a').removeClass('active');
+        $self.addClass('active');
+    });
+
     // initial animate effect appear
     new WOW().init();
 
@@ -220,6 +294,30 @@ $(document).ready(function() {
 
         $logo.find('img').attr('src', $base_url_img + 'kavoshabzar-logo-' + langType + logoType + '.png');
     }
+
+    // change url path with item clicked
+    function loadDataToTemplate(urlPath) {
+        window.history.pushState("", "", urlPath);
+    }
+
+    // load previous page with backward or forward page
+    $(window).on('popstate', function () {
+        var url = window.location.href;
+
+        var partPartUrl = url.split('/');
+
+        //console.log(partPartUrl);
+
+        $('.body-content').load(url + ' .body-content > *', function () {
+            if ($nav.hasClass('active')) {
+                $nav.removeClass('active');
+            }
+
+            if ($hamburger.hasClass('is-active')) {
+                $hamburger.removeClass('is-active')
+            }
+        });
+    });
 
 // end of functions
 });

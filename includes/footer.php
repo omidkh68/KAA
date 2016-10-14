@@ -23,4 +23,4 @@
         &copy; <span class="current-year <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>"><?php echo date("Y"); ?></span>
         <span data-word="copy"><?php echo COPY; ?></span>
     </p>
-</footer>
+</footer><!-- /Footer of Site -->

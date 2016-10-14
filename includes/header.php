@@ -1,7 +1,7 @@
 <header>
     <!-- logo -->
     <a href="<?php echo DOMAIN_URL; ?>"
-       class="logo <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?> wow fadeInLeft" data-wow-duration="1s"
+       class="logo <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?> wow fadeInDown" data-wow-duration="1s"
        data-wow-delay=".03s">
         <h5>
             <b class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".05s">Kavosh Abzar Aria Ltd.</b>
@@ -39,34 +39,37 @@
             </li>
             <!-- About us -->
             <li class="animated wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">
-                <a class="menuItem" href="<?php echo DOMAIN_URL; ?>about_us" data-word="about_us">
+                <a class="menuItem" href="<?php echo DOMAIN_URL; ?>page/about_us.php" data-word="about_us">
                     <span><?php echo ABOUT; ?></span>
                 </a>
             </li>
             <!-- Principal Company -->
             <li class="hasMenu wow fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
-                <a class="dropdown-toggle" data-word="principal_company" id="dropdownMenu1" data-toggle="dropdown"
+                <a class="dropdown-toggle" data-word="principal_company" id="dropdownMenu1" data-item-active=""
+                   data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="true">
                     <span><?php echo PRINCIPAL_COMPANY; ?></span>
                     <i class="fi flaticon-angle-bottom"></i>
                 </a>
                 <ul class="dropdown-menu <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">OMG</a></li>
-                    <li><a href="#">Optimarin</a></li>
+                    <li><a class="menuItem subMenuItem" data-item="1"
+                           href="<?php echo DOMAIN_URL; ?>page/products/omg/index.php">OMG</a></li>
+                    <li><a class="menuItem subMenuItem" data-item="2"
+                           href="<?php echo DOMAIN_URL; ?>page/products/optimarin/index.php">Optimarin</a></li>
                 </ul>
             </li>
             <!-- Press Release -->
             <li class="animated wow fadeInDown" data-wow-duration="1s" data-wow-delay=".4s">
-                <a class="menuItem" href="<?php echo DOMAIN_URL; ?>press_release" data-word="press_release">
+                <a class="menuItem" href="<?php echo DOMAIN_URL; ?>page/press_release.php" data-word="press_release">
                     <span><?php echo PRESS_RELEASE; ?></span>
                 </a>
             </li>
             <!-- Contact US -->
             <li class="animated wow fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
-                <a class="menuItem" href="<?php echo DOMAIN_URL; ?>contact_us" data-word="contact_us">
+                <a class="menuItem" href="<?php echo DOMAIN_URL; ?>page/contact_us.php" data-word="contact_us">
                     <span><?php echo CONTACT; ?></span>
                 </a>
             </li>
         </ul>
     </nav>
-</header>
+</header><!-- /Header of Site -->

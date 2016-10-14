@@ -1,7 +1,7 @@
 // font variables
 $body-default-font-size: 14px;
-$font-stack: Samim, Arial, sans-serif !important;
-$font-stack-en: 'Titillium Web', "Helvetica Neue", Arial, sans-serif !important;
+$font-stack: Samim, sans-serif !important;
+$font-stack-en: 'Titillium Web', 'Helvetica Neue', sans-serif !important;
 
 // default property
 $center: center;
@@ -34,6 +34,7 @@ $light-pink-color: #e02635;
 $fixed: fixed;
 $relative: relative;
 $absolute: absolute;
+$static: static;
 $disblock: block;
 $distable: table;
 $hidden: hidden;

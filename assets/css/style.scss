@@ -1,5 +1,4 @@
 @import 'variables';
-//@import 'normalize-scss/sass/normalize';
 @import 'mixins';
 @import 'essential';
 @import 'hamburgers/hamburgers';
@@ -39,7 +38,9 @@ html[lang="en"] body {
 header {
   background-color: $dark-black-color;
   height: $headerheight;
-  position: $relative;
+  left: $zero;
+  position: $fixed;
+  top: $zero;
   width: $full-size;
   z-index: 2;
 
@@ -343,9 +344,18 @@ nav {
 
           &:hover,
           &:focus,
-          &:visited,
           &:active {
             color: $light-gray-color !important;
+          }
+
+          &:visited {
+            color: $pure-white-color !important;
+          }
+        }
+
+        &:hover {
+          a {
+            color: $light-black-color !important;
           }
         }
       }
@@ -357,6 +367,7 @@ nav {
 // body content style
 .body-content {
   height: $auto;
+  margin-top: $headerheight;
   min-height: 300px;
   overflow: $hidden;
   padding: $full-em * 2;
@@ -366,11 +377,97 @@ nav {
 .box {
   @include radius();
 
+  height: auto;
+  min-height: 500px;
+  padding: $full-em;
+  position: $relative;
+  width: $full-size;
+
+  &.contact_us,
+  &.products {
+    max-width: 1200px;
+  }
+
+  h1 {
+    font-size: $full-em * 1.5;
+    padding-bottom: $half-em;
+    position: $relative;
+
+    &.ltr {
+      text-align: $left;
+    }
+
+    &.rtl {
+      text-align: $right;
+    }
+
+    &::before {
+      background-color: $light-pink-color;
+      bottom: $zero;
+      content: '';
+      height: 1px;
+      left: $zero;
+      position: $absolute;
+      width: $full-size;
+    }
+  }
+
+  iframe {
+    @include radius();
+
+    border: solid 1px $medium-white-color;
+    height: 200px;
+    width: $full-size;
+  }
+
+  .list {
+
+    li {
+      position: $relative;
+
+      b {
+        color: $dark-cyan-color;
+        font-weight: normal;
+      }
+
+      p:nth-child(1),
+      p:nth-child(2),
+      p:nth-child(3) {
+        direction: $dirleft;
+      }
+
+      i {
+        color: $light-pink-color;
+        font-size: 1.5em;
+        position: $absolute;
+        top: .3em;
+      }
+    }
+
+    &.rtl {
+      @extend %pr-double;
+
+      i {
+        right: -1.5em;
+      }
+    }
+
+    &.ltr {
+      @extend %pl-double;
+
+      i {
+        left: -1.5em;
+      }
+    }
+  }
+}
+
+.box.miniBox {
   height: 200px;
   margin-bottom: $full-em;
   max-width: 450px;
-  position: $relative;
-  width: $full-size;
+  min-height: initial;
+  padding: $zero;
 
   .img-container {
     position: $relative;
@@ -387,7 +484,7 @@ nav {
   .content {
     width: 60%;
 
-    h1 {
+    h2 {
       color: $dark-cyan-color;
       font-size: $full-em * 2;
       font-weight: 200;
@@ -418,6 +515,123 @@ nav {
 }
 
 // end of body content style
+
+// box list item effect
+.indicator-holder {
+  height: auto;
+  min-height: 400px;
+  overflow: $auto;
+  position: $relative;
+  width: $full-size;
+}
+
+.indicator {
+  overflow: $auto;
+  position: $absolute;
+  top: $half-size;
+  -moz-transform: translateY(-$half-size);
+  -webkit-transform: translateY(-$half-size);
+  transform: translateY(-$half-size);
+  width: $full-size;
+
+  li {
+    height: 35px;
+    width: $full-size;
+
+    a {
+      @extend %transition-normal;
+
+      display: $disblock;
+      height: $full-size;
+      line-height: 2.3;
+      position: $relative;
+      width: $full-size;
+
+      &::before {
+        @extend %round-corner-full;
+
+        border: solid 2px $light-gray-color;
+        content: '';
+        height: 20px;
+        margin-top: -10px;
+        position: $absolute;
+        top: $half-size;
+        width: 20px;
+      }
+
+      span {
+        position: $relative;
+
+        &::before {
+          @extend %round-corner-full;
+          @extend %transition-normal;
+          @include opacity($zero);
+
+          background-color: $light-pink-color;
+          content: '';
+          height: 10px;
+          left: -23px;
+          position: $absolute;
+          top: 7px;
+          width: 10px;
+        }
+      }
+
+      &.active {
+        font-weight: bold;
+
+        span {
+          &::before {
+            @include opacity(1);
+          }
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      a {
+        &::after {
+          background-color: $light-gray-color;
+          content: '';
+          height: 18px;
+          position: $absolute;
+          top: 25px;
+          width: 2px;
+        }
+      }
+    }
+  }
+
+  &.rtl {
+    a {
+      @extend %pr-double;
+
+      &::before {
+        right: $zero;
+      }
+
+      &::after {
+        right: 9px;
+      }
+    }
+  }
+
+  &.ltr {
+    a {
+      @extend %pl-double;
+
+      &::before {
+        left: $zero;
+      }
+
+      &::after {
+        left: 9px;
+      }
+    }
+  }
+}
+
+// end of box list item effect
 
 // footer of website
 footer {
@@ -518,6 +732,7 @@ footer {
   height: calc(100% - 85px);
   top: $headerheight;
   width: $full-size;
+  z-index: 1;
 
   &.active {
     left: $zero;
@@ -531,6 +746,12 @@ footer {
 }
 
 // fullscreen slider style
+.sliderContainer {
+  height: $auto;
+  position: $relative;
+  width: $full-size;
+}
+
 #supersized {
   a {
     cursor: default;
@@ -723,7 +944,6 @@ body.white {
 
         &:hover,
         &:active,
-        &:visited,
         &:focus {
           color: $dark-cyan-color;
         }

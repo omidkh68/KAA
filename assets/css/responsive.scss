@@ -1,5 +1,5 @@
 @media screen and (min-width: 1024px) {
-  .box {
+  .box.miniBox {
     margin-left: $full-em * 5;
   }
 }
@@ -21,7 +21,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
   nav {
     background-color: $dark-gray-color;
     /* Firefox */
@@ -63,11 +62,15 @@
         font-weight: normal;
 
         &:visited {
-          color: $cyan-color !important;
+          color: $pure-white-color !important;
         }
 
-        &::before {
-          background-color: $cyan-color !important;
+        &.active {
+          color: $cyan-color !important;
+
+          &::before {
+            background-color: $cyan-color !important;
+          }
         }
       }
 
@@ -81,9 +84,51 @@
     }
   }
 
+  .box {
+    h1 {
+      font-size: $full-em;
+    }
+  }
+
+  .nav {
+    margin: $zero $auto;
+  }
+
+  .nav.nav--berta {
+    width: $full-size;
+  }
+
   footer {
     p {
       font-size: 13px;
     }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .body-content {
+    padding: $half-em;
+  }
+
+  footer {
+    display: $distable;
+    height: auto;
+    position: inherit;
+
+    p {
+      display: $disblock;
+      text-align: $center;
+      width: $full-size;
+    }
+  }
+
+  #progress-back {
+    bottom: -40px;
+    position: $relative;
+  }
+
+  #controls-wrapper {
+    bottom: 5px;
+    position: $relative;
   }
 }

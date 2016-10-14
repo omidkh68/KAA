@@ -12,24 +12,24 @@ include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
 <!DOCTYPE html>
 <html lang="<?php echo LANG; ?>">
 <!-- Page Head -->
-<?php include_once("includes/head.php"); ?>
+<?php include_once(LOCAL_PATH . "includes/head.php"); ?>
 
 <body class="<?php echo DEFAULT_THEME; ?>">
     <!-- Page Loader Overlay -->
-    <?php include_once("includes/pageOverlay.php"); ?>
+    <?php include_once(LOCAL_PATH . "includes/pageOverlay.php"); ?>
 
     <!-- Header of Site -->
-    <?php include_once("includes/header.php"); ?>
+    <?php include_once(LOCAL_PATH . "includes/header.php"); ?>
 
-
+    <!-- body content for change data when user change page -->
     <div class="body-content">
         <!-- box content -->
-        <div class="box bg-white wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+        <div class="box miniBox bg-white wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
             <div class="img-container pull-left">
                 <img src="<?php echo DOMAIN_URL; ?>assets/images/p-01.jpg" alt="Kavosh Abzar OMG">
             </div>
             <div class="content pull-right">
-                <h1 class="en-font text-left">OMG</h1>
+                <h2 class="en-font text-left">OMG</h2>
                 <article>
                     Lorem ipsum dolor sit amet,
                     consectetur adipisicing elit. Aliquam aperiam,
@@ -41,12 +41,12 @@ include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
                 </article>
             </div>
         </div>
-        <div class="box bg-white wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+        <div class="box miniBox bg-white wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
             <div class="img-container pull-left">
                 <img src="<?php echo DOMAIN_URL; ?>assets/images/p-02.jpg" alt="Kavosh Abzar Optimarin">
             </div>
             <div class="content pull-right">
-                <h1 class="en-font text-left">OPTIMARIN</h1>
+                <h2 class="en-font text-left">OPTIMARIN</h2>
                 <article>
                     Lorem ipsum dolor sit amet,
                     consectetur adipisicing elit. Aliquam aperiam,
@@ -58,17 +58,16 @@ include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
                 </article>
             </div>
         </div>
+    </div><!-- /body-content -->
 
-        <!-- Fullscreen Slider -->
-        <?php include_once("includes/slider.php"); ?>
-
-    </div>
+    <!-- Fullscreen Slider -->
+    <?php include_once(LOCAL_PATH . "includes/slider.php"); ?>
 
     <!-- Footer of Site -->
-    <?php include_once("includes/footer.php"); ?>
+    <?php include_once(LOCAL_PATH . "includes/footer.php"); ?>
 
         <!-- all js scripts -->
-    <?php include_once("includes/scripts.php"); ?>
+    <?php include_once(LOCAL_PATH . "includes/scripts.php"); ?>
 
     </body>
 </html>
