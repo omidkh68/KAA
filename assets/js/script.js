@@ -196,7 +196,7 @@ $(document).ready(function() {
         if ($self.hasClass('subMenuItem')) {
             $self.parents('.dropdown-menu').prev().attr('data-item-active', $self.attr('data-item'));
         } else {
-            $nav.find('.dropdown-menu').prev().attr('data-item-active', "");
+            $nav.find('[data-item-active]').attr('data-item-active', '');
         }
 
         if (toggleOverlay) {
