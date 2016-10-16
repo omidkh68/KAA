@@ -26,7 +26,7 @@ include_once("../../../config.php");
     <!-- box content -->
     <div class="box bg-white products center-block wow <?php echo (LANG == "fa") ? "fadeInRight" : "fadeInLeft" ?>"
          data-wow-duration="1s" data-wow-delay=".3s">
-        <div class="banner-container">
+        <div class="banner-container wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
             <img src="<?php echo DOMAIN_URL; ?>assets/images/optimarin-banner.jpg" alt="Optimarin banner">
             <h1 class="page_title <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>"><span>OPTIMARIN</span></h1>
         </div>
