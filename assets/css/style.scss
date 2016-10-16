@@ -378,6 +378,7 @@ nav {
   @include radius();
 
   height: auto;
+  margin-bottom: $full-em * 2;
   min-height: 500px;
   padding: $full-em;
   position: $relative;
@@ -385,13 +386,50 @@ nav {
 
   &.contact_us,
   &.products {
+    display: $distable;
+    max-height: 500px;
     max-width: 1200px;
+    overflow-x: $hidden;
+    overflow-y: $auto;
+  }
+
+  .banner-container {
+    height: $auto;
+    max-height: 380px;
+    overflow: $hidden;
+    position: $relative;
+    width: $full-size;
+
+    &::before {
+      content: '';
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,5b5b5b+100&0+0,1+100 */
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(91, 91, 91, 1) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(91, 91, 91, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(91, 91, 91, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#5b5b5b', GradientType=0); /* IE6-9 */
+      bottom: $zero;
+      height: 200px;
+      position: $absolute;
+      left: $zero;
+      width: $full-size;
+    }
+
+    img {
+      @include rounded();
+
+      width: $full-size;
+    }
   }
 
   h1 {
-    font-size: $full-em * 1.5;
-    padding-bottom: $half-em;
-    position: $relative;
+    bottom: $zero;
+    color: $pure-white-color;
+    font-size: $full-em * 1.8;
+    left: $zero;
+    line-height: 2;
+    padding-left: $full-em;
+    position: $absolute;
+    width: $full-size;
 
     &.ltr {
       text-align: $left;
@@ -528,10 +566,11 @@ nav {
 .indicator {
   overflow: $auto;
   position: $absolute;
-  top: $half-size;
-  -moz-transform: translateY(-$half-size);
+  top: $zero;
+  //top: $half-size;
+  /*-moz-transform: translateY(-$half-size);
   -webkit-transform: translateY(-$half-size);
-  transform: translateY(-$half-size);
+  transform: translateY(-$half-size);*/
   width: $full-size;
 
   li {
@@ -572,6 +611,7 @@ nav {
           height: 10px;
           position: $absolute;
           width: 10px;
+          overflow: $hidden;
         }
       }
 
@@ -642,7 +682,7 @@ nav {
         &::before {
           left: -23px;
           right: initial;
-          top: 7px;
+          top: 8px;
         }
       }
 

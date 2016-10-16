@@ -812,6 +812,7 @@ nav li ul li:hover a {
     -webkit-border-radius: 3px 3px 3px 3px !important;
     border-radius: 3px 3px 3px 3px !important;
     height: auto;
+    margin-bottom: 2em;
     min-height: 500px;
     padding: 1em;
     position: relative;
@@ -819,13 +820,55 @@ nav li ul li:hover a {
 }
 
 .box.contact_us, .box.products {
+    display: table;
+    max-height: 500px;
     max-width: 1200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.box .banner-container {
+    height: auto;
+    max-height: 380px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.box .banner-container::before {
+    content: '';
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,5b5b5b+100&0+0,1+100 */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #5b5b5b 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #5b5b5b 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #5b5b5b 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#5b5b5b', GradientType=0);
+    /* IE6-9 */
+    bottom: 0;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.box .banner-container img {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    width: 100%;
 }
 
 .box h1 {
-    font-size: 1.5em;
-    padding-bottom: 0.5em;
-    position: relative;
+    bottom: 0;
+    color: #fff;
+    font-size: 1.8em;
+    left: 0;
+    line-height: 2;
+    padding-left: 1em;
+    position: absolute;
+    width: 100%;
 }
 
 .box h1.ltr {
@@ -949,10 +992,10 @@ nav li ul li:hover a {
 .indicator {
     overflow: auto;
     position: absolute;
-    top: 50%;
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    top: 0;
+    /*-moz-transform: translateY(-$half-size);
+    -webkit-transform: translateY(-$half-size);
+    transform: translateY(-$half-size);*/
     width: 100%;
 }
 
@@ -999,6 +1042,7 @@ nav li ul li:hover a {
     height: 10px;
     position: absolute;
     width: 10px;
+    overflow: hidden;
 }
 
 .indicator li a.active {
@@ -1056,7 +1100,7 @@ nav li ul li:hover a {
 .indicator.ltr a span::before {
     left: -23px;
     right: initial;
-    top: 7px;
+    top: 8px;
 }
 
 .indicator.ltr a.active {

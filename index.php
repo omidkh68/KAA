@@ -6,7 +6,7 @@
  * Time: 12:51 PM
  */
 
-include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
+include_once("config.php");
 
 ?>
 <!DOCTYPE html>
