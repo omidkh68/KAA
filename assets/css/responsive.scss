@@ -18,10 +18,32 @@
       left: $zero !important;
     }
   }
+
+  footer {
+    display: $disblock;
+    height: auto;
+    position: inherit;
+
+    p {
+      display: $disblock;
+      text-align: $center;
+      width: $full-size;
+    }
+  }
+
+  #progress-back {
+    bottom: -40px;
+    position: $relative;
+  }
+
+  #controls-wrapper {
+    bottom: 5px;
+    position: $relative;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  nav {
+  .topNav {
     background-color: $dark-gray-color;
     /* Firefox */
     height: -moz-calc(100% - 85px);
@@ -108,27 +130,5 @@
 @media screen and (max-width: 700px) {
   .body-content {
     padding: $half-em;
-  }
-
-  footer {
-    display: $distable;
-    height: auto;
-    position: inherit;
-
-    p {
-      display: $disblock;
-      text-align: $center;
-      width: $full-size;
-    }
-  }
-
-  #progress-back {
-    bottom: -40px;
-    position: $relative;
-  }
-
-  #controls-wrapper {
-    bottom: 5px;
-    position: $relative;
   }
 }

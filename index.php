@@ -37,7 +37,8 @@ include_once("config.php");
                     doloribus est ipsa maiores nisi quasi qui quia quo
                     sed sunt unde vel voluptates voluptatum.
 
-                    <a href="#" class="text-left">Read More <i class="fi flaticon-angle-right pull-right"></i></a>
+                    <a href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/" class="menuItem text-left">Read More
+                        <i class="fi flaticon-angle-right pull-right"></i></a>
                 </article>
             </div>
         </div>
@@ -54,7 +55,8 @@ include_once("config.php");
                     doloribus est ipsa maiores nisi quasi qui quia quo
                     sed sunt unde vel voluptates voluptatum.
 
-                    <a href="#" class="text-left">Read More <i class="fi flaticon-angle-right pull-right"></i></a>
+                    <a href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/" class="menuItem text-left">Read
+                        More <i class="fi flaticon-angle-right pull-right"></i></a>
                 </article>
             </div>
         </div>
@@ -68,6 +70,12 @@ include_once("config.php");
 
         <!-- all js scripts -->
     <?php include_once(LOCAL_PATH . "includes/scripts.php"); ?>
+
+    <script>
+        $(function () {
+            $('body').removeClass('hugContent');
+        });
+    </script>
 
     </body>
 </html>

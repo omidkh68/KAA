@@ -234,7 +234,7 @@ header {
 // end f top header
 
 // website navigation
-nav {
+.topNav {
   @extend %transition-normal;
   height: $headerheight;
 
@@ -321,7 +321,7 @@ nav {
     ul {
       @include radius($zero, $zero, 3px, 3px);
 
-      background-color: $light-pink-color !important;
+      background-color: $dark-black-color-az !important;
 
       &.rtl {
         left: initial !important;
@@ -422,13 +422,13 @@ nav {
   }
 
   h1 {
-    bottom: $zero;
     color: $pure-white-color;
     font-size: $full-em * 1.8;
     left: $zero;
     line-height: 2;
-    padding-left: $full-em;
+    padding: $zero $full-em;
     position: $absolute;
+    top: $zero;
     width: $full-size;
 
     &.ltr {
@@ -437,16 +437,6 @@ nav {
 
     &.rtl {
       text-align: $right;
-    }
-
-    &::before {
-      background-color: $light-pink-color;
-      bottom: $zero;
-      content: '';
-      height: 1px;
-      left: $zero;
-      position: $absolute;
-      width: $full-size;
     }
   }
 
@@ -554,146 +544,75 @@ nav {
 
 // end of body content style
 
-// box list item effect
-.indicator-holder {
-  height: auto;
-  min-height: 400px;
-  overflow: $auto;
-  position: $relative;
-  width: $full-size;
-}
+// navigation under banner style
+.belowNav {
+  @include radius($zero, $zero, 3px, 3px);
 
-.indicator {
-  overflow: $auto;
-  position: $absolute;
-  top: $zero;
-  //top: $half-size;
-  /*-moz-transform: translateY(-$half-size);
-  -webkit-transform: translateY(-$half-size);
-  transform: translateY(-$half-size);*/
+  min-height: 42px;
   width: $full-size;
 
   li {
-    height: 35px;
-    width: $full-size;
-
     a {
-      @extend %transition-normal;
-
       display: $disblock;
-      height: $full-size;
-      line-height: 2.3;
-      position: $relative;
+      height: 40px;
+      line-height: 40px;
+      padding-bottom: $zero;
+      padding-top: $zero;
       width: $full-size;
+    }
+  }
+}
 
-      &::before {
-        @extend %round-corner-full;
+// end of navigation under banner style
 
-        border: solid 2px $light-gray-color;
-        content: '';
-        height: 20px;
-        margin-top: -10px;
-        position: $absolute;
-        top: $half-size;
-        width: 20px;
-      }
+// change default tab of bootstrap style
+.nav-tabs {
+  text-align: $center;
 
-      span {
-        position: $relative;
+  li {
+    display: inline-block;
+    float: $none;
+    position: $relative;
+
+    &.active {
+
+      a,
+      a:focus,
+      a:hover {
+        background: $none;
+        border: $none;
 
         &::before {
-          @extend %round-corner-full;
-          @extend %transition-normal;
-          @include opacity($zero);
-
-          background-color: $light-pink-color;
+          background-color: $dark-cyan-color;
+          bottom: $zero;
           content: '';
-          height: 10px;
+          height: 1px;
+          left: $zero;
           position: $absolute;
-          width: 10px;
-          overflow: $hidden;
-        }
-      }
-
-      &.active {
-        font-weight: bold;
-
-        span {
-          &::before {
-            @include opacity(1);
-          }
-        }
-      }
-    }
-
-    &:not(:last-child) {
-      a {
-        &::after {
-          background-color: $light-gray-color;
-          content: '';
-          height: 18px;
-          position: $absolute;
-          top: 25px;
-          width: 2px;
+          width: $full-size;
+          z-index: 1;
         }
       }
     }
   }
 
-  &.rtl {
-    a {
-      @extend %pr-double;
-
-      &::before {
-        right: $zero;
-      }
-
-      &::after {
-        right: 9px;
-      }
-
-      span {
-        &::before {
-          left: initial;
-          right: -23px;
-          top: 6px;
-        }
-      }
-
-      &.active {
-        font-weight: bold;
-      }
-    }
-  }
-
-  &.ltr {
-    a {
-      @extend %pl-double;
-
-      &::before {
-        left: $zero;
-      }
-
-      &::after {
-        left: 9px;
-      }
-
-      span {
-        &::before {
-          left: -23px;
-          right: initial;
-          top: 8px;
-        }
-      }
-
-      &.active {
-        font-weight: bold;
+  &.nav {
+    > li {
+      > a,
+      > a:hover,
+      > a:focus {
+        background: $none;
+        border: $none;
       }
     }
   }
 }
 
-// end of box list item effect
+.tab-content {
+  padding: $full-em $zero;
+}
+
+// end of change default tab of bootstrap style
 
 // footer of website
 footer {
@@ -760,6 +679,7 @@ footer {
     display: $disblock;
     height: $footerheight;
     line-height: $footerheight;
+    margin: $zero;
     padding-right: $half-em;
 
     &.rtl {
@@ -785,8 +705,6 @@ footer {
   height: -moz-calc(100% - 85px);
   /* WebKit */
   height: -webkit-calc(100% - 85px);
-  /* Opera */
-  height: -o-calc(100% - 85px);
   /* Standard */
   left: $full-size;
   position: $fixed;
@@ -996,7 +914,7 @@ body.white {
     }
   }
 
-  nav {
+  .topNav {
     li {
 
       a {
@@ -1061,6 +979,25 @@ body.white {
   }
 }
 // end of white theme override colors
+
+// static footer and slider when body has class hugContent
+body.hugContent {
+  footer {
+    position: inherit;
+  }
+
+  #progress-back {
+    bottom: -40px;
+    position: $relative;
+  }
+
+  #controls-wrapper {
+    bottom: 5px;
+    position: $relative;
+  }
+}
+
+// end of static header and slider when body has class hugContent
 
 @import 'pageLoading';
 

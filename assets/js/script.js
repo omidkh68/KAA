@@ -6,7 +6,8 @@ $(document).ready(function() {
 
     var $htmlRoot = $('html'),
         $body = $('body'),
-        $nav = $('nav'),
+        $nav = $('.topNav'),
+        $bnav = $('.belowNav'),
         $logo = $('.logo'),
         $box = $body.find('.box'),
         $box_contact_us = $body.find('.box.contact_us'),
@@ -89,6 +90,7 @@ $(document).ready(function() {
             return false;
         }
 
+        // toggle over lay
         if (toggleOverlay) {
             toggleOverlay = false;
 
@@ -131,6 +133,8 @@ $(document).ready(function() {
                     $hamburger.removeClass('pull-left').addClass('pull-right');
                     $searchContainer.removeClass('pull-right').addClass('pull-left');
                     $box.removeClass('fadeInRight').addClass('fadeInLeft');
+                    $bnav.find('.nav.navbar-nav').removeClass('navbar-right').addClass('navbar-left');
+                    $bnav.find('li').removeClass('pull-right').addClass('pull-left');
 
                     if ($box_contact_us.length) {
                         $box_contact_us.find('.pull-right').removeClass('pull-right').addClass('pull-left');
@@ -151,6 +155,8 @@ $(document).ready(function() {
                     $hamburger.removeClass('pull-right').addClass('pull-left');
                     $searchContainer.removeClass('pull-left').addClass('pull-right');
                     $box.removeClass('fadeInLeft').addClass('fadeInRight');
+                    $bnav.find('.nav.navbar-nav').removeClass('navbar-left').addClass('navbar-right');
+                    $bnav.find('li').removeClass('pull-left').addClass('pull-right');
 
                     if ($box_contact_us.length) {
                         $box_contact_us.find('.pull-left').removeClass('pull-left').addClass('pull-right');
@@ -175,11 +181,12 @@ $(document).ready(function() {
     });
 
     // change page with transition
-    $nav.find('.menuItem').bind('click', function (e) {
+    $body.find('.menuItem').bind('click', function (e) {
         e.preventDefault();
 
         var $self = $(this),
-            path = $self.attr('href');
+            path = $self.attr('href'),
+            page_name = $self.attr('data-pageName');
 
         if (path == "#") {
             return false;
@@ -222,6 +229,41 @@ $(document).ready(function() {
                 if ($hamburger.hasClass('is-active')) {
                     $hamburger.removeClass('is-active')
                 }
+
+                if (page_name == "home") {
+                    $body.hasClass('hugContent') == true ? $body.removeClass('hugContent') : "";
+                } else {
+                    $body.hasClass('hugContent') == false ? $body.addClass('hugContent') : "";
+                }
+            });
+        }
+    });
+
+    // change page with transition
+    $body.find('.subItem').bind('click', function (e) {
+        e.preventDefault();
+
+        var $self = $(this),
+            path = $self.attr('href');
+
+        if (path == "#") {
+            return false;
+        }
+
+        if ($self.parent().hasClass('active')) {
+            return false;
+        }
+
+        if (toggleOverlay) {
+            toggleOverlay = false;
+
+            $('.itemContent').load(path + ' .itemContent > *', function (result) {
+
+                // change url
+                loadDataToTemplate(path);
+
+                $body.find('.subItem').parent().removeClass('active');
+                $self.parent().addClass('active');
             });
         }
     });
@@ -315,6 +357,12 @@ $(document).ready(function() {
 
             if ($hamburger.hasClass('is-active')) {
                 $hamburger.removeClass('is-active')
+            }
+
+            if (url == $base_url.val()) {
+                $body.removeClass('hugContent');
+            } else {
+                $body.addClass('hugContent');
             }
         });
     });

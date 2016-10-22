@@ -31,28 +31,50 @@ include_once("../../../config.php");
             <h1 class="page_title <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>"><span>OPTIMARIN</span></h1>
         </div>
         <div class="content">
-            <div class="row">
-                <div class="col-xs-3 col-sm-2 col-md-2 <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>">
-                    <div class="indicator-holder">
-                        <ul class="indicator <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
-                            <li data-word="about_us">
-                                <a href="#" class="active"><span><?php echo ABOUT; ?></span></a>
-                            </li>
-                            <li data-word="products">
-                                <a href="#"><span><?php echo PRODUCTS; ?></span></a>
-                            </li>
-                            <li data-word="references">
-                                <a href="#"><span><?php echo REFERENCES; ?></span></a>
-                            </li>
-                            <li data-word="certificate">
-                                <a href="#"><span><?php echo CERTIFICATE; ?></span></a>
-                            </li>
-                        </ul>
-                    </div>
+            <nav class="belowNav navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 </div>
-                <div class="col-xs-9 colsm-10 col-md-10 <?php echo (LANG == "fa") ? "pull-left" : "pull-right" ?>">
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav <?php echo (LANG == "fa") ? "navbar-right" : "navbar-left" ?>">
+                        <li class="wow fadeIn active <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay="1s"><a class="subItem"
+                                                                          href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/"
+                                                                          data-word="about_us"><span><?php echo ABOUT; ?></span></a>
+                        </li>
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay="1.2s"><a class="subItem"
+                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/certificate.php"
+                                                                            data-word="certificate"><span><?php echo CERTIFICATE; ?></span></a>
+                        </li>
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay="1.4s"><a class="subItem"
+                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/products.php"
+                                                                            data-word="products"><span><?php echo PRODUCTS; ?></span></a>
+                        </li>
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay="1.6s"><a class="subItem"
+                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/references.php"
+                                                                            data-word="references"><span><?php echo REFERENCES; ?></span></a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+            <div class="row">
+                <div class="col-xs-12 colsm-12 col-md-12 itemContent">
+                    <h3 class="text-center"><?php echo ABOUT; ?></h3>
+
                     <br>
-                    <h3><?php echo ABOUT; ?></h3>
+
                     <p>
                         <br>
                         Optimarin AS was founded in 1994 in Stavanger, a town along the west coast of Norway and we
@@ -98,10 +120,13 @@ include_once("../../../config.php");
 
 <script>
     $(function () {
-        var $nav = $('nav');
+        var $body = $('body'),
+            $nav = $('nav');
 
         $nav.find('a').removeClass('active');
         $nav.find('[data-word="principal_company"]').addClass('active');
+
+        $body.addClass('hugContent');
     });
 </script>
 
