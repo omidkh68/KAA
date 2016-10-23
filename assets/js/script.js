@@ -181,7 +181,7 @@ $(document).ready(function() {
     });
 
     // change page with transition
-    $body.find('.menuItem').bind('click', function (e) {
+    $body.on('click', '.menuItem', function (e) {
         e.preventDefault();
 
         var $self = $(this),
@@ -240,7 +240,7 @@ $(document).ready(function() {
     });
 
     // change page with transition
-    $body.find('.subItem').bind('click', function (e) {
+    $body.on('click', '.subItem', function (e) {
         e.preventDefault();
 
         var $self = $(this),

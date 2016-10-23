@@ -389,24 +389,28 @@ body.white .hamburger-inner, body.white .hamburger-inner::before, body.white .ha
     content: '\f106';
 }
 
-.flaticon-email:before {
+.flaticon-correct:before {
     content: '\f107';
 }
 
-.flaticon-fax:before {
+.flaticon-email:before {
     content: '\f108';
 }
 
-.flaticon-phone:before {
+.flaticon-fax:before {
     content: '\f109';
 }
 
-.flaticon-postal:before {
+.flaticon-phone:before {
     content: '\f10a';
 }
 
-.flaticon-search:before {
+.flaticon-postal:before {
     content: '\f10b';
+}
+
+.flaticon-search:before {
+    content: '\f10c';
 }
 
 body {
@@ -1017,7 +1021,6 @@ header .search-container.active.pull-left .flaticon-circle {
     left: 0;
     position: absolute;
     width: 100%;
-    z-index: 1;
 }
 
 .nav-tabs.nav > li > a,
@@ -1100,7 +1103,7 @@ footer p.rtl {
     height: calc(100% - 85px);
     top: 50px;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 .overlay.active {
@@ -1240,7 +1243,6 @@ body.white header > a h5 b {
 body.white header > a h5 span {
     color: #999;
 }
-
 body.white .topNav li a {
     color: #333;
 }
@@ -1252,11 +1254,9 @@ body.white .topNav li a:hover, body.white .topNav li a:active, body.white .topNa
 body.white .topNav li a:visited {
     color: #333;
 }
-
 body.white .topNav li a.active:visited {
     color: #0e68b1;
 }
-
 body.white .topNav li a.active::before {
     background-color: #0e68b1;
 }
@@ -1283,12 +1283,10 @@ body.white footer p.rtl {
 body.hugContent footer {
     position: inherit;
 }
-
 body.hugContent #progress-back {
     bottom: -40px;
     position: relative;
 }
-
 body.hugContent #controls-wrapper {
     bottom: 5px;
     position: relative;
@@ -1412,11 +1410,10 @@ body.hugContent #controls-wrapper {
     }
 
     footer {
-        display: block;
+        display: table;
         height: auto;
         position: inherit;
     }
-
     footer p {
         display: block;
         text-align: center;
@@ -1450,22 +1447,17 @@ body.hugContent #controls-wrapper {
     top: 50px;
     width: 100%;
     z-index: 2; }
-
     .topNav.pull-left {
         left: -100%;
     }
-
     .topNav.pull-right {
         right: -100%;
     }
-
     .topNav.active.pull-left {
       left: 0; }
-
     .topNav.active.pull-right {
         right: 0;
     }
-
     .topNav li {
       width: 100%; }
 

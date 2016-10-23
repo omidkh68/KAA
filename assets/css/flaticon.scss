@@ -59,24 +59,28 @@
   content: '\f106';
 }
 
-.flaticon-email:before {
+.flaticon-correct:before {
   content: '\f107';
 }
 
-.flaticon-fax:before {
+.flaticon-email:before {
   content: '\f108';
 }
 
-.flaticon-phone:before {
+.flaticon-fax:before {
   content: '\f109';
 }
 
-.flaticon-postal:before {
+.flaticon-phone:before {
   content: '\f10a';
 }
 
-.flaticon-search:before {
+.flaticon-postal:before {
   content: '\f10b';
+}
+
+.flaticon-search:before {
+  content: '\f10c';
 }
 
 $font-Flaticon-address: '\f100';
@@ -86,8 +90,9 @@ $font-Flaticon-angle-right: '\f103';
 $font-Flaticon-angle-top: '\f104';
 $font-Flaticon-bell: '\f105';
 $font-Flaticon-circle: '\f106';
-$font-Flaticon-email: '\f107';
-$font-Flaticon-fax: '\f108';
-$font-Flaticon-phone: '\f109';
-$font-Flaticon-postal: '\f10a';
-$font-Flaticon-search: '\f10b';
+$font-Flaticon-correct: '\f107';
+$font-Flaticon-email: '\f108';
+$font-Flaticon-fax: '\f109';
+$font-Flaticon-phone: '\f10a';
+$font-Flaticon-postal: '\f10b';
+$font-Flaticon-search: '\f10c';

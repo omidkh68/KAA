@@ -590,7 +590,7 @@ header {
           left: $zero;
           position: $absolute;
           width: $full-size;
-          z-index: 1;
+
         }
       }
     }
@@ -712,7 +712,7 @@ footer {
   height: calc(100% - 85px);
   top: $headerheight;
   width: $full-size;
-  z-index: 1;
+  z-index: 2;
 
   &.active {
     left: $zero;

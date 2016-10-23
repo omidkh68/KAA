@@ -51,7 +51,7 @@ include_once("../../../config.php");
                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/"
                                                                           data-word="about_us"><span><?php echo ABOUT; ?></span></a>
                         </li>
-                        <li class="wow fadeIn active <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
                             data-wow-duration="1s" data-wow-delay="1.2s"><a class="subItem"
                                                                             href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/certificate.php"
                                                                             data-word="certificate"><span><?php echo CERTIFICATE; ?></span></a>
@@ -61,7 +61,7 @@ include_once("../../../config.php");
                                                                             href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/products.php"
                                                                             data-word="products"><span><?php echo PRODUCTS; ?></span></a>
                         </li>
-                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                        <li class="wow fadeIn active <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
                             data-wow-duration="1s" data-wow-delay="1.6s"><a class="subItem"
                                                                             href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/references.php"
                                                                             data-word="references"><span><?php echo REFERENCES; ?></span></a>
@@ -71,7 +71,7 @@ include_once("../../../config.php");
             </nav>
             <div class="row">
                 <div class="col-xs-12 colsm-12 col-md-12 itemContent">
-                    <h3 class="text-center" data-word="certificate"><span><?php echo CERTIFICATE; ?></span></h3>
+                    <h3 class="text-center" data-word="references"><span><?php echo REFERENCES; ?></span></h3>
 
                     <br>
 
@@ -79,114 +79,29 @@ include_once("../../../config.php");
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#IMO" aria-controls="IMO" role="tab"
-                                                                      data-toggle="tab">IMO</a></li>
-                            <li role="presentation"><a href="#optimarinApprovals" aria-controls="optimarinApprovals"
-                                                       role="tab" data-toggle="tab">Optimarin Approvals</a></li>
-                            <li role="presentation"><a href="#uSCoastGuard" aria-controls="uSCoastGuard" role="tab"
-                                                       data-toggle="tab">US Coast Guard</a></li>
+                            <li role="presentation" class="active"><a href="#OWNERS" aria-controls="OWNERS" role="tab"
+                                                                      data-toggle="tab">Owners</a></li>
+                            <li role="presentation"><a href="#YARDS" aria-controls="YARDS"
+                                                       role="tab" data-toggle="tab">Yards</a></li>
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active" id="IMO">
-                                <h3><b>IMO</b></h3>
+                            <div role="tabpanel" class="tab-pane fade in active" id="OWNERS">
+                                <h3><b>Owners</b></h3>
                                 <p></p>
                                 <p>
-                                    <strong>
-                                        GLOBAL IMO STANDARDS
-                                    </strong>
-                                    <br>
-                                    The International Convention for the Control and Management of Ships Ballast Water &
-                                    Sediments was adopted by Diplomatic Conference at IMO in London, February 2004.
-                                    <br>
-                                    <br>
-                                    <strong>
-                                        STATUS RATIFICATION BWMC
-                                    </strong>
-                                    <br>
-                                    The Ballast Water Management Convention entered into force  on 7 September 2016 as
-                                    more than 30 flag states, representing more than 35% of the world fleet tonnage has
-                                    ratified the convention.
-                                    <br>
-                                    By 7 September 2016, 52 states have ratified. This provides a total of 35.14% of the
-                                    world’s merchant fleet tonnage .
-                                    <a href="http://www.imo.org" target="_blank">www.imo.org (Status of conventions)</a>
-                                    <br>
-                                    <br>
-                                    <strong>
-                                        PERFORMANCE STANDARD
-                                    </strong>
-                                    <br>
-                                    <br>
-                                    Regulation D2 Ballast Water Performance Standard
-                                    <br>
-                                    <br>
-                                    1 Ships conducting Ballast Water Management in accordance with this regulation shall
-                                    discharge less than 10 viable organisms per cubic metre greater than or equal to 50
-                                    micrometres in minimum dimension and less than 10 viable organisms per milliliter
-                                    less than 50 micrometres in minimum dimension and greater than or equal to 10
-                                    micrometres in minimum dimension; and discharge of the indicator microbes shall not
-                                    exceed the specified concentrations described in paragraph 2.
-                                    <br>
-                                    <br>
-                                    2 Indicator microbes, as a human health standard, shall include:
-                                    <br>
-                                    <br>
-                                    1 Toxicogenic Vibrio cholerae (O1 and O139) with less than 1 colony forming unit
-                                    (cfu) per 100 milliliters or less than 1 cfu per 1 gram (wet weight) zooplankton
-                                    samples ;
-                                    <br>
-                                    <br>
-                                    2 Escherichia coli less than 250 cfu per 100 milliliters;
-                                    <br>
-                                    <br>
-                                    3 Intestinal Enterococci less than 100 cfu per 100 milliliters.
+                                    <img class="center-block"
+                                         src="<?php echo DOMAIN_URL; ?>assets/images/references_owners.jpg"
+                                         alt="Owners">
                                 </p>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="optimarinApprovals">
-                                <h3><b>US Coast Guard</b></h3>
+                            <div role="tabpanel" class="tab-pane fade" id="YARDS">
+                                <h3><b>Yards</b></h3>
                                 <p></p>
                                 <p>
-                                    <strong>
-                                        After several years of testing, developing and patenting new technology,
-                                        Optimarin finally obtained type approval for its purification system in 2009 in
-                                        accordance with Guideline 8 and the International Convention for the Control and
-                                        Management of Ship’s Ballast Water and Sediments, 2004. The Optimarin Ballast
-                                        System uses approved technology that significantly exceeds the stringent
-                                        requirements set out in the IMO Convention. But for Optimarin it is not enough
-                                        to simply be approved. We operate in accordance with NS-EN ISO 9001:2008 &
-                                        14001:2004. And our vision is to have the most environmentally friendly ballast
-                                        water purification system in the world.
-                                    </strong>
-                                    <br>
-                                    <br>
-                                    IMO’s regulations contain requirements that aproved systems shall not constitute a
-                                    hazard to personell, the environment, the ship, or cause uncontrolled discharges.
-                                    The system safeguards the people who handle it, and monitors itself to ensure that
-                                    it is operating properly.
-                                    <br>
-                                    <br>
-                                    Optimarin’s type approval certificate was issued by DNV on behalf of the Norwegian
-                                    Maritime Directorate. Based on the information reviewed Optimarin has also been
-                                    assessed by the California State Land Commission, which stated that Optimarin has
-                                    the potential to meet their standard for Best Available Technologies.
-                                    <br>
-                                    The OBS has been extensively tested at the Norwegian Institute for Water Research
-                                    (NIVA) in accordance with IMO’s G8 Guidelines – with excellent results.
-                                    <br>
-                                    Optimarin’s endeavours have also assured approval from a range of classification
-                                    organizations, including Lloyd’s Register, Germanischer Lloyd, Bureau Veritas, MLIT
-                                    Japan, Russian Maritime Register of Shipping and American Bureau of Shipping.
-                                    <br>
-                                    <br>
-                                    <strong>
-                                        Certificates of approval :
-                                    </strong>
-                                    <br>
                                     <img class="center-block"
-                                         src="<?php echo DOMAIN_URL; ?>assets/images/certificate_img.jpg"
-                                         alt="Certificate of approval">
+                                         src="<?php echo DOMAIN_URL; ?>assets/images/references_yards.jpg" alt="Yards">
                                 </p>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="uSCoastGuard">

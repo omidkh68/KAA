@@ -71,7 +71,7 @@ include_once("../../../config.php");
             </nav>
             <div class="row">
                 <div class="col-xs-12 colsm-12 col-md-12 itemContent">
-                    <h3 class="text-center"><?php echo ABOUT; ?></h3>
+                    <h3 class="text-center" data-word="about_us"><span><?php echo ABOUT; ?></span></h3>
 
                     <br>
 
@@ -103,6 +103,32 @@ include_once("../../../config.php");
                         Europe, in Luxemburg – with excellent connections to airports, shipping ports and land based
                         transportation of our products on their way to our customers all over the world.
                     </p>
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#Gallery" aria-controls="Control_System" role="tab" data-toggle="tab">
+                                Gallery
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#Videos" aria-controls="ballastSystem" role="tab" data-toggle="tab">
+                                Videos
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="Gallery">
+                            <h3><b>Gallery</b></h3>
+                            <p></p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="Videos">
+                            <h3><b>Videos</b></h3>
+                            <p></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
