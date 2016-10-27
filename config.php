@@ -33,6 +33,11 @@ include_once("lang/".LANG.".php");
 
 define("LOCAL_PATH", dirname(__FILE__)."/");
 
+define("DB_HOST","localhost");
+define("DB_USER","kavoshabzar");
+define("DB_PASSWORD","HFNZyXZZdK9EXzuS");
+define("DB_DATABASE","kavoshabzar");
+
 define("DIR", "");
 define("PROTOCOL", "http");
 define("DOMAIN_URL", PROTOCOL."://".$_SERVER["HTTP_HOST"]."/".DIR);

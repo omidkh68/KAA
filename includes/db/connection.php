@@ -6,7 +6,7 @@
  * Time: 9:36 PM
  */
 
-$db = new mysqli('localhost', 'kaa_admin', 'HFNZyXZZdK9EXzuS', 'kavoshabzar');
+$db = new mysqli('localhost', 'kavoshabzar', 'HFNZyXZZdK9EXzuS', 'kavoshabzar');
 
 $db->set_charset("utf8");
 
