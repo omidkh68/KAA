@@ -1299,7 +1299,8 @@ body.hugContent #controls-wrapper {
   35% {
     -webkit-transform: scale3D(0, 0, 1);
     transform: scale3D(0, 0, 1); } }
-@media screen and (min-width: 1300px) {
+
+@media screen and (min-width: 1200px) {
   body.hugContent #progress-back {
     bottom: -5px !important; }
   body.hugContent #controls-wrapper {
