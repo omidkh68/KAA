@@ -5,9 +5,15 @@
  * Date: 10/8/16
  * Time: 9:26 PM
  */
+
 if (isset($_POST['changeLang'])) {
 
     $lang = (isset($_POST['changeLang']) ? $_POST['changeLang'] : "en");
+
+    define("DB_HOST", "localhost");
+    define("DB_USER", "kavoshabzar");
+    define("DB_PASSWORD", "HFNZyXZZdK9EXzuS");
+    define("DB_DATABASE", "kavoshabzar");
 
     include_once($_SERVER["DOCUMENT_ROOT"] . "/lang/" . $lang . ".php");
     include_once($_SERVER["DOCUMENT_ROOT"] . "/includes/db/connection.php");
@@ -35,7 +41,9 @@ if (isset($_POST['changeLang'])) {
         "PHYSICAL_ADDRESS" => PHYSICAL_ADDRESS,
         "PRODUCTS" => PRODUCTS,
         "REFERENCES" => REFERENCES,
-        "CERTIFICATE" => CERTIFICATE
+        "CERTIFICATE" => CERTIFICATE,
+        "GALLERY" => GALLERY,
+        "VIDEO" => VIDEO
     ];
 
     echo json_encode($arr, JSON_UNESCAPED_UNICODE);

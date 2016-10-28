@@ -1,3 +1,27 @@
+@media screen and (min-width: 1300px) {
+
+  body {
+    &.hugContent {
+      #progress-back {
+        bottom: -5px !important;
+      }
+
+      #controls-wrapper {
+        bottom: 45px !important;
+      }
+    }
+  }
+
+  .sliderContainer {
+    bottom: $zero;
+    position: $fixed !important;
+  }
+
+  footer {
+    position: $fixed !important;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .box.miniBox {
     margin-left: $full-em * 5;
@@ -21,6 +45,7 @@
 
   footer {
     display: $distable;
+    bottom: inherit;
     height: auto;
     position: inherit;
 
@@ -46,13 +71,13 @@
   .topNav {
     background-color: $dark-gray-color;
     /* Firefox */
-    height: -moz-calc(100% - 85px);
+    height: -moz-calc(100% - 50px);
     /* WebKit */
-    height: -webkit-calc(100% - 85px);
+    height: -webkit-calc(100% - 50px);
     /* Opera */
-    height: -o-calc(100% - 85px);
+    height: -o-calc(100% - 50px);
     /* Standard */
-    height: calc(100% - 85px);
+    height: calc(100% - 50px);
     max-width: 300px;
     padding-left: $full-em * 2;
     position: $fixed;
@@ -118,6 +143,12 @@
 
   .nav.nav--berta {
     width: $full-size;
+  }
+
+  .navbar-collapse {
+    li {
+      width: $full-size;
+    }
   }
 
   footer {

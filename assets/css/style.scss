@@ -11,7 +11,7 @@ body {
   @extend %no-select;
   -moz-background-size: cover;
   -webkit-background-size: cover;
-  background: url('../images/kavoshabzar-background-5.jpg') no-repeat fixed center center;
+  background: url('../images/slider/kavoshabzar-background-5.jpg') no-repeat fixed center center;
   background-size: cover;
   margin: $zero;
   padding: $zero;
@@ -140,7 +140,7 @@ header {
 
         left: initial;
         right: $zero;
-        visibility: $visibile;
+        visibility: $visible;
       }
 
       .flaticon-circle {
@@ -166,7 +166,7 @@ header {
 
         left: initial;
         right: $zero;
-        visibility: $visibile;
+        visibility: $visible;
       }
 
       .flaticon-circle {
@@ -188,7 +188,7 @@ header {
       input[type="text"] {
         @include opacity(1);
 
-        visibility: $visibile;
+        visibility: $visible;
       }
 
       i {
@@ -209,7 +209,7 @@ header {
 
           left: $zero;
           right: initial;
-          visibility: $visibile;
+          visibility: $visible;
         }
       }
 
@@ -227,7 +227,7 @@ header {
 
           left: initial;
           right: $zero;
-          visibility: $visibile;
+          visibility: $visible;
         }
       }
     }
@@ -321,7 +321,7 @@ header {
     }
 
     ul {
-      @include radius($zero, $zero, 3px, 3px);
+      @include radius-normal($zero, $zero, 3px, 3px);
 
       background-color: $dark-black-color-az !important;
 
@@ -377,7 +377,7 @@ header {
 }
 
 .box {
-  @include radius();
+  @include radius-normal();
 
   height: auto;
   margin-bottom: $full-em * 2;
@@ -388,8 +388,7 @@ header {
 
   &.contact_us,
   &.products {
-    display: $distable;
-    max-height: 500px;
+    display: $disblock;
     max-width: 1200px;
     overflow-x: $hidden;
     overflow-y: $auto;
@@ -423,27 +422,36 @@ header {
     }
   }
 
+  .content {
+    min-height: 340px;
+  }
+
   h1 {
     color: $pure-white-color;
-    font-size: $full-em * 1.8;
-    left: $zero;
-    line-height: 2;
+    font-size: $full-em * 2;
+    line-height: 1;
     padding: $zero $full-em;
-    position: $absolute;
-    top: $zero;
+    text-align: $center;
     width: $full-size;
 
-    &.ltr {
+    &.products {
+      bottom: $zero;
+      left: $zero;
+      line-height: 2;
+      position: $absolute;
+    }
+
+    /*&.ltr {
       text-align: $left;
     }
 
     &.rtl {
       text-align: $right;
-    }
+    }*/
   }
 
   iframe {
-    @include radius();
+    @include radius-normal();
 
     border: solid 1px $medium-white-color;
     height: 200px;
@@ -490,6 +498,20 @@ header {
       }
     }
   }
+
+  .form-control {
+    -moz-box-shadow: $none;
+    -webkit-box-shadow: $none;
+    box-shadow: $none;
+
+    background-color: transparent;
+    border: $none;
+    border-bottom: solid 1px $light-white-color;
+
+    &:focus {
+      @include box-shadow-normal($zero, -1px, 1px, $light-dark-color, inset);
+    }
+  }
 }
 
 .box.miniBox {
@@ -512,6 +534,8 @@ header {
   }
 
   .content {
+    margin-top: $zero;
+    min-height: 100px;
     width: 60%;
 
     h2 {
@@ -529,7 +553,7 @@ header {
       font-size: $full-em;
 
       a {
-        @include radius();
+        @include radius-normal();
 
         background-color: $light-green-color;
         bottom: $full-em;
@@ -546,9 +570,129 @@ header {
 
 // end of body content style
 
+// news style
+.news-inbox {
+  @extend %transition-normal;
+
+  list-style: $none;
+  margin: $full-rem $auto;
+  max-width: 700px;
+  padding: $zero;
+  width: $full-size;
+
+  li {
+    @extend %transition-normal;
+    @include rounded();
+    @include box-shadow-normal($zero, 1px, $zero, $light-gray-color);
+
+    background-color: $pure-white-color;
+    border: solid 1px $light-white-color;
+    cursor: $pointer;
+    height: $auto;
+    margin-bottom: $half-em;
+    min-height: 50px;
+    padding: $full-em;
+    position: $relative;
+
+    .log_title {
+      img {
+        max-width: $full-size;
+        width: $full-size;
+      }
+    }
+
+    h3 {
+      font-size: 1.5em;
+      line-height: 1.5;
+
+      i {
+        @extend %transition-normal;
+
+        font-size: $half-em;
+        position: $absolute;
+        top: $zero;
+      }
+
+      &.rtl {
+        text-align: $right;
+
+        i {
+          left: 1.5em;
+        }
+      }
+
+      &.ltr {
+        text-align: $left;
+
+        i {
+          right: 1.5em;
+        }
+      }
+    }
+
+    .content {
+      @extend %transition-normal;
+
+      background-color: $pure-white-color;
+      border-top: solid 1px $light-white-color;
+      display: $none;
+      height: $auto;
+      width: $full-size;
+
+      p {
+        &.rtl {
+          text-align: $right;
+        }
+
+        &.ltr {
+          text-align: $left;
+        }
+      }
+    }
+
+    &.active {
+      @include box-shadow-normal($zero, 3px, 4px, $light-gray-color);
+
+      cursor: default;
+      margin: .7em -1.5em;
+      min-height: 80px;
+
+      .log_title {
+        //border-bottom: solid 1px #DDD;
+        padding-bottom: 1em;
+      }
+
+      .content {
+        display: $disblock;
+        padding: $full-em;
+      }
+    }
+
+    .date {
+      bottom: $half-em;
+      color: $light-gray-color;
+      font-size: 1.5rem;
+      height: 20px;
+      position: $absolute;
+      text-align: $center;
+      width: $auto;
+
+      &.rtl {
+        left: $half-em;
+      }
+
+      &.ltr {
+        right: $half-em;
+      }
+    }
+  }
+}
+
+// end of news style
+
 // navigation under banner style
 .belowNav {
-  @include radius($zero, $zero, 3px, 3px);
+  @include radius-normal($zero, $zero, 3px, 3px);
 
   min-height: 42px;
   width: $full-size;
@@ -612,16 +756,27 @@ header {
 
 .tab-content {
   padding: $full-em $zero;
+
+  img {
+    max-width: $full-size;
+  }
+
+  ul ul {
+    margin-left: 2em;
+  }
 }
 
 // end of change default tab of bootstrap style
 
 // footer of website
 footer {
+  @extend %transition-normal;
+
   background-color: $light-black-color;
   bottom: $zero;
   height: $footerheight;
   left: $zero;
+  overflow: $hidden;
   position: $fixed;
   width: $full-size;
   z-index: 10;
@@ -704,14 +859,14 @@ footer {
 
   background-color: $light-gray-color;
   /* Firefox */
-  height: -moz-calc(100% - 85px);
+  height: -moz-calc(100% - 50px);
   /* WebKit */
-  height: -webkit-calc(100% - 85px);
+  height: -webkit-calc(100% - 50px);
   /* Standard */
   left: $full-size;
   position: $fixed;
   right: -$full-size;
-  height: calc(100% - 85px);
+  height: calc(100% - 50px);
   top: $headerheight;
   width: $full-size;
   z-index: 2;
@@ -781,7 +936,7 @@ footer {
 }
 
 #slidecaption {
-  color: $light-pink-color;
+  color: $pure-white-color;
   font-weight: 200;
   left: 110px;
   line-height: 20px;

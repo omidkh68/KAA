@@ -1105,7 +1105,7 @@ function print_r_debug($data)
 {
     echo '<pre>';
     print_r($data);
-    die();
+    echo '</pre>';
 }
 
 function get_cities()

@@ -1,0 +1,243 @@
+@import '../../../assets/css/variables';
+@import '../../../assets/css/mixins';
+@import '../../../assets/css/essential';
+@import '../../../assets/css/samim';
+@import 'font-awesome/scss/font-awesome';
+@import '../../bower_components/Bootflat/bootflat/scss/bootflat';
+
+// body style configuration
+body {
+  @extend %no-select;
+  background-color: $light-white-color;
+  font-size: 14px;
+  margin: $zero;
+  padding: $zero;
+
+  &.login {
+    background-color: $dark-blue-color;
+  }
+}
+
+// login style group
+@keyframes spinner {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(359deg);
+  }
+}
+
+.wrapper {
+  display: $disblock;
+  min-height: $full-size;
+  padding: 20px;
+  width: $full-size;
+}
+
+.login {
+  @include radius-normal(2px, 2px, 5px, 5px);
+  @include box-shadow-normal($zero, 1px, 5px, rgba($zero, $zero, $zero, .3));
+
+  background: $pure-white-color;
+  margin: $zero $auto;
+  max-width: 320px;
+  padding: 10px 20px 80px;
+  position: $relative;
+  width: $full-size - 10%;
+
+  &.loading {
+    button {
+      max-height: $full-size;
+      padding-top: 50px;
+
+      .spinner {
+        @include opacity(1);
+
+        top: 40%;
+      }
+    }
+  }
+
+  &.ok {
+    button {
+      background-color: $normal-green-color;
+
+      .spinner {
+        animation: $none;
+        border-radius: $zero;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        height: 20px;
+        transform: rotateZ(-45deg);
+      }
+    }
+  }
+
+  input {
+    @include transition(border-width .2s ease);
+
+    border: 1px solid $light-white-color;
+    border-radius: 2px;
+    color: $normal-white-color;
+    display: $disblock;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+    width: $full-size;
+
+    & + i.fa {
+      @include opacity($zero);
+      @include transition(all .1s ease-in);
+
+      color: $pure-white-color;
+      font-size: 1em;
+      left: $zero;
+      margin-top: -47px;
+      opacity: $zero;
+      position: $absolute;
+    }
+
+    &:focus {
+      & + i.fa {
+        @include opacity(1);
+        @include transition(all .25s ease-out);
+
+        left: 30px;
+      }
+
+      border-color: $dark-cyan-color;
+      border-left-width: 35px;
+      color: $medium-gray-color;
+      outline: $none;
+    }
+
+  }
+
+  a {
+    color: $dark-cyan-color;
+    font-size: .8em;
+    text-decoration: $none;
+  }
+
+  .title {
+    border-bottom: 1px solid $light-white-color;
+    color: $medium-gray-color;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px $zero 30px;
+    padding-bottom: 20px;
+  }
+
+  button {
+    @include transition(all .1s ease-out);
+
+    background: $dark-cyan-color;
+    border: $zero solid rgba($zero, $zero, $zero, .1);
+    border-bottom-width: 7px;
+    border-radius: $zero $zero 2px 2px;
+    bottom: $zero;
+    color: $pure-white-color;
+    display: $disblock;
+    height: $full-size;
+    left: $zero;
+    margin-top: 20px;
+    max-height: 60px;
+    padding: 10px;
+    position: $absolute;
+    transform: rotateZ(0deg);
+    width: $full-size;
+
+    .spinner {
+      @include transition(top .3s .3s ease,
+              opacity .3s .3s ease,
+              border-radius .3s ease);
+
+      animation: spinner .6s infinite linear;
+      border: 4px solid $pure-white-color;
+      border-radius: $full-size;
+      border-top-color: $normal-white-with-alpha;
+      box-shadow: $zero 1px $zero rgba($zero, $zero, $zero, .2);
+      display: $disblock;
+      height: 40px;
+      left: 50%;
+      margin-left: -20px;
+      margin-top: -20px;
+      opacity: $zero;
+      position: $absolute;
+      top: $zero;
+      width: 40px;
+    }
+
+  }
+
+  &:not(.loading) button:hover {
+    @include box-shadow-normal($zero, 1px, 3px, $dark-cyan-color);
+  }
+
+  &:not(.loading) button:focus {
+    border-bottom-width: 4px;
+  }
+}
+
+// end of login style group
+
+// nav style group
+.navbar {
+  @include radius-normal($zero, $zero, $zero, $zero);
+
+  .navbar-brand {
+    margin: $zero !important;
+    padding: $zero;
+  }
+}
+
+// end of nav style group
+
+// content body style
+.jumbotron {
+  h1 {
+    a {
+      display: $disblock;
+      font-size: $half-em;
+      height: $full-size;
+      width: $full-size;
+
+      i {
+        @extend %clear;
+        @extend %mb;
+
+        display: $disblock;
+        font-size: $full-rem * 4;
+        height: $full-size;
+        width: $full-size;
+      }
+    }
+  }
+}
+
+// end of content body style
+
+// footer style
+footer {
+  @extend %transition-normal;
+
+  background-color: $light-black-color;
+  bottom: $zero;
+  height: $footerheight;
+  left: $zero;
+  overflow: $hidden;
+  position: $fixed;
+  width: $full-size;
+  z-index: 10;
+
+  p {
+    color: $medium-white-color;
+    display: $disblock;
+    height: $footerheight;
+    line-height: $footerheight;
+    margin: $zero;
+    padding-right: $half-em;
+  }
+}
+
+// end of style group

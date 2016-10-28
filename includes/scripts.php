@@ -16,30 +16,16 @@
             keyboard_nav: 0,            // disable keyboard navigation
             slide_links: 'blank',	    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
             slides: [			        // Slideshow Images
-                {
-                    image: '<?php echo DOMAIN_URL; ?>assets/images/kavoshabzar-background-4.jpg',
-                    title: 'Image Credit: Colin Wojno'
-                },
-                {
-                    image: '<?php echo DOMAIN_URL; ?>assets/images/kavoshabzar-background-5.jpg',
-                    title: 'Image Credit: Colin Wojno'
-                },
-                {
-                    image: '<?php echo DOMAIN_URL; ?>assets/images/kavoshabzar-background-1.jpg',
-                    title: 'Image Credit: Maria Kazvan'
-                },
-                {
-                    image: '<?php echo DOMAIN_URL; ?>assets/images/kavoshabzar-background-3.jpg',
-                    title: 'Image Credit: Maria Kazvan'
-                },
-                {
-                    image: '<?php echo DOMAIN_URL; ?>assets/images/kavoshabzar-background-2.jpg',
-                    title: 'Image Credit: Maria Kazvan'
-                },
-                {
-                    image: '<?php echo DOMAIN_URL; ?>assets/images/kavoshabzar-background-6.jpg',
-                    title: 'Image Credit: Maria Kazvan'
+                <?php
+                foreach ($slider['export']['list'] as $k => $v) {
+                    echo "
+                        {
+                            image: '" . DOMAIN_URL . 'assets/images/slider/' . $v['name'] . '.' . $v['type'] . "',
+                            title: '" . $v['description'] . "',
+                        },
+                    ";
                 }
+                ?>
             ]
 
         });

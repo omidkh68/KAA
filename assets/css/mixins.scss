@@ -4,7 +4,7 @@
   #{$property}: calc(#{$expression});
 }
 
-@mixin box-shadow($left, $top, $blur, $color, $inset:'') {
+@mixin box-shadow-normal($left, $top, $blur, $color, $inset:'') {
   -moz-box-shadow: $left $top $blur $color #{$inset};
   -webkit-box-shadow: $left $top $blur $color #{$inset};
   box-shadow: $left $top $blur $color #{$inset};
@@ -24,7 +24,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff882c', endColorstr='#fe5454',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-@mixin radius($topleft: 3px, $topright: 3px, $bottomright: 3px, $bottomleft: 3px, $all: false, $full: false) {
+@mixin radius-normal($topleft: 3px, $topright: 3px, $bottomright: 3px, $bottomleft: 3px, $all: false, $full: false) {
   @if $all == false {
     -moz-border-radius: $topleft $topright $bottomright $bottomleft !important;
     -webkit-border-radius: $topleft $topright $bottomright $bottomleft !important;;

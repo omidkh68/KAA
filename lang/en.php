@@ -27,3 +27,6 @@ define("PHYSICAL_ADDRESS", "4th floor, No.6, 17th Street, Bokharest Ave., Argent
 define("PRODUCTS", "Products");
 define("REFERENCES", "References");
 define("CERTIFICATE", "Certificate");
+define("GALLERY", "Gallery");
+define("VIDEO", "Video");
+define("SLIDER", "Slider");

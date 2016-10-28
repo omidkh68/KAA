@@ -16,11 +16,14 @@ $(document).ready(function() {
         $searchTxt = $('#search'),
         width = $(this).width(),
         $hamburger = $('.hamburger'),
+        $lightBox = $body.find('#lightBox'),
+        $newsInbox = $body.find('.news-inbox'),
         $footer = $('footer'),
         $changeLang = $('.change_lang'),
         $overlay = $('.overlay'),
         $base_url = $('#base_url'),
         $indicator = $body.find('.indicator'),
+        $videoPlayer = $body.find('#videoPlayer'),
         $base_url_img = $('#base_url_img').val(),
         toggleOverlay = true;
 
@@ -78,6 +81,8 @@ $(document).ready(function() {
         $(this).toggleClass('is-active');
 
         $nav.toggleClass('active');
+
+        $body.toggleClass('fixed');
     });
 
     // realtime change language
@@ -121,6 +126,8 @@ $(document).ready(function() {
                 $body.find('[data-word="products"] span').html(words['PRODUCTS']);
                 $body.find('[data-word="references"] span').html(words['REFERENCES']);
                 $body.find('[data-word="certificate"] span').html(words['CERTIFICATE']);
+                $body.find('[data-word="gallery"]').html(words['GALLERY']);
+                $body.find('[data-word="video"]').html(words['VIDEO']);
 
                 if (dataLang == "en") {
                     $body.find('.rtl').each(function () {
@@ -135,6 +142,7 @@ $(document).ready(function() {
                     $box.removeClass('fadeInRight').addClass('fadeInLeft');
                     $bnav.find('.nav.navbar-nav').removeClass('navbar-right').addClass('navbar-left');
                     $bnav.find('li').removeClass('pull-right').addClass('pull-left');
+                    $body.find('.news-inbox li .pull-right').removeClass('pull-right').addClass('pull-left');
 
                     if ($box_contact_us.length) {
                         $box_contact_us.find('.pull-right').removeClass('pull-right').addClass('pull-left');
@@ -157,6 +165,7 @@ $(document).ready(function() {
                     $box.removeClass('fadeInLeft').addClass('fadeInRight');
                     $bnav.find('.nav.navbar-nav').removeClass('navbar-left').addClass('navbar-right');
                     $bnav.find('li').removeClass('pull-left').addClass('pull-right');
+                    $body.find('.news-inbox li .pull-left').removeClass('pull-left').addClass('pull-right');
 
                     if ($box_contact_us.length) {
                         $box_contact_us.find('.pull-left').removeClass('pull-left').addClass('pull-right');
@@ -230,6 +239,10 @@ $(document).ready(function() {
                     $hamburger.removeClass('is-active')
                 }
 
+                if ($body.hasClass('fixed')) {
+                    $body.removeClass('fixed')
+                }
+
                 if (page_name == "home") {
                     $body.hasClass('hugContent') == true ? $body.removeClass('hugContent') : "";
                 } else {
@@ -264,6 +277,8 @@ $(document).ready(function() {
 
                 $body.find('.subItem').parent().removeClass('active');
                 $self.parent().addClass('active');
+
+                $body.find('#menuHolderBtn').trigger('click');
             });
         }
     });
@@ -305,6 +320,12 @@ $(document).ready(function() {
         if ($nav.find('.hasMenu').hasClass('open')) {
             $nav.find('.hasMenu i').removeClass('fi-rotate-180');
         }
+
+        if ($body.find('.news-inbox li').hasClass('active')) {
+            $body.find('.news-inbox li').removeClass('active');
+
+            $body.find('.news-inbox li .fi.flaticon-angle-bottom').removeClass('fi-rotate-180');
+        }
     });
 
     $searchTxt.focus(function () {
@@ -318,6 +339,38 @@ $(document).ready(function() {
 
         $self.parents('.indicator').find('a').removeClass('active');
         $self.addClass('active');
+    });
+
+    // lightbox and event
+    $body.on('click', '.runLightBox', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $self = $(this),
+            src = $self.attr('src'),
+            alt = $self.attr('alt');
+
+        $lightBox.find('img').attr({
+            src: src,
+            alt: alt
+        });
+
+        $lightBox.find('h4').text(alt);
+
+        $lightBox.modal('show');
+    });
+
+    $body.on('click', '.news-inbox li', function (e) {
+        e.stopPropagation();
+
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+
+            $(this).find('.fi.flaticon-angle-bottom').removeClass('fi-rotate-180');
+        } else {
+            $(this).addClass('active');
+            $(this).find('.fi.flaticon-angle-bottom').addClass('fi-rotate-180');
+        }
     });
 
     // initial animate effect appear

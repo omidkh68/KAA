@@ -24,16 +24,13 @@
         <!-- box content -->
         <div class="box miniBox bg-white wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
             <div class="img-container pull-left">
-                <img src="<?php echo DOMAIN_URL; ?>assets/images/p-01.jpg" alt="Kavosh Abzar OMG">
+                <img class="img-thumbnail mt" src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/img-2.jpg"
+                     alt="Kavosh Abzar OMG">
             </div>
             <div class="content pull-right">
                 <h2 class="en-font text-left">OMG</h2>
                 <article>
-                    Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit. Aliquam aperiam,
-                    asperiores assumenda consequatur consequuntur debitis
-                    doloribus est ipsa maiores nisi quasi qui quia quo
-                    sed sunt unde vel voluptates voluptatum.
+                    <?php echo(isset($briefOmg) && strlen($briefOmg['brief_desc']) ? $briefOmg['brief_desc'] : '') ?>
 
                     <a href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/" class="menuItem text-left">Read More
                         <i class="fi flaticon-angle-right pull-right"></i></a>
@@ -42,16 +39,13 @@
         </div>
         <div class="box miniBox bg-white wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
             <div class="img-container pull-left">
-                <img src="<?php echo DOMAIN_URL; ?>assets/images/p-02.jpg" alt="Kavosh Abzar Optimarin">
+                <img class="img-thumbnail mt" src="<?php echo DOMAIN_URL; ?>assets/images/products/optimarin/img-2.jpg"
+                     alt="Kavosh Abzar Optimarin">
             </div>
             <div class="content pull-right">
                 <h2 class="en-font text-left">OPTIMARIN</h2>
                 <article>
-                    Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit. Aliquam aperiam,
-                    asperiores assumenda consequatur consequuntur debitis
-                    doloribus est ipsa maiores nisi quasi qui quia quo
-                    sed sunt unde vel voluptates voluptatum.
+                    <?php echo(isset($briefOpt) && strlen($briefOpt['brief_desc']) ? $briefOpt['brief_desc'] : '') ?>
 
                     <a href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/" class="menuItem text-left">Read
                         More <i class="fi flaticon-angle-right pull-right"></i></a>

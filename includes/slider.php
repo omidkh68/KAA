@@ -4,7 +4,7 @@
     </div>
 
     <!--Control Bar-->
-    <div id="controls-wrapper" class="load-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+    <div id="controls-wrapper" class="load-item wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">
         <!--Arrow Navigation-->
         <a id="prevslide" class="load-item"><i class="fi flaticon-angle-left"></i></a>
         <a id="nextslide" class="load-item"><i class="fi flaticon-angle-right"></i></a>

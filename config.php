@@ -6,9 +6,16 @@
  * Time: 1:42 PM
  */
 
+header('Content-Type: text/html; charset=utf-8');
+
 error_reporting(1);
 error_reporting(E_ALL ^ E_STRICT ^ E_WARNING ^ E_DEPRECATED ^ E_NOTICE);
 ini_set("display_errors", 1);
+
+define("DB_HOST", "localhost");
+define("DB_USER", "kavoshabzar");
+define("DB_PASSWORD", "HFNZyXZZdK9EXzuS");
+define("DB_DATABASE", "kavoshabzar");
 
 include_once("includes/db/connection.php");
 
@@ -36,11 +43,6 @@ define("DEFAULT_THEME", $theme);
 include_once("lang/".LANG.".php");
 
 define("LOCAL_PATH", dirname(__FILE__)."/");
-
-define("DB_HOST","localhost");
-define("DB_USER","kavoshabzar");
-define("DB_PASSWORD","HFNZyXZZdK9EXzuS");
-define("DB_DATABASE","kavoshabzar");
 
 define("DIR", "");
 define("PROTOCOL", "http");

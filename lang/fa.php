@@ -27,3 +27,6 @@ define("PHYSICAL_ADDRESS", "میدان آرژانتین ، خیابان بخار
 define("PRODUCTS", "محصولات");
 define("REFERENCES", "منابع");
 define("CERTIFICATE", "مدارک");
+define("GALLERY", "تصاویر");
+define("VIDEO", "ویدیو");
+define("SLIDER", "اسلایدر");

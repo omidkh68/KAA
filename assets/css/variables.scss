@@ -14,21 +14,26 @@ $none: none;
 
 // color variables
 $pure-white-color: #fff;
-$pure-white-color-width-alpha: rgba(255, 255, 255, .8);
+$pure-white-color-width-alpha: rgba(255, 255, 255, .95);
+$normal-white-with-alpha: rgba(255, 255, 255, .3);
 $medium-white-color: #dcdcdc;
 $light-white-color: #ddd;
+$normal-white-color: #ccc;
 $light-normal-gray-color: rgba(54, 54, 54, .6);
 $light-gray-color: #999;
 $dark-gray-color: rgba(83, 83, 83, .9);
 $medium-black-color: #333;
 $medium-gray-color: #555;
-$dark-black-color: rgba(37, 37, 37, .7);
+$dark-black-color: rgba(37, 37, 37, .9);
 $dark-black-color-az: rgba(37, 37, 37, 1);
 $light-black-color: rgba(55, 55, 55, .8);
+$light-dark-color: rgba(0, 0, 0, .37);
 $cyan-color: #2de1fc;
 $dark-cyan-color: #0e68b1;
+$dark-blue-color: #0a6285;
 $pure-black-color: #000;
 $light-green-color: #cafb95;
+$normal-green-color: #8bc34a;
 $light-pink-color: #e02635;
 
 // positions & displays
@@ -39,7 +44,7 @@ $static: static;
 $disblock: block;
 $distable: table;
 $hidden: hidden;
-$visibile: visible;
+$visible: visible;
 $auto: auto;
 $pointer: pointer;
 
