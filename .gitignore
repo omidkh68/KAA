@@ -1,9 +1,4 @@
-.idea/encodings.xml
-.idea/kavoshabzar.iml
-.idea/modules.xml
-.idea/sasslintPlugin.xml
-.idea/vcs.xml
-.idea/workspace.xml
+.idea/
 node_modules/
 assets/.sass-cache/
 .DS_Store

@@ -52,20 +52,20 @@
                                 <span><?php echo ABOUT; ?></span>
                             </a>
                         </li>
-                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
-                            data-wow-duration="1s" data-wow-delay="1.2s">
-                            <a class="subItem"
-                               href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/certificate.php"
-                               data-word="certificate">
-                                <span><?php echo CERTIFICATE; ?></span>
-                            </a>
-                        </li>
                         <li class="wow fadeIn active <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
-                            data-wow-duration="1s" data-wow-delay="1.4s">
+                            data-wow-duration="1s" data-wow-delay="1.2s">
                             <a class="subItem"
                                href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/products.php"
                                data-word="products">
                                 <span><?php echo PRODUCTS; ?></span>
+                            </a>
+                        </li>
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay="1.4s">
+                            <a class="subItem"
+                               href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/regulation.php"
+                               data-word="REGULATION">
+                                <span><?php echo REGULATION; ?></span>
                             </a>
                         </li>
                         <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
@@ -90,80 +90,72 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active">
-                                <a href="#Control_System" aria-controls="Control_System" role="tab" data-toggle="tab">
-                                    Control System
+                                <a class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>" href="#ballastSystem" aria-controls="ballastSystem" role="tab" data-toggle="tab">
+                                    <?php echo (LANG == "fa") ? "سیستم بالاست OPTIMARIN" : "Optimarin Ballast System"; ?>
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a href="#ballastSystem" aria-controls="ballastSystem" role="tab" data-toggle="tab">
-                                    Optimarin Ballast System
+                                <a class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>" href="#UVSystem" aria-controls="UVSystem" role="tab" data-toggle="tab">
+                                    <?php echo (LANG == "fa") ? "سیستم UV" : "UV System"; ?>
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a href="#UVSystem" aria-controls="UVSystem" role="tab" data-toggle="tab">
-                                    UV System
+                                <a class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>" href="#Filters" aria-controls="Filters" role="tab" data-toggle="tab">
+                                    <?php echo (LANG == "fa") ? "فیلترها" : "Filters"; ?>
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a href="#Filters" aria-controls="Filters" role="tab" data-toggle="tab">
-                                    Filters
+                                <a class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>" href="#Control_System" aria-controls="Control_System" role="tab" data-toggle="tab">
+                                    <?php echo (LANG == "fa") ? "سیستم کنترل" : "Control System"; ?>
                                 </a>
                             </li>
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active" id="Control_System">
-                                <p>
-                                    <strong>
-                                        The Ballast Control System allows easy operation of the Optimarin Ballast
-                                        System.
-                                    </strong>
+                            <div role="tabpanel" class="tab-pane fade in active" id="ballastSystem">
+                                <?php
+                                if(LANG == "fa") {
+                                ?>
+                                <p class="rtl">
+                                    سیستم بالاست OPTIMARIN تایید شده بر پایه کاری فیلتر کردن برای پیشگیری با استفاده از
+                                    مقدار زیاد پرتوافکنی UV جهت غیر فعال کردن تمام ارگانیسم ها، ویروس ها و باکتری های
+                                    دریایی بدون ایجاد تغییر در عملکرد عادی کشتی می باشد. آب در هنگام بالاست و دی بالاست
+                                    در معرض امواج UV قرار می گیرد تا اثر دو جانبه UV را تضمین کند. لازم به ذکر است که آب
+                                    بالاست تنها در طی مراحل بالاست فیلتر می شود.
                                     <br>
+                                    <br>
+                                    سیستم بالاست OPTIMARIN (OBS) یکی از چندین روش موجود است که در آن از مواد شیمیایی و
+                                    تخریبگر محیط زیست در طول مراحل اجرایی و غربالگری استفاده نمی شود. این روش بر اساس
+                                    این نظریه بنا شده است که سیستم مورد استفاده باید به لحاظ زیست محیطی بی خطر، ساده،
+                                    تغییر پذیر با شرایط و همراه با نصب راحت باشد به طوری که بتواند بر روی کشتی های تازه
+                                    ساخته شده و قدیمی عمل کند.
+                                    <br>
+                                    <br>
+                                    OBS گواهی می کند که در انواع آب ها (آب شیرین، شور و آب دریا) عمل می کند.
+                                    <br>
+                                    <br>
+                                    سیستم بالاست OPTIMARIN بر روی کشتی های موجود و کشتی های تازه ساخته شده به صورت بسیار
+                                    ساده نصب می شود. سیستم کلی بسیار قابل تنظیم می باشد، اثر و وزن کمی دارد و مناسب مدل
+                                    ها و سایز های متفاوت کشتی ها می باشد. OBS را می توان به شکل شاسی کامل یا راه حل
+                                    بهینه شده، تحویل داد. این سیستم می تواند گستره ی بزرگی از ظرفیت های آب بالاست شده را
+                                    در خود جای دهد و همچنین جریانی تا حدود 3.000 متر مکعب بر ساعت (و یا بالاتر بر حسب
+                                    سفارش) را مدیریت کند.
+                                    <br>
+                                    <br>
+                                    سیستم بالاست OPTIMARIN معمولاً در اتاق موتور یا پمپ و در نزدیکی پمپ های بالاست نصب
+                                    می گردد. سیستم OBS را می توان در یک کانتینر بر روی یک شاسی و یا به صورت قطعات مجزا،
+                                    که باعث نصب راحت تر در هر فضای محدودی می شود، تحویل داد. تجهیزات آن را می توان به
+                                    صورت افقی و عمودی بر روی عرشه و یا به صورت آویزان زیر آن، در طول بدنه ی کشتی و یا در
+                                    چندین محل مجزا نصب کرد. این سیستم نسبتاً وزن و صدای اضافه ای ندارد. OBS از هر متر
+                                    مربع فضای اختصاص داده شده بهترین استفاده را می کند و به جای زیادی هم احتیاج ندارد،
+                                    این نکته نشان می دهد که OBS به لحاظ مالی راه حلی با بازده مالی بالایی را می تواند
+                                    ارائه دهد.
                                 </p>
-                                <ul>
-                                    <li>
-                                        <i class="fi flaticon-correct text-success"></i>
-                                        User-friendly interface with touch screen
-                                        <br>
-                                        <br>
-                                    </li>
-                                    <li>
-                                        <i class="fi flaticon-correct text-success"></i>
-                                        Easy operation: on click only to start any operations
-
-                                        <br>
-                                        <br>
-                                    </li>
-                                    <li>
-                                        <i class="fi flaticon-correct text-success"></i>
-                                        Interface with the ship’s integrated automation system
-
-                                        <br>
-                                        <br>
-                                    </li>
-                                    <li>
-                                        <i class="fi flaticon-correct text-success"></i>
-                                        Logging in accordance with IMO requirements
-
-                                        <br>
-                                        <br>
-                                    </li>
-                                    <li>
-                                        <i class="fi flaticon-correct text-success"></i>
-                                        Option of receiving signals from ballast pumps and valves
-
-                                        <br>
-                                        <br>
-                                    </li>
-                                    <li>
-                                        <i class="fi flaticon-correct text-success"></i>
-                                        Additional features as PMS integration, GPS logging and UV redundancy
-                                    </li>
-                                </ul>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="ballastSystem">
-                                <p>
+                                <?php
+                                } else {
+                                ?>
+                                <p class="ltr">
                                     The type approved Optimarin Ballast System is based on filtration as pre-treatment
                                     and high doses of UV irradiation for inactivation of marine organisms, viruses and
                                     bacteria, without affecting the normal operation of the ship. Ballast water is UV
@@ -202,90 +194,395 @@
                                     low weight and adds no extra noise. The OBS utilizes every square meter and does not
                                     require much space, this makes it a cost-efficient solution.
                                 </p>
+                                <?php
+                                }
+                                ?>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="UVSystem">
-                                <p>
+                                <p class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
+                                    <?php
+                                    if(LANG == "fa") {
+                                    ?>
+                                    <strong>
+                                        سیستم UV بر پایه 20 سال تجربه در تزریق آب بر روی سکو های دریایی، بهبود آب برای کشت آبزیان و ماشین آلات آب شرب در نروژ گسترش یافته است. پرتو UV با توان بالا برای کشتن و غیر فعالسازی کامل ارگانیسم ها، باکتری ها و پاتوژن ها به عنوان عوامل بیماری زا در آب بالاست کاربری دارد.
+                                    </strong>
+                                    <?php
+                                    } else {
+                                    ?>
                                     <strong>
                                         The UV System was developed based on 20 years of experience in water injection
                                         on offshore platforms, water treatment for fish farming and drinking water
                                         plants in Norway.
                                     </strong>
+                                    <?php
+                                    }
+                                    ?>
                                 </p>
-                                <ul>
+                                <ul class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
                                     <li>
                                         <i class="fi flaticon-correct text-success"></i>
-                                        High power UV for the efficient killing or inactivation of organisms,
-                                        bacteria and pathogens in ballast water.
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                            نیاز به تنها یک لامپ UV در هر محفظه (محفظه ای با آهنگ جریان 167 متر مکعب بر ساعت)
+                                        <?php
+                                        } else {
+                                        ?>
+                                        One UV lamp per chamber (167 m3/h flow rate per chamber)
+                                        <?php
+                                        }
+                                        ?>
                                         <br>
                                         <br>
                                     </li>
                                     <li>
                                         <i class="fi flaticon-correct text-success"></i>
-                                        One UV lamp per chamber (167 m3/h flow rate per chamber).
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                            محفظه UV استاندارد شده، که به صورت موازی روی یک منیفلد تنها برای تولید جریان بیشتر نصب می شوند
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Standardized UV chamber, installed in parallel on a single manifold for higher flows
+                                        <?php
+                                        }
+                                        ?>
                                         <br>
                                         <br>
                                     </li>
                                     <li>
                                         <i class="fi flaticon-correct text-success"></i>
-                                        Standardized UV chamber, installed in parallel on a single manifold for
-                                        higher flows.
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                            بهینه شده برای کمترین نگهداری و سهولت در عملکرد
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Optimized for minimum maintenance and ease of operation
+                                        <?php
+                                        }
+                                        ?>
                                         <br>
                                         <br>
                                     </li>
                                     <li>
                                         <i class="fi flaticon-correct text-success"></i>
-                                        Developed and manufactured for installation aboard ships.
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        سیستم نیازی به استفاده از مواد شوینده شیمیایی و جا به جایی قطعات نداشته و خود را تمیز می نماید
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Self-cleaning, with no moving parts or need for chemical cleaning
+                                        <?php
+                                        }
+                                        ?>
                                         <br>
                                         <br>
                                     </li>
                                     <li>
                                         <i class="fi flaticon-correct text-success"></i>
-                                        Optimized for minimum maintenance and ease of operation. It is
-                                        self-cleaning, with no moving parts or need for chemical cleaning.
-                                        <br>
-                                        <br>
-                                    </li>
-                                    <li>
-                                        <i class="fi flaticon-correct text-success"></i>
-                                        UV and temperature sensor in each chamber.
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        وجود حسگر دما و UV در هر محفظه
+                                        <?php
+                                        } else {
+                                        ?>
+                                        UV and temperature sensor in each chamber
+                                        <?php
+                                        }
+                                        ?>
                                         <br>
                                         <br>
                                     </li>
                                 </ul>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Filters">
-                                <p>
+                                <p class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
                                     <strong>
-                                        Optimarin offers three different 40 micron filters: FilterSafe basket type, B&K
-                                        candle type, and Filtrex basket type filter. All three filter types have
-                                        automatic back flushing and are self-cleaning.
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        OPTIMARIN سه فیلتر 40 میکرونی متفاوت را پیشنهاد می دهد:
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Optimarin offers three different 40 micron filters:
+                                        <?php
+                                        }
+                                        ?>
                                     </strong>
                                     <br>
                                 </p>
-                                <ul>
+                                <ul class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
                                     <li>
                                         <i class="fi flaticon-correct text-success"></i>
-                                        Removes large particles and organisms.
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        فیلتر مدل سبد ایمن (Safe Basket)
+                                        <?php
+                                        } else {
+                                        ?>
+                                        FilterSafe basket type
+                                        <?php
+                                        }
+                                        ?>
                                         <br>
                                         <br>
                                     </li>
                                     <li>
                                         <i class="fi flaticon-correct text-success"></i>
-                                        Low pressure loss of only 0.1 – 0.5 BAR.
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        فیلتر مدل شمع B & K
+                                        <?php
+                                        } else {
+                                        ?>
+                                        B&K candle type
+                                        <?php
+                                        }
+                                        ?>
                                         <br>
                                         <br>
                                     </li>
                                     <li>
                                         <i class="fi flaticon-correct text-success"></i>
-                                        Horizontal or vertical installation.
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        فیلتر مدل فیلترکس (Filtrex)
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Filtrex basket type filter
+                                        <?php
+                                        }
+                                        ?>
+                                        <br>
+                                        <br>
+                                    </li>
+                                </ul>
+
+                                <br>
+                                <br>
+
+                                <p class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
+                                    <strong>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                            با این گستره از انواع فیلتر ها، OPTIMARIN موارد ذیل را پیشنهاد می دهد:
+                                        <?php
+                                        } else {
+                                        ?>
+                                            With our range of filters Optimarin can offer:
+                                        <?php
+                                        }
+                                        ?>
+                                    </strong>
+                                    <br>
+                                </p>
+                                <ul class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
+                                    <li>
+                                        <i class="fi flaticon-correct text-success"></i>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        سیفون باز گرداننده ی خودکار و خود شستوشو(Self-Cleaning)
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Automatic back flushing and self-cleaning
+                                        <?php
+                                        }
+                                        ?>
                                         <br>
                                         <br>
                                     </li>
                                     <li>
                                         <i class="fi flaticon-correct text-success"></i>
-                                        Bypassed during de-ballasting.
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        دور ریز ذرات و ارگانیسم های بزرگ
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Removal of large particles and organisms
+                                        <?php
+                                        }
+                                        ?>
                                         <br>
                                         <br>
+                                    </li>
+                                    <li>
+                                        <i class="fi flaticon-correct text-success"></i>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        اتلاف فشار پایین به اندازه ی BAR 0.5 – 0.1
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Low pressure loss of only 0.1 – 0.5 BAR
+                                        <?php
+                                        }
+                                        ?>
+                                        <br>
+                                        <br>
+                                    </li>
+                                    <li>
+                                        <i class="fi flaticon-correct text-success"></i>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        نصب افقی و عمودی
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Horizontal or vertical installation
+                                        <?php
+                                        }
+                                        ?>
+                                        <br>
+                                        <br>
+                                    </li>
+                                    <li>
+                                        <i class="fi flaticon-correct text-success"></i>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        سیستم بای پس هنگام تخلیه آب بالاست
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Bypassed during de-ballasting
+                                        <?php
+                                        }
+                                        ?>
+                                        <br>
+                                        <br>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="Control_System">
+                                <p class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
+                                    <strong>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                            سیستم کنترل بالاست اجازه ی عملکرد آسان به سیستم بالاست  OPTIMARINمی دهد.
+                                        <?php
+                                        } else {
+                                        ?>
+                                        The Ballast Control System allows easy operation of the Optimarin Ballast
+                                        System.
+                                        <?php
+                                        }
+                                        ?>
+                                    </strong>
+                                    <br>
+                                </p>
+                                <ul class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
+                                    <li>
+                                        <i class="fi flaticon-correct text-success"></i>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                        استفاده آسان از دستگاه به همراه صفحه لمسی
+                                        <?php
+                                        } else {
+                                        ?>
+                                        User-friendly interface with touch screen
+                                        <?php
+                                        }
+                                        ?>
+                                        <br>
+                                        <br>
+                                    </li>
+                                    <li>
+                                        <i class="fi flaticon-correct text-success"></i>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                            کاربری آسان: با یک کلیک می توان هر عملیاتی را شروع کرد
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Easy operation: on click only to start any operations
+                                        <?php
+                                        }
+                                        ?>
+                                        <br>
+                                        <br>
+                                    </li>
+                                    <li>
+                                        <i class="fi flaticon-correct text-success"></i>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                            رابط برای همخوانی با سیستم یکپارچه خودکار کشتی
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Interface with the ship’s integrated automation system
+                                        <?php
+                                        }
+                                        ?>
+                                        <br>
+                                        <br>
+                                    </li>
+                                    <li>
+                                        <i class="fi flaticon-correct text-success"></i>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                            ثبت شده مطابق با ملزومات IMO
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Logging in accordance with IMO requirements
+                                        <?php
+                                        }
+                                        ?>
+                                        <br>
+                                        <br>
+                                    </li>
+                                    <li>
+                                        <i class="fi flaticon-correct text-success"></i>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                            دارای گزینه ی دریافت کننده ی سیگنال ها از پمپ و شیرهای بالاست
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Option of receiving signals from ballast pumps and valves
+                                        <?php
+                                        }
+                                        ?>
+                                        <br>
+                                        <br>
+                                    </li>
+                                    <li>
+                                        <i class="fi flaticon-correct text-success"></i>
+                                        <?php
+                                        if(LANG == "fa") {
+                                        ?>
+                                            ویژگی های دیگر همچون یکپارچگی PMS، ثبت GPS و دستگاه حذف مازاد UV
+                                        <?php
+                                        } else {
+                                        ?>
+                                        Additional features as PMS integration, GPS logging and UV redundancy
+                                        <?php
+                                        }
+                                        ?>
                                     </li>
                                 </ul>
                             </div>

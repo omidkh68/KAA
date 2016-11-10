@@ -24,9 +24,11 @@
     <ul class="news-inbox">
         <?php
         if (isset($result)) {
+
+            $cnt = 0.3;
             foreach ($result['export']['list'] as $k => $v) {
                 ?>
-                <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
+                <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="<?php echo $cnt; ?>s">
                     <div class="row log_title">
                         <div
                             class="col-xs-3 col-sm-3 col-md-2 <?php echo (LANG == "fa") ? "pull-right rtl" : "pull-left ltr" ?>">
@@ -54,6 +56,8 @@
             </span>
                 </li>
                 <?php
+
+                $cnt += 0.2;
             }
         }
         ?>

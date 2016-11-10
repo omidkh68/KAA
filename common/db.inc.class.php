@@ -59,17 +59,9 @@ class DataBase
         $flag_trash = 0;
 
 
-                
+
         if (isset($fields['filter'])) {
             foreach ($fields['filter'] as $filter_fields => $searchKey) {
-                if (strpos($filter_fields, 'trash') == 'true') {
-                    $flag_trash = 1;
-                    if ($fields['useTrash'] !== 'false') {
-                        $columnSearch[] = '`'.$filter_fields."` = '".$searchKey."'";
-                        continue;
-                    }
-                }
-
                 $columnSearch[] = '`'.$filter_fields."` LIKE '%".$searchKey."%'";
             }
         }
@@ -80,7 +72,15 @@ class DataBase
                 $filter.' AND '.implode(' AND ', $columnSearch);
         }
 
-        if ($filter != '' or $fields['where']!= '' ) {
+        if ($fields['where']!= '' and $filter != '')
+        {
+            $filter=' and '. $filter;
+
+        }
+
+
+        if ($filter != '' or $fields['where']!= '' )
+        {
             $result['list']['useWhere'] = ' WHERE ';
 
         }

@@ -1,3 +1,22 @@
+<div id="lightBox" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <img src="" alt="" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <footer>
     <div class="lang-selector pull-left">
         <ul>

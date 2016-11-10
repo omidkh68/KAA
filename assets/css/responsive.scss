@@ -70,13 +70,9 @@
 @media screen and (max-width: 768px) {
   .topNav {
     background-color: $dark-gray-color;
-    /* Firefox */
     height: -moz-calc(100% - 50px);
-    /* WebKit */
     height: -webkit-calc(100% - 50px);
-    /* Opera */
     height: -o-calc(100% - 50px);
-    /* Standard */
     height: calc(100% - 50px);
     max-width: 300px;
     padding-left: $full-em * 2;

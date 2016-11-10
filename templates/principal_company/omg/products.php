@@ -49,15 +49,15 @@
                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/"
                                                                            data-word="about_us"><span><?php echo ABOUT; ?></span></a>
                         </li>
-                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
-                            data-wow-duration="1s" data-wow-delay=".7s"><a class="subItem"
-                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/certificate.php"
-                                                                           data-word="certificate"><span><?php echo CERTIFICATE; ?></span></a>
-                        </li>
                         <li class="wow fadeIn active <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
-                            data-wow-duration="1s" data-wow-delay=".9s"><a class="subItem"
+                            data-wow-duration="1s" data-wow-delay=".7s"><a class="subItem"
                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/products.php"
                                                                            data-word="products"><span><?php echo PRODUCTS; ?></span></a>
+                        </li>
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay=".9s"><a class="subItem"
+                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/certificate.php"
+                                                                           data-word="REGULATION"><span><?php echo CERTIFICATE; ?></span></a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->

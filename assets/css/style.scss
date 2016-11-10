@@ -74,7 +74,7 @@ header {
       b {
         color: $cyan-color;
         display: $disblock;
-        font-size: 1.2em;
+        font-size: $full-em + .2em;
         font-weight: 200;
         line-height: 1.2;
         width: $full-size;
@@ -89,7 +89,6 @@ header {
     img {
       margin-top: .5em;
       max-height: 35px;
-      //width: $full-size;
     }
   }
 
@@ -515,22 +514,36 @@ header {
 }
 
 .box.miniBox {
+  @extend %clear;
+
   height: 200px;
   margin-bottom: $full-em;
   max-width: 450px;
   min-height: initial;
-  padding: $zero;
+  padding: $zero $half-em;
 
   .img-container {
     position: $relative;
     width: 40%;
 
     img {
-      left: -$full-em;
       position: $absolute;
       top: .7em;
       width: 100%;
     }
+
+    &.pull-right {
+      img {
+        right: -$full-em;
+      }
+    }
+
+    &.pull-left {
+      img {
+        left: -$full-em;
+      }
+    }
+
   }
 
   .content {
@@ -561,8 +574,19 @@ header {
         line-height: 30px;
         padding: $zero $half-em;
         position: $absolute;
-        right: -$full-em;
         width: 100px;
+      }
+
+      &.rtl {
+        a {
+          left: -$full-em;
+        }
+      }
+
+      &.ltr {
+        a {
+          right: -$full-em;
+        }
       }
     }
   }
@@ -1153,7 +1177,6 @@ body.hugContent {
     position: $relative;
   }
 }
-
 // end of static header and slider when body has class hugContent
 
 @import 'pageLoading';

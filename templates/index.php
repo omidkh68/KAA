@@ -22,33 +22,36 @@
     <!-- body content for change data when user change page -->
     <div class="body-content">
         <!-- box content -->
-        <div class="box miniBox bg-white wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-            <div class="img-container pull-left">
+        <div class="box miniBox bg-white wow <?php echo (LANG == "fa") ? "fadeInRight pull-right" : "fadeInLeft pull-left" ?>" data-wow-duration="1s" data-wow-delay=".3s">
+            <div class="img-container <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>">
                 <img class="img-thumbnail mt" src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/img-2.jpg"
                      alt="Kavosh Abzar OMG">
             </div>
-            <div class="content pull-right">
-                <h2 class="en-font text-left">OMG</h2>
-                <article>
-                    <?php echo(isset($briefOmg) && strlen($briefOmg['brief_desc']) ? $briefOmg['brief_desc'] : '') ?>
+            <div class="content <?php echo (LANG == "fa") ? "pull-left" : "pull-right" ?>">
+                <h2 class="<?php echo (LANG == "fa") ? "fa-font text-right" : "en-font text-left" ?>">OMG</h2>
+                <article class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
+                    <?php echo(isset($briefOmg) && strlen($briefOmg) ? $briefOmg : '') ?>
 
-                    <a href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/" class="menuItem text-left">Read More
-                        <i class="fi flaticon-angle-right pull-right"></i></a>
+                    <a href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/" class="menuItem <?php echo (LANG == "fa") ? "text-right" : "text-left" ?>">
+                        <?php echo READMORE; ?>
+                        <i class="fi flaticon-angle-<?php echo (LANG == "fa") ? "left" : "right" ?> <?php echo (LANG == "fa") ? "pull-left" : "pull-right" ?>"></i>
+                    </a>
                 </article>
             </div>
         </div>
-        <div class="box miniBox bg-white wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
-            <div class="img-container pull-left">
+        <div class="box miniBox bg-white wow <?php echo (LANG == "fa") ? "fadeInRight pull-right" : "fadeInLeft pull-left" ?>" data-wow-duration="1s" data-wow-delay=".5s">
+            <div class="img-container <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>">
                 <img class="img-thumbnail mt" src="<?php echo DOMAIN_URL; ?>assets/images/products/optimarin/img-2.jpg"
                      alt="Kavosh Abzar Optimarin">
             </div>
-            <div class="content pull-right">
-                <h2 class="en-font text-left">OPTIMARIN</h2>
-                <article>
-                    <?php echo(isset($briefOpt) && strlen($briefOpt['brief_desc']) ? $briefOpt['brief_desc'] : '') ?>
+            <div class="content <?php echo (LANG == "fa") ? "pull-left" : "pull-right" ?>">
+                <h2 class="<?php echo (LANG == "fa") ? "fa-font text-right" : "en-font text-left" ?>">OPTIMARIN</h2>
+                <article class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
+                    <?php echo(isset($briefOpt) && strlen($briefOpt) ? $briefOpt : '') ?>
 
-                    <a href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/" class="menuItem text-left">Read
-                        More <i class="fi flaticon-angle-right pull-right"></i></a>
+                    <a href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/" class="menuItem <?php echo (LANG == "fa") ? "text-right" : "text-left" ?>"><?php echo READMORE; ?>
+                        <i class="fi flaticon-angle-<?php echo (LANG == "fa") ? "left" : "right" ?> <?php echo (LANG == "fa") ? "pull-left" : "pull-right" ?>"></i>
+                    </a>
                 </article>
             </div>
         </div>

@@ -41,7 +41,7 @@ if (isset($_POST['changeLang'])) {
         "PHYSICAL_ADDRESS" => PHYSICAL_ADDRESS,
         "PRODUCTS" => PRODUCTS,
         "REFERENCES" => REFERENCES,
-        "CERTIFICATE" => CERTIFICATE,
+        "REGULATION" => REGULATION,
         "GALLERY" => GALLERY,
         "VIDEO" => VIDEO
     ];

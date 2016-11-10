@@ -51,13 +51,13 @@
                         </li>
                         <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
                             data-wow-duration="1s" data-wow-delay=".7s"><a class="subItem"
-                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/certificate.php"
-                                                                           data-word="certificate"><span><?php echo CERTIFICATE; ?></span></a>
+                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/products.php"
+                                                                           data-word="products"><span><?php echo PRODUCTS; ?></span></a>
                         </li>
                         <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
                             data-wow-duration="1s" data-wow-delay=".9s"><a class="subItem"
-                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/products.php"
-                                                                           data-word="products"><span><?php echo PRODUCTS; ?></span></a>
+                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/certificate.php"
+                                                                           data-word="REGULATION"><span><?php echo CERTIFICATE; ?></span></a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -68,8 +68,8 @@
 
                     <br>
 
-                    <p> 
-                        <?php echo(isset($result) && strlen($result['text']) ? $result['text'] : '') ?>
+                    <p class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>"> 
+                        <?php echo(isset($result) && strlen($result) ? $result : '') ?>
                     </p>
 
                     <!-- Nav tabs -->
@@ -115,25 +115,6 @@
             </div>
         </div>
     </div>
-
-    <div id="lightBox" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"></h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <img src="" alt="" class="img-responsive">
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
 </div><!-- /body-content -->
 
 <!-- Fullscreen Slider -->

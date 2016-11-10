@@ -57,6 +57,7 @@ $(document).ready(function() {
         $hamburger.removeClass('hidden');
     }
 
+    // focus search on press slash key and blur from search input by press scape key
     $(document).keyup(function (e) {
         var key = e.which ? e.which : e.keyCode;
 
@@ -89,104 +90,14 @@ $(document).ready(function() {
     $changeLang.click(function (e) {
         e.preventDefault();
 
-        var $self = $(this);
+        var $self = $(this),
+            dataLang = $self.data('lang');
 
-        if ($self.hasClass('active')) {
-            return false;
-        }
-
-        // toggle over lay
-        if (toggleOverlay) {
-            toggleOverlay = false;
-
-            var dataLang = $self.data('lang');
-
-            $.post("/includes/changeLang.php", {changeLang: dataLang}, function (result) {
-                var words = $.parseJSON(result);
-
-                $body.find('[data-word="home"] span').html(words['HOME']);
-                $body.find('[data-word="about_us"] span').html(words['ABOUT']);
-                $body.find('[data-word="principal_company"] span').html(words['PRINCIPAL_COMPANY']);
-                $body.find('[data-word="press_release"] span').html(words['PRESS_RELEASE']);
-                $body.find('[data-word="contact_us"] span').html(words['CONTACT']);
-                $body.find('[data-word="copy"]').html(words['COPY']);
-                $body.find('[data-word="search"]').attr('placeholder', words['SEARCH']);
-                $body.find('[data-word="contact_name"]').attr('placeholder', words['NAME']);
-                $body.find('[data-word="contact_email"]').attr('placeholder', words['EMAIL']);
-                $body.find('[data-word="contact_subject"]').attr('placeholder', words['SUBJECT']);
-                $body.find('[data-word="contact_message"]').attr('placeholder', words['YOUR_MESSAGE']);
-                $body.find('[data-word="contact_code"]').attr('placeholder', words['CAPTCHA_CODE']);
-                $body.find('[data-word="contact_send"]').html(words['SEND']);
-                $body.find('[data-word="phone"] span').html(words['PHONE']);
-                $body.find('[data-word="fax"] span').html(words['FAX']);
-                $body.find('[data-word="contact_email"] span').html(words['EMAIL']);
-                $body.find('[data-word="postal_code"] span').html(words['POSTAL_CODE']);
-                $body.find('[data-word="address"] span').html(words['ADDRESS']);
-                $body.find('[data-word="physical_address"]').html(words['PHYSICAL_ADDRESS']);
-                $body.find('[data-word="products"] span').html(words['PRODUCTS']);
-                $body.find('[data-word="references"] span').html(words['REFERENCES']);
-                $body.find('[data-word="certificate"] span').html(words['CERTIFICATE']);
-                $body.find('[data-word="gallery"]').html(words['GALLERY']);
-                $body.find('[data-word="video"]').html(words['VIDEO']);
-
-                if (dataLang == "en") {
-                    $body.find('.rtl').each(function () {
-                        $(this).removeClass('rtl').addClass('ltr');
-                    });
-
-                    $nav.removeClass('pull-left').addClass('pull-right');
-                    $logo.removeClass('pull-right').addClass('pull-left');
-                    $logo.find('img').removeClass('pull-right').addClass('pull-left');
-                    $hamburger.removeClass('pull-left').addClass('pull-right');
-                    $searchContainer.removeClass('pull-right').addClass('pull-left');
-                    $box.removeClass('fadeInRight').addClass('fadeInLeft');
-                    $bnav.find('.nav.navbar-nav').removeClass('navbar-right').addClass('navbar-left');
-                    $bnav.find('li').removeClass('pull-right').addClass('pull-left');
-                    $body.find('.news-inbox li .pull-right').removeClass('pull-right').addClass('pull-left');
-
-                    if ($box_contact_us.length) {
-                        $box_contact_us.find('.pull-right').removeClass('pull-right').addClass('pull-left');
-                    }
-                    if ($box_products.length) {
-                        $box_products.find('.pull-right').removeClass('pull-right').addClass('pull-left');
-                    }
-
-                    $htmlRoot.attr('lang', 'en');
-                } else {
-                    $body.find('.ltr').each(function () {
-                        $(this).removeClass('ltr').addClass('rtl');
-                    });
-
-                    $nav.removeClass('pull-right').addClass('pull-left');
-                    $logo.removeClass('pull-left').addClass('pull-right');
-                    $logo.find('img').removeClass('pull-left').addClass('pull-right');
-                    $hamburger.removeClass('pull-right').addClass('pull-left');
-                    $searchContainer.removeClass('pull-left').addClass('pull-right');
-                    $box.removeClass('fadeInLeft').addClass('fadeInRight');
-                    $bnav.find('.nav.navbar-nav').removeClass('navbar-left').addClass('navbar-right');
-                    $bnav.find('li').removeClass('pull-left').addClass('pull-right');
-                    $body.find('.news-inbox li .pull-left').removeClass('pull-left').addClass('pull-right');
-
-                    if ($box_contact_us.length) {
-                        $box_contact_us.find('.pull-left').removeClass('pull-left').addClass('pull-right');
-                    }
-                    if ($box_products.length) {
-                        $box_products.find('.pull-left').removeClass('pull-left').addClass('pull-right');
-                    }
-
-                    $htmlRoot.attr('lang', 'fa');
-                }
-
-                // set default logo per Theme
-                changeLogoPerTheme();
-
-                $changeLang.removeClass('active');
-                $self.addClass('active');
-            });
-        }
-
-        $self.blur();
-
+        $.post("/includes/changeLang.php", {changeLang: dataLang}, function() {
+            setTimeout(function () {
+                window.location.reload();
+            }, 500);
+        });
     });
 
     // change page with transition
@@ -360,6 +271,7 @@ $(document).ready(function() {
         $lightBox.modal('show');
     });
 
+    // open news box
     $body.on('click', '.news-inbox li', function (e) {
         e.stopPropagation();
 

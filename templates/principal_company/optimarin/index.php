@@ -52,13 +52,13 @@
                         </li>
                         <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
                             data-wow-duration="1s" data-wow-delay="1.2s"><a class="subItem"
-                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/certificate.php"
-                                                                            data-word="certificate"><span><?php echo CERTIFICATE; ?></span></a>
+                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/products.php"
+                                                                            data-word="products"><span><?php echo PRODUCTS; ?></span></a>
                         </li>
                         <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
                             data-wow-duration="1s" data-wow-delay="1.4s"><a class="subItem"
-                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/products.php"
-                                                                            data-word="products"><span><?php echo PRODUCTS; ?></span></a>
+                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/regulation.php"
+                                                                            data-word="REGULATION"><span><?php echo REGULATION; ?></span></a>
                         </li>
                         <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
                             data-wow-duration="1s" data-wow-delay="1.6s"><a class="subItem"
@@ -74,8 +74,8 @@
 
                     <br>
 
-                    <p>
-                        <?php echo(isset($result) && strlen($result['text']) ? $result['text'] : '') ?>
+                    <p class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
+                        <?php echo(isset($result['export']['list'][0]['text']) && strlen($result['export']['list'][0]['text']) ? $result['export']['list'][0]['text'] : '') ?>
                     </p>
 
                     <!-- Nav tabs -->
@@ -141,25 +141,6 @@
             </div>
         </div>
     </div>
-
-    <div id="lightBox" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"></h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <img src="" alt="" class="img-responsive">
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
 </div><!-- /body-content -->
 
 <!-- Fullscreen Slider -->

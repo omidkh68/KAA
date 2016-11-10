@@ -18,9 +18,11 @@ include_once("model/slider.php");
 
 $result = index::find(1)->fields;
 
-$briefOpt = optimarin::find(1)->fields;
+$briefResult1 = optimarin::getBy_lang($lang)->getList();
+$briefOpt = $briefResult1['export']['list'][0]['brief_desc'];
 
-$briefOmg = omg::find(1)->fields;
+$briefResult2 = omg::getBy_lang($lang)->getList();
+$briefOmg = $briefResult2['export']['list'][0]['brief_desc'];
 
 $sliderTmp = new slider();
 $slider = $sliderTmp->getByFilter();

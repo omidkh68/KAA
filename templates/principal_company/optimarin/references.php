@@ -52,13 +52,13 @@
                         </li>
                         <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
                             data-wow-duration="1s" data-wow-delay="1.2s"><a class="subItem"
-                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/certificate.php"
-                                                                            data-word="certificate"><span><?php echo CERTIFICATE; ?></span></a>
+                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/products.php"
+                                                                            data-word="products"><span><?php echo PRODUCTS; ?></span></a>
                         </li>
                         <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
                             data-wow-duration="1s" data-wow-delay="1.4s"><a class="subItem"
-                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/products.php"
-                                                                            data-word="products"><span><?php echo PRODUCTS; ?></span></a>
+                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/regulation.php"
+                                                                            data-word="REGULATION"><span><?php echo REGULATION; ?></span></a>
                         </li>
                         <li class="wow fadeIn active <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
                             data-wow-duration="1s" data-wow-delay="1.6s"><a class="subItem"

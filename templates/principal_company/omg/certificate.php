@@ -49,26 +49,44 @@
                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/"
                                                                            data-word="about_us"><span><?php echo ABOUT; ?></span></a>
                         </li>
-                        <li class="wow fadeIn active <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
-                            data-wow-duration="1s" data-wow-delay=".7s"><a class="subItem"
-                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/certificate.php"
-                                                                           data-word="certificate"><span><?php echo CERTIFICATE; ?></span></a>
-                        </li>
                         <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
-                            data-wow-duration="1s" data-wow-delay=".9s"><a class="subItem"
+                            data-wow-duration="1s" data-wow-delay=".7s"><a class="subItem"
                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/products.php"
                                                                            data-word="products"><span><?php echo PRODUCTS; ?></span></a>
+                        </li>
+                        <li class="wow fadeIn active <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay=".9s"><a class="subItem"
+                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/certificate.php"
+                                                                           data-word="REGULATION"><span><?php echo CERTIFICATE; ?></span></a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
             <div class="row">
                 <div class="col-xs-12 colsm-12 col-md-12 itemContent">
-                    <h3 class="text-center" data-word="certificate"><span><?php echo CERTIFICATE; ?></span></h3>
+                    <h3 class="text-center" data-word="REGULATION"><span><?php echo CERTIFICATE; ?></span></h3>
 
                     <br>
 
-                    <p>
+                    <?php
+                    if(LANG == "fa") {
+                    ?>
+                    <p class="rtl">
+                        از اواخر سالهای 1980 شرکت OMG شروع به استفاده از یک سیستم ( تضمین ) مدیریت کیفیت در خط با استانداردهای UNIENSO نمود.
+                        <br>
+                        <br>
+                        گواهینامه UNIEN ISO 9002  در ماه مارس1995 اخذ و درسال 1996 به UNIEN ISO 9001   ارتقا یافت.
+                        <br>
+                        <br>
+                        اکنون OMG دارای سیستم یکپارچه تضمین کیفیت ( سازگاربا ISO/9001/14001 و BS OHSAS 18001 ) تایید شده توسط دفتر بین المللی کنترل کیفیت ایتالیا ( Veritas ) می باشد.
+                        <br>
+                        <br>
+                        سیستم مدیریت کیفیت مورد تایید مستقیم (API ) نفتا آمریکا می باشد.
+                    </p>
+                    <?php
+                    } else {
+                    ?>
+                    <p class="ltr">
                         Since the late 80's, OMG has been utilizing a quality system in line with UNI EN ISO standards.
 
                         <br>
@@ -88,6 +106,9 @@
 
                         The same Quality System was directly validated by American Petroleum Institute.
                     </p>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>

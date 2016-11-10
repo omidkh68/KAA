@@ -17,6 +17,6 @@ include_once LOCAL_PATH . "model/slider.php";
 $sliderTmp = new slider();
 $slider = $sliderTmp->getByFilter();
 
-$result = optimarin::find(1)->fields;
+$result = optimarin::getBy_lang($lang)->getList();
 
 include_once LOCAL_PATH . 'templates/principal_company/optimarin/index.php';

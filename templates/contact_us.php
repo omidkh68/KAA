@@ -34,15 +34,15 @@
                     <form>
                         <div class="form-group <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
                             <input type="text" class="form-control" name="name" data-word="contact_name"
-                                   placeholder="<?php echo NAME; ?>">
+                                   placeholder="<?php echo NAME; ?>" autofocus required>
                         </div>
                         <div class="form-group <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
                             <input type="text" class="form-control" name="email" data-word="contact_email"
-                                   placeholder="<?php echo EMAIL; ?>">
+                                   placeholder="<?php echo EMAIL; ?>" required>
                         </div>
                         <div class="form-group <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
                             <input type="text" class="form-control" name="subject" data-word="contact_subject"
-                                   placeholder="<?php echo SUBJECT; ?>">
+                                   placeholder="<?php echo SUBJECT; ?>" required>
                         </div>
                         <div class="form-group <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
                             <textarea class="form-control" name="message" data-word="contact_message"
@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
                             <input type="text" class="form-control" name="code" data-word="contact_code"
-                                   placeholder="<?php echo CAPTCHA_CODE; ?>">
+                                   placeholder="<?php echo CAPTCHA_CODE; ?>" required>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-info btn-block" data-word="contact_send"><?php echo SEND; ?></button>

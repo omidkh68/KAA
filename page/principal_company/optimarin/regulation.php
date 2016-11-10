@@ -16,4 +16,4 @@ include_once LOCAL_PATH . "model/slider.php";
 $sliderTmp = new slider();
 $slider = $sliderTmp->getByFilter();
 
-include_once LOCAL_PATH . 'templates/principal_company/optimarin/certificate.php';
+include_once LOCAL_PATH . 'templates/principal_company/optimarin/regulation.php';

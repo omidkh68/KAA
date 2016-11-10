@@ -1,4 +1,4 @@
-.row.xxxsmall-space, .row.xxsmall-space, .row.xsmall-space, .row.halfsmall-space, .row.small-space, .row.medium-space, .row.large-space, .row.xlarge-space {
+.row.xxxsmall-space, .row.xxsmall-space, .row.xsmall-space, .row.halfsmall-space, .row.small-space, .row.medium-space, .row.large-space, .row.xlarge-space, .box.miniBox {
   clear: both; }
 
 :focus {
@@ -360,7 +360,7 @@ body.white .hamburger-inner, body.white .hamburger-inner::before, body.white .ha
   @font-face {
     font-family: 'Flaticon';
     src: url("../fonts/flaticon/Flaticon.svg#Flaticon") format("svg"); } }
-.fi:before {
+.fi::before {
   display: inline-block;
   font-family: 'Flaticon';
   -moz-osx-font-smoothing: grayscale;
@@ -832,15 +832,18 @@ header {
   margin-bottom: 1em;
   max-width: 450px;
   min-height: initial;
-  padding: 0; }
+  padding: 0 0.5em; }
   .box.miniBox .img-container {
     position: relative;
     width: 40%; }
     .box.miniBox .img-container img {
-      left: -1em;
       position: absolute;
       top: .7em;
       width: 100%; }
+    .box.miniBox .img-container.pull-right img {
+      right: -1em; }
+    .box.miniBox .img-container.pull-left img {
+      left: -1em; }
   .box.miniBox .content {
     margin-top: 0;
     min-height: 100px;
@@ -866,8 +869,11 @@ header {
         line-height: 30px;
         padding: 0 0.5em;
         position: absolute;
-        right: -1em;
         width: 100px; }
+      .box.miniBox .content article.rtl a {
+        left: -1em; }
+      .box.miniBox .content article.ltr a {
+        right: -1em; }
 
 .news-inbox {
   list-style: none;
@@ -1299,8 +1305,7 @@ body.hugContent #controls-wrapper {
   35% {
     -webkit-transform: scale3D(0, 0, 1);
     transform: scale3D(0, 0, 1); } }
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1250px) {
   body.hugContent #progress-back {
     bottom: -5px !important; }
   body.hugContent #controls-wrapper {
@@ -1342,13 +1347,9 @@ body.hugContent #controls-wrapper {
 @media screen and (max-width: 768px) {
   .topNav {
     background-color: rgba(83, 83, 83, 0.9);
-    /* Firefox */
     height: -moz-calc(100% - 50px);
-    /* WebKit */
     height: -webkit-calc(100% - 50px);
-    /* Opera */
     height: -o-calc(100% - 50px);
-    /* Standard */
     height: calc(100% - 50px);
     max-width: 300px;
     padding-left: 2em;

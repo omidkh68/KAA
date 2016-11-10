@@ -18,10 +18,13 @@ include_once LOCAL_PATH . "model/slider.php";
 $sliderTmp = new slider();
 $slider = $sliderTmp->getByFilter();
 
-$result = about::find(1)->fields;
+$resultTmp = about::getBy_lang($lang)->getList();
+$result = $resultTmp['export']['list'][0]['text'];
 
-$briefOpt = optimarin::find(1)->fields;
+$briefResult1 = optimarin::getBy_lang($lang)->getList();
+$briefOpt = $briefResult1['export']['list'][0]['brief_desc'];
 
-$briefOmg = omg::find(1)->fields;
+$briefResult2 = omg::getBy_lang($lang)->getList();
+$briefOmg = $briefResult2['export']['list'][0]['brief_desc'];
 
 include_once LOCAL_PATH . 'templates/about_us.php';

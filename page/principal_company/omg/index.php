@@ -17,6 +17,7 @@ include_once LOCAL_PATH . "model/slider.php";
 $sliderTmp = new slider();
 $slider = $sliderTmp->getByFilter();
 
-$result = omg::find(1)->fields;
+$resultTmp = omg::getBy_lang($lang)->getList();
+$result = $resultTmp['export']['list'][0]['text'];
 
 include_once LOCAL_PATH . 'templates/principal_company/omg/index.php';
