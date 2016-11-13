@@ -17,9 +17,9 @@ define("DB_USER", "kavoshabzar");
 define("DB_PASSWORD", "HFNZyXZZdK9EXzuS");
 define("DB_DATABASE", "kavoshabzar");
 
-include_once '../lang/en.php';
-
 define("LOCAL_PATH", dirname(__FILE__) . "/");
+
+include_once LOCAL_PATH.'../lang/en.php';
 
 define("DIR", "");
 define("PROTOCOL", "http");

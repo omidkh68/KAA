@@ -241,3 +241,15 @@ footer {
 }
 
 // end of style group
+
+.jumbotron {
+  @include padding($full-em, $full-em, $full-em, $full-em);
+
+  h1 {
+    @extend %noMargin;
+  }
+}
+
+table td img {
+  max-width: $full-size;
+}

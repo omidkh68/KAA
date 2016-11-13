@@ -12,6 +12,8 @@ error_reporting(1);
 error_reporting(E_ALL ^ E_STRICT ^ E_WARNING ^ E_DEPRECATED ^ E_NOTICE);
 ini_set("display_errors", 1);
 
+session_start();
+
 define("DB_HOST", "localhost");
 define("DB_USER", "kavoshabzar");
 define("DB_PASSWORD", "HFNZyXZZdK9EXzuS");
@@ -24,7 +26,7 @@ $sql = <<<SQL
     FROM `config`
 SQL;
 
-$lang = "en";
+$lang = "";
 $theme = "";
 
 if(!$result = $db->query($sql)){
@@ -36,6 +38,13 @@ if(!$result = $db->query($sql)){
     }
 }
 $db->close();
+
+if($_SESSION['lang'] == "" || !isset($_SESSION['lang']) || $_SESSION['lang']!='en')
+{
+    $_SESSION['lang'] = $lang;
+} else {
+    $lang = $_SESSION['lang'];
+}
 
 define("LANG", $lang);
 define("DEFAULT_THEME", $theme);

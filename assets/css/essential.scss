@@ -61,7 +61,7 @@ li {
 
 %en-font,
 .en-font {
-  font-family: $font-stack-en;
+  font-family: $font-stack-en !important;
 }
 
 .hiding {
@@ -74,7 +74,7 @@ li {
 
 %fa-font,
 .fa-font {
-  font-family: $font-stack;
+  font-family: $font-stack !important;
 }
 
 %block-el {
@@ -142,6 +142,11 @@ li {
 
 .fi-rotate-180 {
   @include fi-icon-rotate(180deg, 2);
+}
+
+%noMargin,
+.noMargin {
+  margin: $zero;
 }
 
 .mt-half,
