@@ -19,7 +19,7 @@ include_once '../config.php';
 
             <div class="jumbotron">
                 <h1>
-                    <?php echo SLIDER; ?>
+                    <?php echo PRESS_RELEASE; ?>
 
                     <button class="btn btn-primary pull-right" href="#" role="button">Add To List</button>
                 </h1>
@@ -29,14 +29,14 @@ include_once '../config.php';
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <?php
-                        if(isset($slider) && count($slider)) {
+                        if(isset($pressRelease) && count($pressRelease)) {
                         ?>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Row</th>
-                                    <th>Name</th>
-                                    <th>Desc</th>
+                                    <th>Subject</th>
+                                    <th>Description</th>
                                     <th>Image</th>
                                     <th>Tools</th>
                                 </tr>
@@ -44,13 +44,15 @@ include_once '../config.php';
                             <tbody>
                             <?php
                             $cnt = 1;
-                            foreach ($slider as $k => $v) {
+                            foreach ($pressRelease as $k => $v) {
                             ?>
                             <tr>
                                 <td><?php echo $cnt++; ?></td>
-                                <td><?php echo $v['name']; ?></td>
+                                <td><?php echo $v['subject']; ?></td>
                                 <td><?php echo $v['description']; ?></td>
-                                <td style="width: 200px;"><img src="<?php echo DOMAIN_URL."assets/images/slider/".$v['name'].'.'.$v['type']; ?>" alt="<?php echo $v['description']; ?>"></td>
+                                <td style="width: 200px;">
+                                    <img src="<?php echo DOMAIN_URL."assets/images/news/".$v['image_name'].'.'.$v['image_type']; ?>" alt="<?php echo $v['image_desc']; ?>">
+                                </td>
                                 <td class="text-center">
                                     <a class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
                                     <a class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>

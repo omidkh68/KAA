@@ -1,25 +1,18 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: omidkhosrojerdi
- * Date: 10/14/16
- * Time: 12:42 PM
+ * User: omidkh68
+ * Date: 2016November/11/AD
+ * Time: 13:40
  */
-include_once "../config.php";
 
-$sliderSql = <<<SQL
-  SELECT * FROM `slider`
-SQL;
+include_once '../config.php';
 
-if($sliderResult = $db->query($sliderSql)){
-    $slider = array();
-
-    while($row = $sliderResult->fetch_assoc()){
-        $slider[$row['Slider_id']]['name'] = $row['name'];
-        $slider[$row['Slider_id']]['description'] = $row['description'];
-        $slider[$row['Slider_id']]['type'] = $row['type'];
-    }
+if(!isset($_SESSION['username']) || $_SESSION['username'] == "") {
+    header('location: '.DOMAIN_URL_admin.'login.php');
 }
+
+include_once '../../includes/db/connection.php';
 
 $pressSql = <<<SQL
   SELECT * FROM `pressRelease`
@@ -38,4 +31,4 @@ if($pressResult = $db->query($pressSql)){
     }
 }
 
-include_once LOCAL_PATH . 'templates/press_release.php';
+include_once LOCAL_PATH . 'templates/pressRelease.php';

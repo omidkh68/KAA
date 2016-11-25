@@ -19,9 +19,7 @@ include_once '../config.php';
 
             <div class="jumbotron">
                 <h1>
-                    <?php echo SLIDER; ?>
-
-                    <button class="btn btn-primary pull-right" href="#" role="button">Add To List</button>
+                    <?php echo ABOUT; ?>
                 </h1>
 
                 <div class="row xsmall-space"></div>
@@ -29,31 +27,27 @@ include_once '../config.php';
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <?php
-                        if(isset($slider) && count($slider)) {
+                        if(isset($about) && count($about)) {
                         ?>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Row</th>
-                                    <th>Name</th>
-                                    <th>Desc</th>
-                                    <th>Image</th>
-                                    <th>Tools</th>
+                                    <th>Lang</th>
+                                    <th>Text</th>
                                 </tr>
                             </thead>
                             <tbody>
                             <?php
                             $cnt = 1;
-                            foreach ($slider as $k => $v) {
+                            foreach ($about as $k => $v) {
                             ?>
                             <tr>
                                 <td><?php echo $cnt++; ?></td>
-                                <td><?php echo $v['name']; ?></td>
-                                <td><?php echo $v['description']; ?></td>
-                                <td style="width: 200px;"><img src="<?php echo DOMAIN_URL."assets/images/slider/".$v['name'].'.'.$v['type']; ?>" alt="<?php echo $v['description']; ?>"></td>
+                                <td><?php echo $v['lang']; ?></td>
+                                <td><?php echo $v['text']; ?></td>
                                 <td class="text-center">
                                     <a class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
-                                    <a class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                             <?php

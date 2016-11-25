@@ -24,3 +24,10 @@ include_once LOCAL_PATH.'../lang/en.php';
 define("DIR", "");
 define("PROTOCOL", "http");
 define("DOMAIN_URL", PROTOCOL . "://" . $_SERVER["HTTP_HOST"] . "/" . DIR);
+define("DOMAIN_URL_admin", PROTOCOL . "://" . $_SERVER["HTTP_HOST"] . "/" . "admin/");
+
+function debug($array) {
+    echo "<pre>";
+    print_r($array);
+    die();
+}

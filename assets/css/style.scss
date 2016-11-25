@@ -68,7 +68,7 @@ header {
       line-height: .8;
       margin: $zero;
       position: $absolute;
-      top: $half-em;
+      top: $full-em;
       width: 300px;
 
       b {
@@ -153,7 +153,7 @@ header {
     }
 
     &.pull-left {
-      left: 250px;
+      left: 130px;
 
       input[type="text"] {
         padding-right: 2.5em;
@@ -453,7 +453,7 @@ header {
     @include radius-normal();
 
     border: solid 1px $medium-white-color;
-    height: 200px;
+    height: 350px;
     width: $full-size;
   }
 
@@ -908,8 +908,10 @@ footer {
 
 // fullscreen slider style
 .sliderContainer {
+  bottom: 35px;
   height: $auto;
-  position: $relative;
+  left: $zero;
+  position: $fixed;
   width: $full-size;
 }
 
@@ -1163,7 +1165,10 @@ body.white {
 
 // static footer and slider when body has class hugContent
 body.hugContent {
-  footer {
+
+  footer,
+  .sliderContainer {
+    height: $auto;
     position: inherit;
   }
 

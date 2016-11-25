@@ -6,13 +6,19 @@
  * Time: 12:42 PM
  */
 include_once "../config.php";
-include_once LOCAL_PATH . "common/db.inc.php";
-include_once LOCAL_PATH . "common/func.inc.php";
-include_once LOCAL_PATH . "common/db.inc.class.php";
-include_once LOCAL_PATH . "common/looeic.php";
-include_once LOCAL_PATH . "model/slider.php";
 
-$sliderTmp = new slider();
-$slider = $sliderTmp->getByFilter();
+$sliderSql = <<<SQL
+  SELECT * FROM `slider`
+SQL;
+
+if($sliderResult = $db->query($sliderSql)){
+    $slider = array();
+
+    while($row = $sliderResult->fetch_assoc()){
+        $slider[$row['Slider_id']]['name'] = $row['name'];
+        $slider[$row['Slider_id']]['description'] = $row['description'];
+        $slider[$row['Slider_id']]['type'] = $row['type'];
+    }
+}
 
 include_once LOCAL_PATH . 'templates/contact_us.php';

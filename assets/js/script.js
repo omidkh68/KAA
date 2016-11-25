@@ -91,13 +91,15 @@ $(document).ready(function() {
         e.preventDefault();
 
         var $self = $(this),
-            dataLang = $self.data('lang');
+            dataLang = $self.data('lang'),
+            $form = $('form#changeLang');
 
-        $.post("/includes/changeLang.php", {changeLang: dataLang}, function() {
-            setTimeout(function () {
-                window.location.reload();
-            }, 500);
-        });
+        if($self.hasClass('active')) {
+            return false;
+        } else {
+            $form.find('#changeLang').val(dataLang);
+            $form.submit();
+        }
     });
 
     // change page with transition
@@ -291,7 +293,8 @@ $(document).ready(function() {
     // functions
     function changeLogoPerTheme() {
         var langType = $htmlRoot.attr('lang'),
-            logoType = "";
+            logoType = "",
+            width = $(window).width();
 
         if ($body.hasClass('white')) {
             logoType = "-2";
@@ -299,7 +302,11 @@ $(document).ready(function() {
             logoType = "";
         }
 
-        $logo.find('img').attr('src', $base_url_img + 'kavoshabzar-logo-' + langType + logoType + '.png');
+        if(width < 920) {
+            $logo.find('img').attr('src', $base_url_img + 'kavoshabzar-logo-' + 'en' + logoType + '.png');
+        } else {
+            $logo.find('img').attr('src', $base_url_img + 'kavoshabzar-logo-' + langType + logoType + '.png');
+        }
     }
 
     // change url path with item clicked

@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="<?php echo DOMAIN_URL; ?>bower_components/bootstrap-3.3.6/css/bootstrap.min.css">
 
         <!-- main css link -->
-        <link rel="stylesheet" href="<?php echo DOMAIN_URL; ?>admin/assets/css/style.min.css">
+        <link rel="stylesheet" href="<?php echo DOMAIN_URL; ?>admin/assets/css/style.css">
 
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>

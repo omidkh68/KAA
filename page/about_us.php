@@ -6,25 +6,58 @@
  * Time: 12:42 PM
  */
 include_once "../config.php";
-include_once LOCAL_PATH . "common/db.inc.php";
-include_once LOCAL_PATH . "common/func.inc.php";
-include_once LOCAL_PATH . "common/db.inc.class.php";
-include_once LOCAL_PATH . "common/looeic.php";
-include_once LOCAL_PATH . "model/about.php";
-include_once LOCAL_PATH . "model/optimarin.php";
-include_once LOCAL_PATH . "model/omg.php";
-include_once LOCAL_PATH . "model/slider.php";
 
-$sliderTmp = new slider();
-$slider = $sliderTmp->getByFilter();
+$sliderSql = <<<SQL
+  SELECT * FROM `slider`
+SQL;
 
-$resultTmp = about::getBy_lang($lang)->getList();
-$result = $resultTmp['export']['list'][0]['text'];
+if($sliderResult = $db->query($sliderSql)){
+    $slider = array();
 
-$briefResult1 = optimarin::getBy_lang($lang)->getList();
-$briefOpt = $briefResult1['export']['list'][0]['brief_desc'];
+    while($row = $sliderResult->fetch_assoc()){
+        $slider[$row['Slider_id']]['name'] = $row['name'];
+        $slider[$row['Slider_id']]['description'] = $row['description'];
+        $slider[$row['Slider_id']]['type'] = $row['type'];
+    }
+}
 
-$briefResult2 = omg::getBy_lang($lang)->getList();
-$briefOmg = $briefResult2['export']['list'][0]['brief_desc'];
+$optimarinSql = <<<SQL
+  SELECT `brief_desc` FROM `optimarin`
+  WHERE `lang` = '$lang'
+SQL;
+
+if($optimarinResult = $db->query($optimarinSql)){
+    $briefOpt = "";
+
+    while($row = $optimarinResult->fetch_assoc()){
+        $briefOpt = $row['brief_desc'];
+    }
+}
+
+$omgSql = <<<SQL
+  SELECT `brief_desc` FROM `omg`
+  WHERE `lang` = '$lang'
+SQL;
+
+if($omgResult = $db->query($omgSql)){
+    $briefOmg = "";
+
+    while($row = $omgResult->fetch_assoc()){
+        $briefOmg = $row['brief_desc'];
+    }
+}
+
+$aboutSql = <<<SQL
+  SELECT `text` FROM `about`
+  WHERE `lang` = '$lang'
+SQL;
+
+if($aboutResult = $db->query($aboutSql)){
+    $about = "";
+
+    while($row = $aboutResult->fetch_assoc()){
+        $about = $row['text'];
+    }
+}
 
 include_once LOCAL_PATH . 'templates/about_us.php';

@@ -16,11 +16,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="<?php echo DOMAIN_URL_admin; ?>"><i class="fa fa-home"></i> Home Page</a></li>
                     <li><a href="<?php echo DOMAIN_URL; ?>" target="_blank"><i class="fa fa-globe"></i> Website</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <b class="fa fa-angle-down"></b></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><i class="fa fa-external-link"></i> Logout</a></li>
+                            <li><a href="<?php echo DOMAIN_URL_admin.'pages/logout.php'; ?>"><i class="fa fa-external-link"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>

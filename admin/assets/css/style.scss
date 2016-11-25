@@ -18,167 +18,45 @@ body {
   }
 }
 
-// login style group
-@keyframes spinner {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(359deg);
-  }
-}
-
-.wrapper {
-  display: $disblock;
-  min-height: $full-size;
-  padding: 20px;
-  width: $full-size;
-}
-
 .login {
-  @include radius-normal(2px, 2px, 5px, 5px);
-  @include box-shadow-normal($zero, 1px, 5px, rgba($zero, $zero, $zero, .3));
+  margin: 16px $auto;
+  width: 400px;
 
-  background: $pure-white-color;
-  margin: $zero $auto;
-  max-width: 320px;
-  padding: 10px 20px 80px;
-  position: $relative;
-  width: $full-size - 10%;
-
-  &.loading {
-    button {
-      max-height: $full-size;
-      padding-top: 50px;
-
-      .spinner {
-        @include opacity(1);
-
-        top: 40%;
-      }
-    }
+  p {
+    padding: 12px;
   }
 
-  &.ok {
-    button {
-      background-color: $normal-green-color;
-
-      .spinner {
-        animation: $none;
-        border-radius: $zero;
-        border-right-color: transparent;
-        border-top-color: transparent;
-        height: 20px;
-        transform: rotateZ(-45deg);
-      }
-    }
-  }
-
-  input {
-    @include transition(border-width .2s ease);
-
-    border: 1px solid $light-white-color;
-    border-radius: 2px;
-    color: $normal-white-color;
-    display: $disblock;
-    margin-bottom: 10px;
-    padding: 15px 10px;
-    width: $full-size;
-
-    & + i.fa {
-      @include opacity($zero);
-      @include transition(all .1s ease-in);
-
-      color: $pure-white-color;
-      font-size: 1em;
-      left: $zero;
-      margin-top: -47px;
-      opacity: $zero;
-      position: $absolute;
-    }
+  input[type="email"],
+  input[type="password"] {
+    background: $pure-white-color;
+    border-color: $normal-white-color;
+    color: $medium-gray-color;
 
     &:focus {
-      & + i.fa {
-        @include opacity(1);
-        @include transition(all .25s ease-out);
-
-        left: 30px;
-      }
-
-      border-color: $dark-cyan-color;
-      border-left-width: 35px;
-      color: $medium-gray-color;
-      outline: $none;
+      border-color: $light-gray-color;
     }
-
   }
 
-  a {
-    color: $dark-cyan-color;
-    font-size: .8em;
-    text-decoration: $none;
+  .login-header,
+  .login p {
+    margin-bottom: $zero;
+    margin-top: $zero;
   }
 
-  .title {
-    border-bottom: 1px solid $light-white-color;
-    color: $medium-gray-color;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 10px $zero 30px;
-    padding-bottom: 20px;
-  }
-
-  button {
-    @include transition(all .1s ease-out);
-
+  .login-header {
     background: $dark-cyan-color;
-    border: $zero solid rgba($zero, $zero, $zero, .1);
-    border-bottom-width: 7px;
-    border-radius: $zero $zero 2px 2px;
-    bottom: $zero;
     color: $pure-white-color;
-    display: $disblock;
-    height: $full-size;
-    left: $zero;
-    margin-top: 20px;
-    max-height: 60px;
-    padding: 10px;
-    position: $absolute;
-    transform: rotateZ(0deg);
-    width: $full-size;
-
-    .spinner {
-      @include transition(top .3s .3s ease,
-              opacity .3s .3s ease,
-              border-radius .3s ease);
-
-      animation: spinner .6s infinite linear;
-      border: 4px solid $pure-white-color;
-      border-radius: $full-size;
-      border-top-color: $normal-white-with-alpha;
-      box-shadow: $zero 1px $zero rgba($zero, $zero, $zero, .2);
-      display: $disblock;
-      height: 40px;
-      left: 50%;
-      margin-left: -20px;
-      margin-top: -20px;
-      opacity: $zero;
-      position: $absolute;
-      top: $zero;
-      width: 40px;
-    }
-
+    font-size: $full-em;
+    padding: $full-em;
+    text-align: $center;
+    text-transform: uppercase;
   }
 
-  &:not(.loading) button:hover {
-    @include box-shadow-normal($zero, 1px, 3px, $dark-cyan-color);
-  }
-
-  &:not(.loading) button:focus {
-    border-bottom-width: 4px;
+  .login-container {
+    background: $pure-white-color;
+    padding: 12px;
   }
 }
-
 // end of login style group
 
 // nav style group
@@ -190,11 +68,28 @@ body {
     padding: $zero;
   }
 }
-
 // end of nav style group
+
+// main container style group
+.container {
+  h4 {
+    border-bottom: solid 1px $normal-green-color;
+    font-size: $full-em * 2;
+    padding-bottom: $half-em;
+  }
+}
+// end of main container style group
 
 // content body style
 .jumbotron {
+  margin-bottom: $full-rem * 5;
+
+  h3 {
+    font-size: $full-em * 2;
+    font-weight: normal;
+    margin: $zero;
+  }
+
   h1 {
     a {
       display: $disblock;

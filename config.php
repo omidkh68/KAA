@@ -8,22 +8,22 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
-error_reporting(1);
+error_reporting(0);
 error_reporting(E_ALL ^ E_STRICT ^ E_WARNING ^ E_DEPRECATED ^ E_NOTICE);
-ini_set("display_errors", 1);
+ini_set("display_errors", 0);
 
 session_start();
 
 define("DB_HOST", "localhost");
-define("DB_USER", "kavoshabzar");
-define("DB_PASSWORD", "HFNZyXZZdK9EXzuS");
+define("DB_USER", "root");
+define("DB_PASSWORD", "123456");
 define("DB_DATABASE", "kavoshabzar");
 
 include_once("includes/db/connection.php");
 
 $sql = <<<SQL
-    SELECT *
-    FROM `config`
+  SELECT *
+  FROM `config`
 SQL;
 
 $lang = "";
@@ -37,10 +37,8 @@ if(!$result = $db->query($sql)){
         $theme = $row['theme'];
     }
 }
-$db->close();
 
-if($_SESSION['lang'] == "" || !isset($_SESSION['lang']) || $_SESSION['lang']!='en')
-{
+if($_SESSION['lang'] == "" || !isset($_SESSION['lang'])) {
     $_SESSION['lang'] = $lang;
 } else {
     $lang = $_SESSION['lang'];

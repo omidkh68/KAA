@@ -75,7 +75,7 @@
                     <br>
 
                     <p class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
-                        <?php echo(isset($result['export']['list'][0]['text']) && strlen($result['export']['list'][0]['text']) ? $result['export']['list'][0]['text'] : '') ?>
+                        <?php echo(isset($optimarin) && strlen($optimarin) ? $optimarin : '') ?>
                     </p>
 
                     <!-- Nav tabs -->
@@ -141,6 +141,9 @@
             </div>
         </div>
     </div>
+
+
+    <div class="row xsmall-space"></div>
 </div><!-- /body-content -->
 
 <!-- Fullscreen Slider -->

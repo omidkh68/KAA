@@ -71,11 +71,11 @@
                         </li>
                         <li data-word="contact_email">
                             <b><i class="fi flaticon-email"></i> <span><?php echo EMAIL; ?></span>: </b>
-                            <p>info [at] kavoshabzar [dot] net</p>
+                            <p>info@kavoshabzar.net</p>
                         </li>
                         <li data-word="postal_code">
                             <b><i class="fi flaticon-postal"></i> <span><?php echo POSTAL_CODE; ?></span>: </b>
-                            <p>1513835116</p>
+                            <p>15138-35116</p>
                         </li>
                         <li data-word="address">
                             <b><i class="fi flaticon-address"></i> <span><?php echo ADDRESS; ?></span>: </b>

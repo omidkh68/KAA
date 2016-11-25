@@ -30,7 +30,7 @@
         <div class="content mt-double">
             <p class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
                 <?php
-                echo(isset($result) && strlen($result) ? $result : '');
+                echo(isset($about) && strlen($about) ? $about : '');
                 ?>
             </p>
 

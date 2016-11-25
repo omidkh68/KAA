@@ -5,7 +5,6 @@
        data-wow-delay=".03s">
         <h5>
             <b class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".05s">Kavosh Abzar Aria Ltd.</b>
-            <span class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".08s">Authorized Representative of OMG Pumps Italy</span>
         </h5>
         <img src="" alt="Kavosh Abzar Aria - Official Logo"
              class="<?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>">

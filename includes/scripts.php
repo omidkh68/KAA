@@ -17,7 +17,7 @@
             slide_links: 'blank',	    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
             slides: [			        // Slideshow Images
                 <?php
-                foreach ($slider['export']['list'] as $k => $v) {
+                foreach ($slider as $k => $v) {
                     echo "
                         {
                             image: '" . DOMAIN_URL . 'assets/images/slider/' . $v['name'] . '.' . $v['type'] . "',

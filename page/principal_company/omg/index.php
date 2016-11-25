@@ -7,17 +7,32 @@
  */
 
 include_once "../../../config.php";
-include_once LOCAL_PATH . "common/db.inc.php";
-include_once LOCAL_PATH . "common/func.inc.php";
-include_once LOCAL_PATH . "common/db.inc.class.php";
-include_once LOCAL_PATH . "common/looeic.php";
-include_once LOCAL_PATH . "model/omg.php";
-include_once LOCAL_PATH . "model/slider.php";
 
-$sliderTmp = new slider();
-$slider = $sliderTmp->getByFilter();
+$sliderSql = <<<SQL
+  SELECT * FROM `slider`
+SQL;
 
-$resultTmp = omg::getBy_lang($lang)->getList();
-$result = $resultTmp['export']['list'][0]['text'];
+if($sliderResult = $db->query($sliderSql)){
+    $slider = array();
+
+    while($row = $sliderResult->fetch_assoc()){
+        $slider[$row['Slider_id']]['name'] = $row['name'];
+        $slider[$row['Slider_id']]['description'] = $row['description'];
+        $slider[$row['Slider_id']]['type'] = $row['type'];
+    }
+}
+
+$omgSql = <<<SQL
+  SELECT `text` FROM `omg`
+  WHERE `lang` = '$lang'
+SQL;
+
+if($omgResult = $db->query($omgSql)){
+    $omg = "";
+
+    while($row = $omgResult->fetch_assoc()){
+        $omg = $row['text'];
+    }
+}
 
 include_once LOCAL_PATH . 'templates/principal_company/omg/index.php';

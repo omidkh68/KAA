@@ -26,7 +26,7 @@
         if (isset($result)) {
 
             $cnt = 0.3;
-            foreach ($result['export']['list'] as $k => $v) {
+            foreach ($pressRelease as $k => $v) {
                 ?>
                 <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="<?php echo $cnt; ?>s">
                     <div class="row log_title">

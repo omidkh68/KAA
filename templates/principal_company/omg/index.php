@@ -69,7 +69,7 @@
                     <br>
 
                     <p class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>"> 
-                        <?php echo(isset($result) && strlen($result) ? $result : '') ?>
+                        <?php echo(isset($omg) && strlen($omg) ? $omg : '') ?>
                     </p>
 
                     <!-- Nav tabs -->
