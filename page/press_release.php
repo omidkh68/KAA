@@ -23,6 +23,7 @@ if($sliderResult = $db->query($sliderSql)){
 
 $pressSql = <<<SQL
   SELECT * FROM `pressRelease`
+  ORDER BY `PressRelease_id` DESC
 SQL;
 
 if($pressResult = $db->query($pressSql)){

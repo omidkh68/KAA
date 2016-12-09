@@ -26,7 +26,7 @@
          data-wow-duration="1s" data-wow-delay=".3s">
         <div class="banner-container wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
             <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/omg-banner.jpg" alt="Optimarin banner">
-            <h1 class="page_title products <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>"><span>OMG</span></h1>
+            <h1 class="page_title products <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>"><span>Officine Meccaniche Gallaratesi</span></h1>
         </div>
         <div class="content">
             <nav class="belowNav navbar navbar-default">
@@ -59,6 +59,11 @@
                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/certificate.php"
                                                                            data-word="REGULATION"><span><?php echo CERTIFICATE; ?></span></a>
                         </li>
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay=".9s"><a class="subItem"
+                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/references.php"
+                                                                           data-word="REFERENCES"><span><?php echo REFERENCES; ?></span></a>
+                        </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
@@ -74,12 +79,9 @@
                     <p class="rtl">
                         از اواخر سالهای 1980 شرکت OMG شروع به استفاده از یک سیستم ( تضمین ) مدیریت کیفیت در خط با استانداردهای UNIENSO نمود.
                         <br>
-                        <br>
                         گواهینامه UNIEN ISO 9002  در ماه مارس1995 اخذ و درسال 1996 به UNIEN ISO 9001   ارتقا یافت.
                         <br>
-                        <br>
                         اکنون OMG دارای سیستم یکپارچه تضمین کیفیت ( سازگاربا ISO/9001/14001 و BS OHSAS 18001 ) تایید شده توسط دفتر بین المللی کنترل کیفیت ایتالیا ( Veritas ) می باشد.
-                        <br>
                         <br>
                         سیستم مدیریت کیفیت مورد تایید مستقیم (API ) نفتا آمریکا می باشد.
                     </p>
@@ -88,27 +90,80 @@
                     ?>
                     <p class="ltr">
                         Since the late 80's, OMG has been utilizing a quality system in line with UNI EN ISO standards.
-
                         <br>
-                        <br>
-
                         The quality system was UNI EN ISO 9002 certified in March 1995 and extended to UNI EN 9001
                         coverage in 1996.
-
                         <br>
-                        <br>
-
                         Today OMG employs an integrated quality assurance System (compliant to ISO 9001 / 14001 and BS
                         OHSAS 18001) certified by Bureau Veritas Quality International Italia.
-
                         <br>
-                        <br>
-
                         The same Quality System was directly validated by American Petroleum Institute.
                     </p>
                     <?php
                     }
                     ?>
+
+
+                    <!-- separator -->
+                    <div class="row xsmall-space"></div>
+
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+                            <a href="<?php echo DOMAIN_URL; ?>assets/images/products/omg/ISO_9001.pdf">
+                                <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/ISO_9001.jpg" alt="Download Pdf" style="max-width: 100px;">
+                                <p class="text-center" style="padding-top: .3em;">
+                                    ISO 9001
+                                </p>
+                            </a>
+
+                            <!-- separator -->
+                            <div class="row xsmall-space"></div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+                            <a href="<?php echo DOMAIN_URL; ?>assets/images/products/omg/ISO_14001.pdf">
+                                <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/ISO_14001.jpg" alt="Download Pdf" style="max-width: 100px;">
+                                <p class="text-center" style="padding-top: .3em;">
+                                    ISO 14001
+                                </p>
+                            </a>
+
+                            <!-- separator -->
+                            <div class="row xsmall-space"></div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+                            <a href="<?php echo DOMAIN_URL; ?>assets/images/products/omg/ISO_18001.pdf">
+                                <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/ISO_18001.jpg" alt="Download Pdf" style="max-width: 100px;">
+                                <p class="text-center" style="padding-top: .3em;">
+                                    ISO 18001
+                                </p>
+                            </a>
+
+                            <!-- separator -->
+                            <div class="row xsmall-space"></div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+                            <a href="<?php echo DOMAIN_URL; ?>assets/images/products/omg/API.pdf">
+                                <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/API.jpg" alt="Download Pdf" style="max-width: 100px;">
+                                <p class="text-center" style="padding-top: .3em;">
+                                    API
+                                </p>
+                            </a>
+
+                            <!-- separator -->
+                            <div class="row xsmall-space"></div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+                            <a href="<?php echo DOMAIN_URL; ?>assets/images/products/omg/Quality_Certificate.pdf">
+                                <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/Quality_Certificate.jpg" alt="Download Pdf" style="max-width: 100px;">
+                                <p class="text-center" style="padding-top: .3em;">
+                                    Quality Certificate
+                                </p>
+                            </a>
+
+                            <!-- separator -->
+                            <div class="row xsmall-space"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

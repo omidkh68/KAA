@@ -26,7 +26,7 @@
          data-wow-duration="1s" data-wow-delay=".3s">
         <div class="banner-container wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
             <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/omg-banner.jpg" alt="Optimarin banner">
-            <h1 class="page_title products <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>"><span>OMG</span></h1>
+            <h1 class="page_title products <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>"><span>Officine Meccaniche Gallaratesi</span></h1>
         </div>
         <div class="content">
             <nav class="belowNav navbar navbar-default">
@@ -59,6 +59,11 @@
                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/certificate.php"
                                                                            data-word="REGULATION"><span><?php echo CERTIFICATE; ?></span></a>
                         </li>
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay=".9s"><a class="subItem"
+                                                                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/references.php"
+                                                                           data-word="REFERENCES"><span><?php echo REFERENCES; ?></span></a>
+                        </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
@@ -75,9 +80,15 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active">
-                            <a href="#Gallery" aria-controls="Control_System" role="tab" data-toggle="tab"
+                            <a href="#Gallery" aria-controls="Gallery" role="tab" data-toggle="tab"
                                data-word="gallery">
                                 <?php echo GALLERY; ?>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#Videos" aria-controls="Videos" role="tab" data-toggle="tab"
+                               data-word="video">
+                                <?php echo VIDEO; ?>
                             </a>
                         </li>
                     </ul>
@@ -86,27 +97,58 @@
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane fade in active" id="Gallery">
                             <div class="row">
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/img-1.jpg"
-                                         class="img-thumbnail runLightBox"
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 pull-left">
+                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/omg-1.jpg"
+                                         class="runLightBox"
                                          alt="4MP series- metering piston & diaphragm.jpg">
                                 </div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/img-2.jpg"
-                                         class="img-thumbnail runLightBox" alt="OMG pumps">
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 pull-left">
+                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/omg-2.jpg"
+                                         class="runLightBox" alt="OMG pumps">
                                 </div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/img-3.jpg"
-                                         class="img-thumbnail runLightBox" alt="OMG Pumps">
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 pull-left">
+                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/omg-4.jpg"
+                                         class="runLightBox" alt="OMG pumps">
                                 </div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/img-4.jpg"
-                                         class="img-thumbnail runLightBox" alt="OMG pumps">
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 pull-left">
+                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/omg-5.jpg"
+                                         class="runLightBox"
+                                         alt="OMG Pumps">
                                 </div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/img-5.jpg"
-                                         class="img-thumbnail runLightBox"
-                                         alt="bar double diaphragm metering pump with 27mm for power station water treatment">
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 pull-left">
+                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/omg-6.jpg"
+                                         class="runLightBox"
+                                         alt="OMG Pumps">
+                                </div>
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 pull-left">
+                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/omg-7.jpg"
+                                         class="runLightBox"
+                                         alt="OMG Pumps">
+                                </div>
+                            </div>
+                            <!-- separatoe -->
+                            <div class="row xxxsmall-space"></div>
+
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 pull-left clear">
+                                    <img src="<?php echo DOMAIN_URL; ?>assets/images/products/omg/omg-3.jpg"
+                                         class="runLightBox" alt="OMG Pumps">
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="Videos">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <video controls="controls"
+                                           poster="<?php echo DOMAIN_URL; ?>assets/videos/video-2-poster.jpg"
+                                           style="width:100%" title="video-2">
+                                        <source src="<?php echo DOMAIN_URL; ?>assets/videos/video-2.m4v"
+                                                type="video/mp4"/>
+                                        <source src="<?php echo DOMAIN_URL; ?>assets/videos/video-2.webm"
+                                                type="video/webm"/>
+                                        <source src="<?php echo DOMAIN_URL; ?>assets/videos/video-2.ogv"
+                                                type="video/ogg"/>
+                                    </video>
                                 </div>
                             </div>
                         </div>

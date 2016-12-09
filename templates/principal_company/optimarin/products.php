@@ -76,6 +76,11 @@
                                 <span><?php echo REFERENCES; ?></span>
                             </a>
                         </li>
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay="1.6s"><a class="subItem"
+                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/certificate.php"
+                                                                            data-word="certificate"><span><?php echo CERTIFICATE; ?></span></a>
+                        </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
@@ -124,16 +129,13 @@
                                     در معرض امواج UV قرار می گیرد تا اثر دو جانبه UV را تضمین کند. لازم به ذکر است که آب
                                     بالاست تنها در طی مراحل بالاست فیلتر می شود.
                                     <br>
-                                    <br>
                                     سیستم بالاست OPTIMARIN (OBS) یکی از چندین روش موجود است که در آن از مواد شیمیایی و
                                     تخریبگر محیط زیست در طول مراحل اجرایی و غربالگری استفاده نمی شود. این روش بر اساس
                                     این نظریه بنا شده است که سیستم مورد استفاده باید به لحاظ زیست محیطی بی خطر، ساده،
                                     تغییر پذیر با شرایط و همراه با نصب راحت باشد به طوری که بتواند بر روی کشتی های تازه
                                     ساخته شده و قدیمی عمل کند.
                                     <br>
-                                    <br>
                                     OBS گواهی می کند که در انواع آب ها (آب شیرین، شور و آب دریا) عمل می کند.
-                                    <br>
                                     <br>
                                     سیستم بالاست OPTIMARIN بر روی کشتی های موجود و کشتی های تازه ساخته شده به صورت بسیار
                                     ساده نصب می شود. سیستم کلی بسیار قابل تنظیم می باشد، اثر و وزن کمی دارد و مناسب مدل
@@ -141,7 +143,6 @@
                                     بهینه شده، تحویل داد. این سیستم می تواند گستره ی بزرگی از ظرفیت های آب بالاست شده را
                                     در خود جای دهد و همچنین جریانی تا حدود 3.000 متر مکعب بر ساعت (و یا بالاتر بر حسب
                                     سفارش) را مدیریت کند.
-                                    <br>
                                     <br>
                                     سیستم بالاست OPTIMARIN معمولاً در اتاق موتور یا پمپ و در نزدیکی پمپ های بالاست نصب
                                     می گردد. سیستم OBS را می توان در یک کانتینر بر روی یک شاسی و یا به صورت قطعات مجزا،
@@ -162,16 +163,13 @@
                                     treated both during ballasting and de-ballasting to ensure the dual UV effect.
                                     Ballast water is only filtered during ballasting.
                                     <br>
-                                    <br>
                                     The OBS is one of very few treatment options that does not use or generate chemicals
                                     or biocides in its treatment or cleaning processes. It is based on the idea that
                                     such systems should be environmentally sound, simple, flexible and easy to install,
                                     and capable of operating on both newbuilds and existing vessels.
                                     <br>
-                                    <br>
                                     The OBS is certified to operate in all salinities. (freshwater, brackish and
                                     seawater)
-                                    <br>
                                     <br>
                                     The Optimarin Ballast System is easy to install on board existing ships (retrofit)
                                     as well as on newbuilds. The modulized system is very flexible, with a relatively
@@ -180,11 +178,9 @@
                                     range of ballast water capacities and can handle flows up to 3.000 m³/h (or higher
                                     upon request).
                                     <br>
-                                    <br>
                                     Optimarin’s endeavours have also assured approval from a range of classification
                                     organizations, including Lloyd’s Register, Germanischer Lloyd, Bureau Veritas, MLIT
                                     Japan, Russian Maritime Register of Shipping and American Bureau of Shipping.
-                                    <br>
                                     <br>
                                     The Optimarin Ballast System is normally installed in the pump or engine room and in
                                     close proximity to the ballast pumps. The OBS can be delivered in a container, on a
@@ -218,9 +214,8 @@
                                     }
                                     ?>
                                 </p>
-                                <ul class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
+                                <ul class="myList <?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -233,10 +228,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -249,10 +242,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -265,10 +256,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -281,10 +270,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -296,7 +283,6 @@
                                         <?php
                                         }
                                         ?>
-                                        <br>
                                         <br>
                                     </li>
                                 </ul>
@@ -318,9 +304,8 @@
                                     </strong>
                                     <br>
                                 </p>
-                                <ul class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
+                                <ul class="myList <?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -333,10 +318,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -349,10 +332,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -364,7 +345,6 @@
                                         <?php
                                         }
                                         ?>
-                                        <br>
                                         <br>
                                     </li>
                                 </ul>
@@ -388,9 +368,8 @@
                                     </strong>
                                     <br>
                                 </p>
-                                <ul class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
+                                <ul class="myList <?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -403,10 +382,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -419,10 +396,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -435,10 +410,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -451,10 +424,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -466,7 +437,6 @@
                                         <?php
                                         }
                                         ?>
-                                        <br>
                                         <br>
                                     </li>
                                 </ul>
@@ -489,9 +459,8 @@
                                     </strong>
                                     <br>
                                 </p>
-                                <ul class="<?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
+                                <ul class="myList <?php echo (LANG == "fa") ? "rtl" : "ltr"; ?>">
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -504,10 +473,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -520,10 +487,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -536,10 +501,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -552,10 +515,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>
@@ -568,10 +529,8 @@
                                         }
                                         ?>
                                         <br>
-                                        <br>
                                     </li>
                                     <li>
-                                        <i class="fi flaticon-correct text-success"></i>
                                         <?php
                                         if(LANG == "fa") {
                                         ?>

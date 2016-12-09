@@ -65,6 +65,11 @@
                                                                             href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/references.php"
                                                                             data-word="references"><span><?php echo REFERENCES; ?></span></a>
                         </li>
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay="1.6s"><a class="subItem"
+                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/certificate.php"
+                                                                            data-word="certificate"><span><?php echo CERTIFICATE; ?></span></a>
+                        </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>

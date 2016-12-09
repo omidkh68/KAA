@@ -5,6 +5,7 @@
 @import 'samim';
 @import 'supersized';
 @import 'flaticon';
+@import 'izitoast';
 
 // body style configuration
 body {
@@ -375,12 +376,22 @@ header {
   width: $full-size;
 }
 
+.overlay2 {
+  background-color: $dark-black-color;
+  height: $full-size;
+  left: $zero;
+  position: $absolute;
+  right: $zero;
+  top: $zero;
+  width: $full-size;
+}
+
 .box {
   @include radius-normal();
 
   height: auto;
   margin-bottom: $full-em * 2;
-  min-height: 500px;
+  min-height: 600px;
   padding: $full-em;
   position: $relative;
   width: $full-size;
@@ -391,6 +402,24 @@ header {
     max-width: 1200px;
     overflow-x: $hidden;
     overflow-y: $auto;
+  }
+
+  .captchaText {
+    background-color: $normal-white-color;
+    font-size: 1.4em;
+    height: 34px;
+    line-height: 34px;
+    position: $absolute;
+    top: $zero;
+    width: 100px;
+
+    &.rtl {
+      left: $zero;
+    }
+
+    &.ltr {
+      right: $zero;
+    }
   }
 
   .banner-container {
@@ -423,6 +452,10 @@ header {
 
   .content {
     min-height: 340px;
+  }
+
+  li .content {
+    min-height: 70px;
   }
 
   h1 {
@@ -553,7 +586,7 @@ header {
 
     h2 {
       color: $dark-cyan-color;
-      font-size: $full-em * 2;
+      font-size: 1.3em;
       font-weight: 200;
       height: $headerheight;
       line-height: $headerheight;
@@ -1169,7 +1202,7 @@ body.hugContent {
   footer,
   .sliderContainer {
     height: $auto;
-    position: inherit;
+    position: inherit !important;
   }
 
   #progress-back {

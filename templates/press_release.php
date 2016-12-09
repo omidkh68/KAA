@@ -21,47 +21,56 @@
 
 <!-- body content for change data when user change page -->
 <div class="body-content">
-    <ul class="news-inbox">
-        <?php
-        if (isset($result)) {
+    <!-- box content -->
+    <div class="box center-block">
+        <ul class="news-inbox">
+            <?php
+            if (isset($result)) {
 
-            $cnt = 0.3;
-            foreach ($pressRelease as $k => $v) {
-                ?>
-                <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="<?php echo $cnt; ?>s">
-                    <div class="row log_title">
-                        <div
-                            class="col-xs-3 col-sm-3 col-md-2 <?php echo (LANG == "fa") ? "pull-right rtl" : "pull-left ltr" ?>">
-                            <img class="center-block img-thumbnail runLightBox"
-                                 src="<?php echo DOMAIN_URL; ?>assets/images/news/<?php echo $v['image_name'] . '.' . $v['image_type']; ?>"
-                                 alt="<?php echo(strlen($v['image_desc']) ? $v['image_desc'] : ''); ?>">
+                $cnt = 0.3;
+                foreach ($pressRelease as $k => $v) {
+                    ?>
+                    <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="<?php echo $cnt; ?>s">
+                        <div class="row log_title">
+                            <div
+                                class="col-xs-3 col-sm-3 col-md-2 <?php echo (LANG == "fa") ? "pull-right rtl" : "pull-left ltr" ?>">
+                                <?php
+                                $fileNameTmp = LOCAL_PATH."assets/images/news/".$v['image_name'].'.'.$v['image_type'];
+                                if(is_file($fileNameTmp)) {
+                                    $fileName = DOMAIN_URL."assets/images/news/".$v['image_name'].'.'.$v['image_type'];
+                                } else {
+                                    $fileName = DOMAIN_URL."assets/images/kavoshabzar_img_placeholder.png";
+                                }
+                                ?>
+                                <img class="center-block img-thumbnail runLightBox"
+                                     src="<?php echo $fileName; ?>"
+                                     alt="<?php echo(strlen($v['image_desc']) ? $v['image_desc'] : '-'); ?>">
+                            </div>
+                            <div
+                                class="col-xs-9 col-sm-9 col-md-10 <?php echo (LANG == "fa") ? "pull-right rtl" : "pull-left ltr" ?>">
+                                <h3 class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
+                                    <?php echo(isset($v['subject']) && strlen($v['subject']) ? $v['subject'] : ''); ?>
+
+                                    <i class="fi flaticon-angle-bottom normal-transition"></i>
+                                </h3>
+                            </div>
                         </div>
-                        <div
-                            class="col-xs-9 col-sm-9 col-md-10 <?php echo (LANG == "fa") ? "pull-right rtl" : "pull-left ltr" ?>">
-                            <h3 class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
-                                <?php echo(isset($v['subject']) && strlen($v['subject']) ? $v['subject'] : ''); ?>
-
-                                <i class="fi flaticon-angle-bottom normal-transition"></i>
-                            </h3>
+                        <div class="content">
+                            <?php echo(strlen($v['description']) ? $v['description'] : '-'); ?>
                         </div>
-                    </div>
-                    <div class="content rtl">
-                        <p class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
-                            <?php echo(isset($v['description']) && strlen($v['description']) ? $v['description'] : ''); ?>
-                        </p>
-                    </div>
 
-                    <span class="date <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
-                <?php echo(isset($v['create_date']) && strlen($v['create_date']) ? $v['create_date'] : ''); ?>
-            </span>
-                </li>
-                <?php
+                        <span class="date <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
+                            <?php echo(isset($v['create_date']) && strlen($v['create_date']) ? $v['create_date'] : ''); ?>
+                        </span>
+                    </li>
+                    <?php
 
-                $cnt += 0.2;
+                    $cnt += 0.2;
+                }
             }
-        }
-        ?>
-    </ul>
+            ?>
+        </ul>
+    </div>
 
     <div id="lightBox" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-lg" role="document">

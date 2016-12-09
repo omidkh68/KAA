@@ -1,9 +1,17 @@
+.clear,
 %clear {
   clear: both;
 }
 
 :focus {
   outline: $none;
+}
+
+ul,
+li {
+  list-style: $none;
+  margin: $zero;
+  padding: $zero;
 }
 
 h1,
@@ -16,7 +24,7 @@ h6 {
 }
 
 a {
-  cursor: pointer;
+  cursor: $pointer;
 
   &:hover,
   &:focus,
@@ -25,6 +33,10 @@ a {
     outline: $none;
     text-decoration: $none;
   }
+}
+
+p {
+  text-align: $justify;
 }
 
 textarea {
@@ -36,13 +48,6 @@ textarea {
   width: $full-size;
 }
 
-ul,
-li {
-  list-style: $none;
-  margin: $zero;
-  padding: $zero;
-}
-
 %no-select {
   -moz-user-select: $none;
   -ms-user-select: $none;
@@ -52,11 +57,11 @@ li {
 
 %rtl,
 .rtl {
-  direction: $dirright;
+  direction: $dirright !important;
 }
 
 %ltr {
-  direction: $dirleft;
+  direction: $dirleft !important;
 }
 
 %en-font,
@@ -94,6 +99,10 @@ li {
 %text-black,
 .text-black {
   color: $pure-black-color;
+}
+
+.form-group {
+  position: $relative;
 }
 
 %mt {
@@ -283,7 +292,7 @@ li {
     width: $full-size;
   }
 
-  &.xxsmall-space {
+    &.c {
     @extend %clear;
 
     padding-bottom: $full-em;
@@ -338,4 +347,10 @@ li {
     padding-top: $full-em * 10;
     width: $full-size;
   }
+}
+
+.myList,
+.myList li {
+  list-style: disc;
+  margin: $zero $full-em;
 }

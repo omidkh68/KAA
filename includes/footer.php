@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
-                        <img src="" alt="" class="img-responsive">
+                        <img src="" alt="" class="img-responsive center-block">
                     </div>
                 </div>
             </div>
@@ -51,6 +51,7 @@
     if($sqlResult = $db->query($copyrightSql)){
         $copyrightText = $sqlResult->fetch_object()->text;
     }
+    $db->close();
     ?>
 
     <p class="pull-right <?php echo (LANG == "fa") ? "rtl" : "ltr" ?> wow fadeInUp" data-wow-duration="1s"

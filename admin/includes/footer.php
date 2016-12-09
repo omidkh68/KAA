@@ -10,6 +10,8 @@ if($sqlResult = $db->query($copyrightSql)){
     $copyrightText = "";
 
     $copyrightText = $sqlResult->fetch_object()->text;
+
+    $db->close();
 }
 ?>
 

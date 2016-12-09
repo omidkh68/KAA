@@ -21,10 +21,34 @@ switch ($_POST['action']) {
         $lang = mysqli_real_escape_string($db, $lang);
         $text = mysqli_real_escape_string($db, $text);
 
-        $result = $db->query("UPDATE copyright SET text = '".$text."' WHERE lang = '".$lang."'");
+        $result = $db->query("UPDATE `copyright` SET `text` = '".$text."' WHERE `lang` = '".$lang."'");
 
         if($result) {
             header('location: '.DOMAIN_URL_admin.'index.php');
+        }
+
+        break;
+
+    case 'changeDefaultLang':
+        $lang = (isset($_POST['changeLang']) ? $_POST['changeLang'] : "en");
+
+        $result = $db->query("UPDATE `config` SET `lang` = '".$lang."'");
+
+        if($result) {
+            $_SESSION['lang'] = $lang;
+
+            header("Location:" . DOMAIN_URL.'admin');
+        }
+
+        break;
+
+    case 'changeDefaultTheme':
+        $theme = (isset($_POST['changeTheme']) ? $_POST['changeTheme'] : "");
+
+        $result = $db->query("UPDATE `config` SET `theme` = '".$theme."'");
+
+        if($result) {
+            header("Location:" . DOMAIN_URL.'admin');
         }
 
         break;
@@ -42,13 +66,15 @@ switch ($_POST['action']) {
             }
         }
 
-        $defaultLangSql = "
-          SELECT `lang` FROM `config`
+        $configSql = "
+          SELECT `lang`, `theme` FROM `config`
         ";
 
-        $resultLang = $db->query($defaultLangSql);
+        $resultConfig = $db->query($configSql);
 
-        $defaultLang = $resultLang->fetch_object()->lang;
+        $configs = $resultConfig->fetch_assoc();
+        $defaultLang = $configs['lang'];
+        $defaultTheme = $configs['theme'];
 
         break;
 }

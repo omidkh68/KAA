@@ -65,6 +65,11 @@
                                                                             href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/references.php"
                                                                             data-word="references"><span><?php echo REFERENCES; ?></span></a>
                         </li>
+                        <li class="wow fadeIn <?php echo (LANG == "fa") ? "pull-right" : "pull-left" ?>"
+                            data-wow-duration="1s" data-wow-delay="1.6s"><a class="subItem"
+                                                                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/certificate.php"
+                                                                            data-word="certificate"><span><?php echo CERTIFICATE; ?></span></a>
+                        </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
@@ -82,8 +87,6 @@
                                                                       data-toggle="tab">Owners</a></li>
                             <li role="presentation"><a href="#YARDS" aria-controls="YARDS"
                                                        role="tab" data-toggle="tab">Yards</a></li>
-                            <li role="presentation"><a href="#uSCoastGuard" aria-controls="uSCoastGuard"
-                                                       role="tab" data-toggle="tab">US Coast Guard</a></li>
                         </ul>
 
                         <!-- Tab panes -->
@@ -99,42 +102,6 @@
                                 <p>
                                     <img class="center-block"
                                          src="<?php echo DOMAIN_URL; ?>assets/images/references_yards.jpg" alt="Yards">
-                                </p>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="uSCoastGuard">
-                                <p>
-                                    <strong>
-                                        In March 2012 the US Coast Guard published its final rule on Ballast Water
-                                        Management for Control of Nonindigenous Species in Waters of the United States.
-                                        And in June the same year the USCG Regulations 33 CFR Part 151 and 46 CFR Part
-                                        162 entered into force on 21 June 2012, which apply to new builds constructed on
-                                        or after 1st December 2013 as well as to existing ships by their first
-                                        dry-docking after 2014 or 2016 depending on the ballast water capacity.
-                                    </strong>
-                                    <br>
-                                    <br>
-                                    In order to address the US implementation schedule for ballast water treatment
-                                    systems for dates prior to 2015, the USCG introduced the Alternate Management System
-                                    (AMS) acceptance for some IMO approved systems including Optimarin. Ships
-                                    with systems accepted as AMS installed will be grandfathered for five years beyond
-                                    their USCG compliance date.
-                                    <br>
-                                    <br>
-                                    Regarding treatment; The USCG requirement of BWT is instant death after treatment
-                                    using a test/counting method called CMFDA which is a staining method which can
-                                    determine that the organisms are really dead immediately after treatment.
-                                    <br>
-                                    <br>
-                                    The non-viability standard (acceptable under the IMO regime) which render the
-                                    organism non-viable after treatment or dead after a grow-out period of 14-20 days.
-                                    This test method is called MPM and is not approved by the USCG.  USCG has a project
-                                    to analyse the MPM method but it does not look like they will allow this it any time
-                                    soon.
-                                    <br>
-                                    <br>
-                                    If USCG however do decide to change the test methods, it is a process that requires
-                                    public hearing and public comments and submittal of the revised regulation through
-                                    the proper US regulatory process and may take years to carry through.
                                 </p>
                             </div>
                         </div>

@@ -22,6 +22,8 @@
     <!-- Default EN fonts -->
     <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700'>
 
+    <script src="<?php echo DOMAIN_URL; ?>bower_components/jquery/dist/jquery.min.js"></script>
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>

@@ -8,9 +8,9 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
-error_reporting(0);
+error_reporting(1);
 error_reporting(E_ALL ^ E_STRICT ^ E_WARNING ^ E_DEPRECATED ^ E_NOTICE);
-ini_set("display_errors", 0);
+ini_set("display_errors", 1);
 
 session_start();
 
@@ -54,3 +54,11 @@ define("LOCAL_PATH", dirname(__FILE__)."/");
 define("DIR", "");
 define("PROTOCOL", "http");
 define("DOMAIN_URL", PROTOCOL."://".$_SERVER["HTTP_HOST"]."/".DIR);
+
+$message = "";
+
+if(isset($_SESSION['message']) && !empty($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+    unset($_SESSION['message']);
+}
+?>

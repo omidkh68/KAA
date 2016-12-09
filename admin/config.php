@@ -7,6 +7,7 @@
  */
 
 session_start();
+ob_start();
 
 error_reporting(1);
 error_reporting(E_ALL ^ E_STRICT ^ E_WARNING ^ E_DEPRECATED ^ E_NOTICE);
@@ -26,8 +27,17 @@ define("PROTOCOL", "http");
 define("DOMAIN_URL", PROTOCOL . "://" . $_SERVER["HTTP_HOST"] . "/" . DIR);
 define("DOMAIN_URL_admin", PROTOCOL . "://" . $_SERVER["HTTP_HOST"] . "/" . "admin/");
 
+define("ROOT_PATH", $_SERVER['DOCUMENT_ROOT'] . "/" . DIR);
+
 function debug($array) {
     echo "<pre>";
     print_r($array);
-    die();
 }
+
+$message = "";
+
+if(isset($_SESSION['message']) && !empty($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+    unset($_SESSION['message']);
+}
+?>

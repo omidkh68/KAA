@@ -53,7 +53,7 @@
                 </a>
                 <ul class="dropdown-menu <?php echo (LANG == "fa") ? "rtl" : "ltr" ?>" aria-labelledby="dropdownMenu1">
                     <li><a class="menuItem subMenuItem" data-item="1"
-                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/" data-pageName="omg">OMG</a></li>
+                           href="<?php echo DOMAIN_URL; ?>page/principal_company/omg/" data-pageName="omg">Officine Meccaniche Gallaratesi</a></li>
                     <li><a class="menuItem subMenuItem" data-item="2"
                            href="<?php echo DOMAIN_URL; ?>page/principal_company/optimarin/" data-pageName="optimarin">Optimarin</a>
                     </li>

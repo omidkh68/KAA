@@ -28,7 +28,7 @@
                      alt="Kavosh Abzar OMG">
             </div>
             <div class="content <?php echo (LANG == "fa") ? "pull-left" : "pull-right" ?>">
-                <h2 class="<?php echo (LANG == "fa") ? "fa-font text-right" : "en-font text-left" ?>">OMG</h2>
+                <h2 class="<?php echo (LANG == "fa") ? "fa-font text-right" : "en-font text-left" ?>">Officine Meccaniche Gallaratesi</h2>
                 <article class="<?php echo (LANG == "fa") ? "rtl" : "ltr" ?>">
                     <?php echo(isset($briefOmg) && strlen($briefOmg) ? $briefOmg : '') ?>
 

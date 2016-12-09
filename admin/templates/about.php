@@ -22,6 +22,7 @@ include_once '../config.php';
                     <?php echo ABOUT; ?>
                 </h1>
 
+                <!-- separator -->
                 <div class="row xsmall-space"></div>
 
                 <div class="row">
@@ -45,9 +46,9 @@ include_once '../config.php';
                             <tr>
                                 <td><?php echo $cnt++; ?></td>
                                 <td><?php echo $v['lang']; ?></td>
-                                <td><?php echo $v['text']; ?></td>
+                                <td class="<?php echo ($v['lang'] == 'fa' ? 'rtl' : ''); ?>"><?php echo $v['text']; ?></td>
                                 <td class="text-center">
-                                    <a class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
+                                    <a class="editBtn btn btn-success btn-xs" data-lang="<?php echo $v['lang']; ?>"><i class="fa fa-pencil"></i></a>
                                 </td>
                             </tr>
                             <?php
@@ -69,10 +70,90 @@ include_once '../config.php';
 
         </div>
 
+        <!-- Edit Form -->
+        <div id="editAbout" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Edit About</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="summernote"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="lang" value="">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="saveChanges" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
         <!-- footer of panel -->
         <?php include_once LOCAL_PATH . 'includes/footer.php'; ?>
 
         <!-- scritps of panel -->
         <?php include_once LOCAL_PATH . 'includes/scripts.php'; ?>
+
+        <script>
+            $(function() {
+                var baseURL = '<?php echo DOMAIN_URL_admin.'pages/about.php'; ?>',
+                    $modal      = $('#editAbout'),
+                    $summernote = $('#summernote'),
+                    lang        = "";
+
+                $('.editBtn').bind('click', function(e) {
+                    e.preventDefault();
+
+                    lang = $(this).data('lang');
+
+                    if(lang == 'fa') {
+                        $modal.find('.modal-body').removeClass('ltr').addClass('rtl');
+                    } else {
+                        $modal.find('.modal-body').removeClass('rtl').addClass('ltr');
+                    }
+
+                    $modal.modal('show');
+                });
+
+                $modal.on('show.bs.modal', function() {
+                    $.post(baseURL, {action: 'getAbout', lang: lang}, function(result) {
+
+                        $summernote.html(result);
+                        $summernote.summernote({
+                            disableDragAndDrop: true,
+                            height: 200,                 // set editor height
+                            minHeight: 100,              // set minimum height of editor
+                            maxHeight: 300,              // set maximum height of editor
+                            focus: true,
+                            toolbar: [
+                                ['style', ['bold', 'italic', 'underline', 'clear']],
+                                ['fontsize', ['fontsize']],
+                                ['insert',['ltr','rtl']],
+                                ['color', ['color']],
+                                ['para', ['ul', 'ol', 'paragraph']],
+                                ['height', ['height']],
+                                ['misc', ['fullscreen', 'codeview', 'redo', 'undo']]
+                            ]
+                        });
+                    });
+                });
+
+                $modal.on('hidden.bs.modal', function() {
+                    $summernote.summernote('destroy');
+                });
+
+                $('#saveChanges').bind('click', function(e) {
+                    e.preventDefault();
+
+                    $.post(baseURL, {action: 'setAbout', lang: lang, text: $summernote.summernote('code')}, function(result) {
+                        if(result == "1") {
+                            window.location.reload();
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>

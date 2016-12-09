@@ -261,10 +261,11 @@ $(document).ready(function() {
 
         var $self = $(this),
             src = $self.attr('src'),
-            alt = $self.attr('alt');
+            alt = $self.attr('alt'),
+            data_src = $self.attr('data-src');
 
         $lightBox.find('img').attr({
-            src: src,
+            src: data_src != undefined ? data_src : src,
             alt: alt
         });
 
@@ -318,10 +319,6 @@ $(document).ready(function() {
     $(window).on('popstate', function () {
         var url = window.location.href;
 
-        var partPartUrl = url.split('/');
-
-        //console.log(partPartUrl);
-
         $('.body-content').load(url + ' .body-content > *', function () {
             if ($nav.hasClass('active')) {
                 $nav.removeClass('active');
@@ -339,8 +336,50 @@ $(document).ready(function() {
         });
     });
 
+    $('.btnSend').bind('click', function(e) {
+        e.preventDefault();
+
+        var captchaHolder = $('.captchaText').html(),
+            $captcha = $('#captcha_code'),
+            $name = $('#name'),
+            $email = $('#email'),
+            $subject = $('#subject');
+
+        if($name.val() != "" && $email.val() != "" && isEmail($email.val()) && $subject.val() != "" && $captcha.val() != "") {
+            if($captcha.val() === captchaHolder) {
+
+                $('.frmContact').submit();
+
+            } else {
+                iziToast.error({
+                    message: 'Please enter the correct captcha',
+                    position: 'topCenter',
+                    transitionIn: 'bounceInDown',
+                    transitionOut: 'fadeOutUp',
+                    timeout: 5000,
+                    pauseOnHover: true
+                });
+            }
+        } else {
+            iziToast.error({
+                message: 'Please fill all required items',
+                position: 'topCenter',
+                transitionIn: 'bounceInDown',
+                transitionOut: 'fadeOutUp',
+                timeout: 5000,
+                pauseOnHover: true
+            });
+        }
+    });
+
+    function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
+
 // end of functions
 });
+
 $(window).resize(function() {
     var $nav = $('nav'),
         width = $(this).width(),

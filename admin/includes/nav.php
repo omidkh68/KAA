@@ -30,4 +30,4 @@
     </nav>
 
     <!-- separator -->
-    <div class="row xsmall-space"></div>
+    <div class="row halfsmall-space"></div>
